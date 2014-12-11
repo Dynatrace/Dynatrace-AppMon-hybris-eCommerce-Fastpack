@@ -1,7 +1,5 @@
 # hybris eCommerce Fastpack
 
-[hybris-fastpack-2.0-public.dtp](attachments_156631071_4_hybris-fastpack-2.0-public.dtp)
-
 ## Overview
 
 ![images_community/download/attachments/74383375/hybris-performance_management.png](images_community/download/attachments/74383375/hybris-performance_management.png) The dynaTrace FastPack for hybris
@@ -87,7 +85,7 @@ last 6 hours, lat day and last 7 days for the average response time and error ra
 
 ## Installation
 
-Just download and import the FastPack on your dynaTrace Server (see [Plugin Management](https://community/display/DOCDT40/Plugin+Management)).  
+Just download and import the FastPack on your dynaTrace Server (see [Plugin Management](https://community.compuwareapm.com/community/display/DOCDT40/Plugin+Management)).  
 Either configure your hybris agents' name to start with "hybris" so they will be mapped to the system profile contained in the fastpack, or copy the profile to match your application and modify the
 contained agent groups and mappings.  
 To use UEM you will need to match your webserver's agent name to the "webserver" agentgroup or adopt accordingly. Also make sure to enable the UEM and webserver sensor in the agent configuration
