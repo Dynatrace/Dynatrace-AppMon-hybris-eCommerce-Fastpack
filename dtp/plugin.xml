@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.dynatrace.diagnostics.InstallerContent" name="com.dynatrace.diagnostics.InstallerContent" schema="schema/com.dynatrace.diagnostics.InstallerContent.exsd"/>
+   <extension
+         point="com.dynatrace.diagnostics.InstallerContent">
+      <metainfo
+            installer_type="resourcepack"
+            name="FastPack Resources">
+         <resource
+               resource="profiles/Production.profile.xml"
+               resource_type="systemProfile">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] java memory pools.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] solr request performance.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] request balancing.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] java garbage collection.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] webrequest performance.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] end user performance overview.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] database performance.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+                  <resource
+               resource="dashboards/[y] database connection pool.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] cache metrics.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource> 
+      </metainfo>
+   </extension>
+
+</plugin>
