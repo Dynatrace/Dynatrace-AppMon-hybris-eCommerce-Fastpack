@@ -22,6 +22,13 @@
             </instance>
          </resource>
          <resource
+               resource="dashboards/[y] page class performance.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
                resource="dashboards/[y] solr request performance.dashboard.xml"
                resource_type="dashboard">
             <instance
@@ -44,6 +51,20 @@
          </resource>
          <resource
                resource="dashboards/[y] webrequest performance.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] webrequest distribution.dashboard.xml"
+               resource_type="dashboard">
+            <instance
+                  instance="server">
+            </instance>
+         </resource>
+         <resource
+               resource="dashboards/[y] cron jobs.dashboard.xml"
                resource_type="dashboard">
             <instance
                   instance="server">

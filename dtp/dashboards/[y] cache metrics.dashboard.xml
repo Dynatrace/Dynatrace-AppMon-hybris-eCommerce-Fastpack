@@ -2,8 +2,8 @@
 <!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
 <!-- Manual changes can cause severe problems and system instability -->
 <!-- Apply manual changes only if you have received explicit instructions from dynaTrace Support -->
-<dynatrace version="5.6.0.5802" date="3/4/14 4:28 PM">
-  <dashboardconfig memento.version="5.6.0.5802" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" localizationenabled="false" sessiontype="live" locationassource="true" groupname="" authorname="CompuwareAPM" opendrilldowninnewdashboard="true" sessionid="Production" autoreplacesession="false" modified="2014-03-04T16:28:21+0000" id="2d12f70b-b256-4adc-a669-5a03492b0bf2" revision="00000144-8dec-abf2-a62b-f90646a096bf" created="2014-02-26T20:04:56+0000" description="" name="[y] cache metrics" modifiedbyname="admin" locationascomparesource="false">
+<dynatrace version="6.0.0.6733" date="3/4/14 4:28 PM">
+  <dashboardconfig memento.version="6.0.0.6733" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" localizationenabled="false" sessiontype="live" locationassource="true" groupname="" authorname="CompuwareAPM" opendrilldowninnewdashboard="true" sessionid="Production" autoreplacesession="false" modified="2014-03-04T16:28:21+0000" id="2d12f70b-b256-4adc-a669-5a03492b0bf2" revision="00000144-8dec-abf2-a62b-f90646a096bf" created="2014-02-26T20:04:56+0000" description="" name="[y] cache metrics" modifiedbyname="admin" locationascomparesource="false">
     <reportconfig lines.per.table="100" pagesize="A4" enabled="true" print.legends="true" orientation="portrait" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" optimizeequalcolumns="true" type="PDF" title="" override="false" levels.per.tree="10" description="" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" print.images="true" />
     <filter>
       <criterion completepurepath="true" type="agents" mode="all">
