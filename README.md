@@ -17,7 +17,7 @@ It provides following capabilities:
 ### How to Install the Binary Fastpack (*.dtp)
 
 1. Open the Dynatrace Client and connect to a Dynatrace Server
-2. Go to Dyantrace Server Settings and select _Plugins_
+2. Go to Dynatrace Server Settings and select _Plugins_
 3. Select _Install Plugin_ and choose the *.dtp file
 4. Check the installed Hybris System Profiles (y_Production and y_Staging)
 
