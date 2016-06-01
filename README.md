@@ -1,6 +1,9 @@
 ## Dynatrace fastpack for SAP Hybris eCommerce Platform
 
 This fastpack contains a configuration and dashboards for Dynatrace AppMon for monitoring SAP Hybris ECP environments.
+
+Visit [the Dynatrace Community page](http://bit.ly/hybrisapm) for more details and howto use the fastpack
+
 It provides following capabilities:
 * automatic detection of different page types
 * automatic detection and monitoring of CronJobs
