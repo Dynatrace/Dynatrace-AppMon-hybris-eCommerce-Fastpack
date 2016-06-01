@@ -1,8 +1,13 @@
-## hybris eCommerce Fastpack
+## Dynatrace fastpack for SAP Hybris eCommerce Platform
 
-![images_community/download/attachments/74383375/hybris-performance_management.png](images_community/download/attachments/74383375/hybris-performance_management.png) 
-The dynaTrace FastPack for hybris
-contains sensors, a template system profile and dashboards for the hybris accelerator eCommerce platform. If you are using dynaTrace UEM you will also get conversion and visitor tagging.
-
-Find further information in the [dynaTrace community](https://community.compuwareapm.com/community/display/DL/hybris+eCommerce+Fastpack). 
+This fastpack contains a configuration and dashboards for Dynatrace AppMon for monitoring SAP Hybris ECP environments.
+It provides following capabilities:
+* automatic detection of different page types
+* automatic detection and monitoring of CronJobs
+* detection of external webservices and webrequests
+* impact analysis of external systems
+* database usage and impact of individual page types
+* end-user experience monitoring
+* loadbalancing validation and system monitoring
+* business dashboards for orders and revenue in multi-currencies
 
