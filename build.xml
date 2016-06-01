@@ -1,0 +1,413 @@
+<project name="hybris-managed-services-template" default="dist" basedir=".">
+    <description>
+        A script to generate a Dynatrace fastpack for SAP Hybris environments.
+    	It creates a fastpack with profiles and dashboards that are ready to use 
+    </description>
+	<taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask">
+		<classpath>
+	    	<pathelement location="lib/xmltask.jar"/>
+	  	</classpath>
+	</taskdef>
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<fileset dir="${basedir}/lib/ant-contrib"/>
+		</classpath>
+	</taskdef>
+	
+	<taskdef name="http" classname="org.missinglink.ant.task.http.HttpClientTask">
+	    <classpath>
+	    	<pathelement location="lib/ant-http/ml-ant-http-1.1.3.jar"/>
+	    </classpath>
+	</taskdef>
+	
+	<scriptdef language="javascript" name="lower">
+	    <attribute name="string" /> 
+	    <attribute name="to" />
+
+	    project.setProperty( attributes.get( "to" ),
+	                         attributes.get( "string" ).toLowerCase() );
+	</scriptdef>
+	<scriptdef language="javascript" name="upper">
+	    <attribute name="string" /> 
+	    <attribute name="to" />
+
+	    project.setProperty( attributes.get( "to" ),
+	                         attributes.get( "string" ).toUpperCase() );
+	</scriptdef>
+	
+	<!-- set global properties for this build -->
+    <loadproperties srcFile="fastpack.properties"/>
+	<property name="build" location="build"/>
+	<property name="dist"  location="dist"/>
+	<property name="fastpack-template" location="fastpack-template"/>
+	<property name="prod" value="Production"/>
+	<property name="stag" value="Staging"/>
+	<property name="prod.short" value="p"/>
+	<property name="stag.short" value="s"/>
+	<property name="prod-profile-postfix" value="_${prod}.profile.xml"/>
+	<property name="stag-profile-postfix" value="_${stag}.profile.xml"/>		
+
+	<target name="init">
+		<tstamp>
+			<format property="build.time" pattern="MM/dd/yyyy hh:mm"/>
+		</tstamp>
+		<mkdir dir="${build}"/>
+		<copy todir="${build}">
+			<fileset dir="${fastpack-template}"/>
+		</copy>
+	</target>
+
+	<target name="get-uem-config" unless="config.uem">
+		<!-- if UEM configuration is not set in fastpack.properties ask for it -->
+		<input message="Enable UEM (y/n):" validargs="yes,no" addproperty="config.uem"/>
+		<condition property="enable.uem">
+			<istrue value="${config.uem}"/>
+		</condition>
+		<condition property="disable.uem">
+			<isfalse value="${config.uem}"/>
+		</condition>
+	</target>
+	
+	<target name="config-uem" depends="get-customer-prefix, get-uem-config">
+		<echo>Building with UEM: ${config.uem}</echo>
+		<if>
+		 <istrue value="${config.uem}"/>
+		 <then>
+			<if>
+				<istrue value="${build.production}"/>
+				<then>
+		 			<xmltask source="${build}/profiles/${customer.prefix}${prod-profile-postfix}" dest="${build}/profiles/${customer.prefix}${prod-profile-postfix}">
+		 				<replace path="//application[@name='B2C']/uemappconfig/uemsensorconfig/@uemmode" withText="CAPTURE_SERVER_AND_ENDUSER_SIDE"/>
+		 			</xmltask>
+				</then>
+			</if>
+			<if>
+				<istrue value="${build.staging}"/>
+				<then>
+				 	<xmltask source="${build}/profiles/${customer.prefix}${stag-profile-postfix}" dest="${build}/profiles/${customer.prefix}${stag-profile-postfix}">
+				 		<replace path="//application[@name='B2C']/uemappconfig/uemsensorconfig/@uemmode" withText="CAPTURE_SERVER_AND_ENDUSER_SIDE"/>
+				 	</xmltask>
+				</then>
+			</if>
+		 </then>
+		 <else>
+			<if>
+				<istrue value="${build.production}"/>
+				<then>
+				 	<xmltask source="${build}/profiles/${customer.prefix}${prod-profile-postfix}" dest="${build}/profiles/${customer.prefix}${prod-profile-postfix}">
+				 		<replace path="//uemsensorconfig/@uemmode" withText="CAPTURE_SERVER_SIDE"/>
+				 	</xmltask>
+				</then>
+			</if>
+			<if>
+				<istrue value="${build.staging}"/>
+				<then>
+				 	<xmltask source="${build}/profiles/${customer.prefix}${stag-profile-postfix}" dest="${build}/profiles/${customer.prefix}${stag-profile-postfix}">
+				 		<replace path="//uemsensorconfig/@uemmode" withText="CAPTURE_SERVER_SIDE"/>
+				 	</xmltask>
+				</then>
+			</if>
+		 </else>
+		</if>
+	</target>
+	
+	<target name="get-customer-prefix" unless="customer.prefix">
+		<!-- if customer prefix is not set in fastpack.properties ask for it -->
+		<input message="Enter Customer Prefix:" addproperty="customer.prefix"/>
+	</target>
+	
+	<target name="config-customer" depends="get-customer-prefix">
+		<echo>Building with Customer/Profile Prefix: ${customer.prefix}</echo>
+		<if>
+			<istrue value="${build.production}"/>
+			<then>
+				<copy file="${build}/profiles/Production.profile.xml" tofile="${build}/profiles/${customer.prefix}${prod-profile-postfix}"/>
+			</then>
+		</if>
+		<if>
+			<istrue value="${build.staging}"/>
+			<then>
+				<copy file="${build}/profiles/Production.profile.xml" tofile="${build}/profiles/${customer.prefix}${stag-profile-postfix}"/>
+			</then>
+		</if>
+	</target>
+	
+	<target name="build" depends="init, config-customer, config-uem">
+		<echo>SAP Hybris Fastpack Version: ${build.version}</echo>
+		<lower string="${customer.prefix}" to="customer.prefix.lower" />
+		
+		<if>
+			<istrue value="${build.production}"/>
+			<then>
+				<!-- production profile -->
+				<xmltask source="${build}/profiles/${customer.prefix}${prod-profile-postfix}" dest="${build}/profiles/${customer.prefix}${prod-profile-postfix}">
+					<replace path="//agentmapping[@id='applicationserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-app.*"/>
+					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-adm.*"/>
+					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-web.*"/>
+					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-search.*"/>
+				</xmltask>
+				<!-- adding a version tag as description -->
+				<xmltask source="${build}/profiles/${customer.prefix}${prod-profile-postfix}" dest="${build}/profiles/${customer.prefix}${prod-profile-postfix}">
+					<replace path="//systemprofile/@description" withText="Version ${build.version} created ${build.time}"/>
+					<replace path="//dynatrace/@version" withText="${dashboard.version}"/>
+					<replace path="//configuration[@active='true']/@id" withText="${build.version}"/>
+					<replace path="//configuration[@active='true']/@description" withText="Version ${build.version} created ${build.time}"/>
+				</xmltask>
+			</then>
+		</if>
+
+		<if>
+			<istrue value="${build.staging}"/>
+			<then>
+				<!-- staging profile -->
+				<xmltask source="${build}/profiles/${customer.prefix}${stag-profile-postfix}" dest="${build}/profiles/${customer.prefix}${stag-profile-postfix}">
+					<replace path="//agentmapping[@id='applicationserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-app.*"/>
+					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-adm.*"/>
+					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-web.*"/>
+					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-search.*"/>
+				</xmltask>
+				<!-- adding a version tag as description -->
+				<xmltask source="${build}/profiles/${customer.prefix}${stag-profile-postfix}" dest="${build}/profiles/${customer.prefix}${stag-profile-postfix}">
+					<replace path="//systemprofile/@description" withText="Version ${build.version} created ${build.time}"/>
+					<replace path="//dynatrace/@version" withText="${dashboard.version}"/>
+					<replace path="//configuration[@active='true']/@id" withText="${build.version}"/>
+					<replace path="//configuration[@active='true']/@description" withText="Version ${build.version} created ${build.time}"/>
+				</xmltask>
+			</then>
+		</if>
+		
+		<!-- creating dashboards -->
+		<if>
+			<istrue value="${build.production}"/>
+			<then>
+				<!-- production dashboards -->
+				<copy todir="${build}/dashboards">
+				    <fileset dir="${build}/dashboards"/>
+				    <globmapper from="[y]*.dashboard.xml" to="${customer.prefix}_${prod} - [y]*.dashboard.xml"/>
+				</copy>
+				<foreach target="set-dashboard-source" param="dashboard">
+					<param name="environment" value="${customer.prefix}_${prod}"/>
+					<fileset dir="${build}/dashboards">
+						<include name="${customer.prefix}_${prod} - [y]*.dashboard.xml"/>
+					</fileset>
+				</foreach>
+			</then>
+		</if>
+		
+		<if>
+			<istrue value="${build.staging}"/>
+			<then>
+				<!-- staging dashboards -->
+				<copy todir="${build}/dashboards">
+				    <fileset dir="${build}/dashboards"/>
+				    <globmapper from="[y]*.dashboard.xml" to="${customer.prefix}_${stag} - [y]*.dashboard.xml"/>
+				</copy>
+				<foreach target="set-dashboard-source" param="dashboard">
+					<param name="environment" value="${customer.prefix}_${stag}"/>
+					<fileset dir="${build}/dashboards">
+						<include name="${customer.prefix}_${stag} - [y]*.dashboard.xml"/>
+					</fileset>
+				</foreach>
+			</then>
+		</if>
+		
+		<!-- clean templates -->
+		<delete>
+		    <fileset dir="${build}/dashboards" includes="[y]*.dashboard.xml"/>
+			<fileset dir="${build}/profiles" includes="Production.profile.xml"/>
+		</delete>
+		
+	</target>
+	
+	<target name="set-dashboard-source">
+		<echo>${dashboard}</echo>
+		<xmltask source="${dashboard}" dest="${dashboard}">
+			<replace path="//dashboardconfig/@sessionid" withText="${environment}"/>
+			<replace path="//dashboardconfig/@locationassource" withText="true" />
+		</xmltask>
+		
+		<xmltask source="${dashboard}" dest="${dashboard}">
+			<replace path="//dashboardconfig/@authorname" withText="${dashboard.author}"/>
+		</xmltask>
+		
+		<xmltask source="${dashboard}" dest="${dashboard}">
+			<replace path="//dashboardconfig/@memento.version" withText="${dashboard.version}"/>
+		</xmltask>
+		
+		<xmltask source="${dashboard}" dest="${dashboard}">
+			<replace path="//dynatrace/@version" withText="${dashboard.version}"/>
+		</xmltask>
+		
+		<!-- add a help-link to community -->
+		<var name="dashboard.name" unset="true"/>
+		<var name="dashboard.anchor" unset="true"/>
+		<basename file="${dashboard}" property="dashboard.name"/>
+		<propertyregex property="dashboard.anchor.tmp"
+		              input="${dashboard.name}"
+		              regexp="[^\]]*\] (.*)\.dashboard.xml"
+		              select="\1"
+		              casesensitive="false" />
+		<propertyregex property="dashboard.anchor"
+				              input="${dashboard.anchor.tmp}"
+				              regexp=" "
+				              replace="_"
+				              casesensitive="false" />
+		<lower string="${dashboard.anchor}" to="dashboard.anchor.lower" />
+		<echo>Help Link: https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-${dashboard.anchor.lower}</echo>	
+		
+		<property name="dashlet-id" value="id"/>
+		<var name="dashlet-id" unset="true"/>
+		<xmltask source="${dashboard}" dest="${dashboard}">
+			<!-- using the image length as identifier to find the header image dashlets -->
+			<replace path="//image[contains(@length,'8132')]/../@description" withText="[Help for this Dashboard|https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-${dashboard.anchor.lower}]"/>
+			<copy path="//image[contains(@length,'8132')]/../@id" property="dashlet-id"/>
+		</xmltask>
+		
+		<!-- set sub-header dashlet style (blue bar headers) -->
+		<xmltask source="${dashboard}">
+		<call path="//image[contains(@length,'1448')]/..">
+		  <param name="id" path="@id"/>
+		  <actions> 
+		    <!--echo>id = @{id}</echo-->
+		  	<xmltask source="${dashboard}" dest="${dashboard}">
+		  		<!--print path="//portletfolder[@portletconfigorder='@{id}']/designconfig"/-->
+		  		<replace path="//portletfolder[@portletconfigorder='@{id}']/designconfig" withFile="subheaderdesign.xml"/>		  		
+		  	</xmltask>
+		  </actions> 
+		</call>
+		</xmltask>
+		<var name="dashlet-id" unset="true"/>
+		
+		<!-- set default dashlet header style -->
+		<xmltask source="${dashboard}">
+		<call path="//portletconfig[not(.//image)]">
+		  <param name="id" path="@id"/>
+		  <actions> 
+		    <!--echo>id = @{id}</echo-->
+		  	<xmltask source="${dashboard}" dest="${dashboard}">
+		  		<!--print path="//portletfolder[@portletconfigorder='@{id}']/designconfig"/-->
+		  		<replace path="//portletfolder[@portletconfigorder='@{id}']/designconfig" withFile="dashletdesign.xml"/>		  		
+		  	</xmltask>
+		  </actions> 
+		</call>
+		</xmltask>
+		<var name="dashlet-id" unset="true"/>
+		
+		<!-- set default dashlet header image -->
+		<xmltask source="${dashboard}">
+		<call path="//image">
+		  <actions> 
+		    <!--echo>id = @{id}</echo-->
+		  	<xmltask source="${dashboard}" dest="${dashboard}">
+		  		<replace path="//image[contains(@length,'8132')]" withFile="headerimage.xml"/>		  		
+		  	</xmltask>
+		  </actions> 
+		</call>
+		</xmltask>
+		
+		<!-- set default dashlet header image -->
+		<xmltask source="${dashboard}">
+		<call path="//image">
+		  <actions> 
+		    <!--echo>id = @{id}</echo-->
+		  	<xmltask source="${dashboard}" dest="${dashboard}">
+		  		<replace path="//image[contains(@length,'1448')]" withFile="separatorimage.xml"/>		  		
+		  	</xmltask>
+		  </actions> 
+		</call>
+		</xmltask>
+		
+					
+	</target>
+	
+	<target name="add-dashboard-config">
+		<var name="dashboard.name" unset="true"/>
+		<basename file="${dashboard}" property="dashboard.name"/>
+		<xmltask source="${build}/plugin.xml" dest="${build}/plugin.xml">
+			<insert path="/plugin/extension/metainfo">
+				<![CDATA[
+				<resource resource="dashboards/${dashboard.name}" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+				]]>
+			</insert>
+		</xmltask>
+	</target>
+	
+	<target name="add-profile-config">
+		<var name="profile.name" unset="true"/>
+		<basename file="${profile}" property="profile.name"/>
+		<xmltask source="${build}/plugin.xml" dest="${build}/plugin.xml">
+			<insert path="/plugin/extension/metainfo">
+				<![CDATA[
+				<resource resource="profiles/${profile.name}" resource_type="systemProfile">
+		            <instance instance="server"/>
+		        </resource>
+				]]>
+			</insert>
+		</xmltask>
+	</target>
+	
+	<target name="build-fastpack" depends="build">
+		<echo>Bulding new fastpack</echo>
+		<echo>${build.time}</echo>
+		<!-- update plugin configuration -->
+		<foreach target="add-dashboard-config" param="dashboard">
+			<fileset dir="${build}/dashboards">
+				<include name="*.dashboard.xml"/>
+			</fileset>
+		</foreach>
+		
+		<foreach target="add-profile-config" param="profile">
+			<fileset dir="${build}/profiles">
+				<include name="*.profile.xml"/>
+			</fileset>
+		</foreach>
+		
+		<zip destfile="${dist}/${customer.prefix}-fastpack.dtp">
+			<fileset dir="${build}">
+				<exclude name="**/[y]*"/>
+				<exclude name="**/Production*"/>
+			</fileset>
+		</zip>
+	</target>
+	
+	<target name="deploy">
+		<exec executable="curl" dir="${dist}">
+			<arg value="-s"/>
+			<arg value="-v"/>
+			<arg value="-X POST"/>
+			<arg value="-F"/>
+			<arg value="file=@${customer.prefix}-fastpack.dtp"/>
+			<arg value="-k" />
+			<arg value="-u"/>
+			<arg value="${deploy.user}:${deploy.passwd}"/>
+			<arg value="https://${deploy.server}:8021/rest/management/installjobs"/>
+		</exec>
+	</target>
+	
+	<target name="clean" description="clean up" >
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}"/>
+		<delete dir="${dist}"/>
+	</target>
+	
+	<target name="build.multiple">
+		<echo>Prefix: ${prefix}</echo>
+	  	<antcall target="build-fastpack">
+	    	<param name="customer.prefix" value="${prefix}"/>
+	  	</antcall>
+		<if>
+			<istrue value="${deploy.enable}"/>
+			<then>
+			<antcall target="deploy">
+				<param name="customer.prefix" value="${prefix}"/>
+			</antcall>
+			</then>
+		</if>
+	</target>
+	
+	<target name="dist" depends="clean" if="profiles.list" description="create a new fastpack" >
+		<foreach target="build.multiple" param="prefix" list="${profiles.list}"/>
+	</target>
+</project>

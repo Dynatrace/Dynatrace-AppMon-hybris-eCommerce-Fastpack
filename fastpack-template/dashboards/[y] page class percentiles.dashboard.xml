@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="6.3.0.1305" date="3/8/16 5:32 PM">
+  <dashboardconfig memento.version="6.3.0.1305" suppresssavewarning="false" created="2016-03-08T17:32:25+0100" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="r.brandstaedter" locationascomparesource="false" sessionid="GET_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="00000153-5712-8d78-90ce-c52e939e653b" locationassource="true" localizationenabled="false" name="[y] page class percentiles" authorname="r.brandstaedter" modified="2016-03-08T17:32:27+0100" id="b017c6d0-db96-4ede-adaf-165e991282be">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="all" type="applications" />
+      <criterion showrendering="true" isactive="true" shownetwork="true" type="browserpathtype" showjavascript="true" />
+      <criterion pageenabled="false" timerenabled="false" type="browsersectionfilter">
+        <timername>
+          <stringmatchpattern match="contains" text="" />
+        </timername>
+        <pageurl>
+          <stringmatchpattern match="contains" text="" />
+        </pageurl>
+      </criterion>
+      <criterion type="btm">
+        <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Page Types">
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="SearchPage" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep1Page" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutPage" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep0Page" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep2Page" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CategoryPage" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep3Page" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CartPage" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep3Proxy" />
+          <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="HomePage" />
+        </record>
+      </criterion>
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" type="incident" rulesmode="all" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion contenttypegroupsmode="all" showrendering="true" javascripttriggersmode="all" isactive="false" shownetwork="true" requestcriterion="ALL" type="riapurepathtype" showjavascript="true" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe type="Last 72h" />
+      </criterion>
+      <criterion type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+    <designconfig namefontsize="12" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="10" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="ce6065c1-7c7e-4aa0-92c7-6823fab8113b" folderid="org.eclipse.ui.internal.ViewStack@49e266f" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="false" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="RIGHT" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="8f18378b-c23a-49f0-8926-2239c97fa7a9" folderid="org.eclipse.ui.internal.ViewStack@77c67d69" relatedfolderid="org.eclipse.ui.internal.ViewStack@49e266f" ratio="0.8050661">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="e490ae39-e434-4316-89b6-e28339e8fd58" folderid="org.eclipse.ui.internal.ViewStack@19498e19" relatedfolderid="org.eclipse.ui.internal.ViewStack@77c67d69" ratio="0.4915254">
+        <designconfig namefontsize="12" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@e5444ea" relatedfolderid="org.eclipse.ui.internal.ViewStack@49e266f" ratio="0.24760602" />
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@43efa51f" relatedfolderid="org.eclipse.ui.internal.ViewStack@e5444ea" ratio="0.32181817" />
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@1d0d8935" relatedfolderid="org.eclipse.ui.internal.ViewStack@43efa51f" ratio="0.4309091" />
+      <portletfolder selectionindex="-1" relationtype="RIGHT" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@271073a0" relatedfolderid="org.eclipse.ui.internal.ViewStack@1d0d8935" ratio="0.0764411" />
+      <portletfolder selectionindex="-1" relationtype="RIGHT" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@ae76c31" relatedfolderid="org.eclipse.ui.internal.ViewStack@43efa51f" ratio="0.0764411" />
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="d77a2380-e69b-49c5-bcc4-deaf1f9eea59" folderid="org.eclipse.ui.internal.ViewStack@86d7e1d" relatedfolderid="org.eclipse.ui.internal.ViewStack@e5444ea" ratio="0.06390978">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="96162898-7358-46b8-8ec9-5fd3ccf99686" folderid="org.eclipse.ui.internal.ViewStack@6046e536" relatedfolderid="org.eclipse.ui.internal.ViewStack@86d7e1d" ratio="0.36">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="9751fc35-c10f-443b-9292-344fb1ecc27d" folderid="org.eclipse.ui.internal.ViewStack@64c971f9" relatedfolderid="org.eclipse.ui.internal.ViewStack@49e266f" ratio="0.49171272">
+        <designconfig namefontsize="12" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Load" locationascomparesource="false" sessionid="GET_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@77c67d69" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="8f18378b-c23a-49f0-8926-2239c97fa7a9">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="all" type="applications" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Page Types">
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="SearchPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep1Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep0Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep2Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CategoryPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep3Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CartPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep3Proxy" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="HomePage" />
+          </record>
+        </criterion>
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="632,367" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="false" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Vertical" yaxisalignment="0" legendposition="Top" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" showlegend="false" lockyaxis="false" showlabels="true">
+          <legendcomposition splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="886c7b7b-9e59-3b9e-aeab-79af0dd09716" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutLogin" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="88a6b617-99e7-3cb3-9b76-000d7dd96d95" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="SavedItemPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="958e4ec8-e37c-31dc-8e13-6c0d58f47196" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="FileDownload" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="980d0625-1d13-382a-b78b-059c529532a3" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="PasswordResetPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="a5cb871f-3011-3f59-823e-a62d84009730" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="MiniCart" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="WebServer" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="aeb78cac-92eb-3291-a4af-25d392925b61" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ProductPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="b5d28226-e216-38b2-9e94-e005294b796a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutStep1Page" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="bae3ac04-ed77-34c8-aac6-76383c162ddf" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="LoginPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="c8d18b77-ee6c-3bbd-a259-72a861e154dd" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutStep0Page" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="dabfdf02-de62-328f-8008-023344c263cf" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="AccountPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="db15254c-80a6-31de-8c7d-9a414670de7f" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CustomerPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="ec1678ff-92a4-3b24-8897-a5989e4e0f13" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CartPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="ec964b55-305a-3a7c-87c5-7ba61d7f15a4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="Masquerade" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="fbc3b188-7911-3717-ad1a-442e89292e8c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="DefaultPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="fceb1476-870e-327f-8752-5406252ff58d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="StoreLocatorPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="fe0024c6-fe44-3a84-9527-43600a1177bd" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ContactUsPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="fe8adfdc-6b25-339c-8fa8-e435a90adb92" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="TicketPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="ff19eae6-656e-30bb-b6a8-e0edfe46056d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutStep3Page" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="01e795fd-5dea-319f-b4b5-f5901ebf9ab4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CategoryPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="0a033619-68a6-393f-8d9c-dfa3f26273b9" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="MasqueradePage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="0d9500be-549f-35bb-9b70-57ec895f2ea2" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="StoreCollectPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="2981fd23-51cc-3c03-b317-fc18a0a3079f" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="SearchPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="GET_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="31142c43-b9d2-436c-9758-515092734484" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="3123cd42-792f-3213-8d90-9ac5f5264b3e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="AddToCart" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="WebServer" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="323b0b48-08ba-308f-a8a4-1ae7fbdbabf4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="LegacyProductPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="3ac9d7e5-60c1-3b83-a1fb-5a068c07121a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="RegisterPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="447150a3-ca8b-3746-bfd9-e537a168dddf" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CommunicationPreferences" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="45b4c59e-df2b-327c-8d8f-123bef747012" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutStep2Page" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="470c6326-c253-323b-8940-28ae44c1e19c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ReceiptPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="482ea338-a6ba-33f6-a0c8-32e1949ff1c9" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="OrderPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="558c3089-c4b3-30c0-9d6e-8b1ee294e1cb" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="Robots" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="71ad6611-47f8-3847-bc08-d6771e495aa1" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="72087f4d-53be-3a0c-88d7-a7a4a2c0414e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="NewsletterSignupPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="77945ece-3317-3ad2-8ef0-dfd8c187309b" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="LandingPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="79820465-5848-3754-b351-9a2f6b9ceae3" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="RefundPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="7a6f110b-4a75-30df-bad2-7a88a15de899" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutStep3Proxy" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="7aaa0727-4b92-30f6-ad47-e56107ccd416" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="HomePage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(76,76,76,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="7cbed35e-4dd4-3ab0-ba50-ddbab4a2cbca" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Page Types" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="StorePage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="Tag" splittag="(y) page controller name" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Response Time Percentiles" locationascomparesource="false" sessionid="GET_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@6046e536" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="96162898-7358-46b8-8ec9-5fd3ccf99686">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="all" type="applications" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Page Types">
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="SearchPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep1Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep0Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep2Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CategoryPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep3Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CartPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep3Proxy" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="HomePage" />
+          </record>
+        </criterion>
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="632,367" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="false" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Vertical" yaxisalignment="0" legendposition="Top" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" showlegend="true" lockyaxis="false" showlabels="true">
+          <legendcomposition aggregation="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="886c7b7b-9e59-3b9e-aeab-79af0dd09716" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutLogin" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="90330f19-e0b7-39eb-a04d-e5fdc78c5759" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="HomePage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="918beaf7-a52f-31e0-8dab-66f2e552e5a7" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutLogin" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="96bb9ef3-c33e-3b69-ac8b-9ebb842c4d9e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutLogin" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="a0ab99ab-e88f-3e2e-88a4-5e7e043eb3d3" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="HomePage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="a5cb871f-3011-3f59-823e-a62d84009730" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="MiniCart" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="WebServer" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="bae3ac04-ed77-34c8-aac6-76383c162ddf" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="LoginPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="cd4c4456-726a-369d-924e-8ce84caa654e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CategoryPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="d340374f-3472-37bb-815e-517a03a341e3" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="SearchPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="d65ea2b9-b1cb-33a6-afbd-25c239232d62" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="StoreLocatorPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="ec1678ff-92a4-3b24-8897-a5989e4e0f13" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CartPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="f0d7394d-5524-3ff6-a6ee-97b1e9c52057" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CartPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="f5518217-7f80-3475-b891-73a056f73857" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ProductPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="fceb1476-870e-327f-8752-5406252ff58d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="StoreLocatorPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="fd0ef47e-e045-3a4d-917c-e6d0ff6d3cf1" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="LoginPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="01e795fd-5dea-319f-b4b5-f5901ebf9ab4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CategoryPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="2721e5cf-0699-31c8-8385-f0671c88319e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="SearchPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="2981fd23-51cc-3c03-b317-fc18a0a3079f" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="SearchPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="GET_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="31142c43-b9d2-436c-9758-515092734484" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="3" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="3123cd42-792f-3213-8d90-9ac5f5264b3e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="AddToCart" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="WebServer" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="3322b349-b3d9-3605-96b4-1c32ec7f8590" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="StoreLocatorPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="369083f6-174e-3696-887a-4278ba74e0ae" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="AddToCart" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="WebServer" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="4e781020-a5b8-3733-a264-910d66711f61" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="MiniCart" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="WebServer" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="GET_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="5ee2a495-b9d1-41c3-a465-50705011c5ec" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="5f0d2e4a-dd57-302d-8ce9-9540598f0d41" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="LoginPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="5ee2a495-b9d1-41c3-a465-50705011c5ec" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="6982efe7-f9c5-3ac2-a53f-67ac1ba085e8" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CartPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="6bb750b5-547c-328b-b7d9-24020d1ba505" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CategoryPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="7e871e3c-2952-4b34-b559-31236c1312ef" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="77417ed7-7725-386b-954a-8cc25250f6d7" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="Checkout" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="99" id="7aaa0727-4b92-30f6-ad47-e56107ccd416" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="HomePage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(240,222,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="GET_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="50" id="7e871e3c-2952-4b34-b559-31236c1312ef" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="Tag" splittag="(y) page controller name" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@64c971f9" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="true" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" name="Page Class Performance Percentiles " ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="9751fc35-c10f-443b-9292-344fb1ecc27d">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="[Help for this Dashboard|https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-page_class_percentiles]" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@49e266f" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="true" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="ce6065c1-7c7e-4aa0-92c7-6823fab8113b">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="9008">
+        <chunk offset="0" data="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" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="GET_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@86d7e1d" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="d77a2380-e69b-49c5-bcc4-deaf1f9eea59">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="all" type="applications" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Page Types">
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="SearchPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep1Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep0Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep2Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CategoryPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep3Page" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CartPage" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="CheckoutStep3Proxy" />
+            <splitpattern stringmatch="3" equalstoemptystring="false" measurename="(y) page controller name" textpattern="HomePage" />
+          </record>
+        </criterion>
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="632,367" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="true" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="PercentileChart" aggregation.absolute="false" showheatfield="false" axis.y.show="false" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Top" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" showlegend="false" lockyaxis="false" showlabels="true">
+          <legendcomposition splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="886c7b7b-9e59-3b9e-aeab-79af0dd09716" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CheckoutLogin" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="a5cb871f-3011-3f59-823e-a62d84009730" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="MiniCart" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="WebServer" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="bae3ac04-ed77-34c8-aac6-76383c162ddf" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="LoginPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="ec1678ff-92a4-3b24-8897-a5989e4e0f13" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CartPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="fceb1476-870e-327f-8752-5406252ff58d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="StoreLocatorPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="01e795fd-5dea-319f-b4b5-f5901ebf9ab4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="CategoryPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="2981fd23-51cc-3c03-b317-fc18a0a3079f" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="SearchPage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="GET_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="31142c43-b9d2-436c-9758-515092734484" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="3123cd42-792f-3213-8d90-9ac5f5264b3e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="AddToCart" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="WebServer" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="GET_Production" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="GET_Production" parentid="31142c43-b9d2-436c-9758-515092734484" groupingcriterion="BTSP1" aggregationtype="Pct100" rate="10s" sourcetype="MEASURE" id="7aaa0727-4b92-30f6-ad47-e56107ccd416" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Page Types" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) page controller name" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="GET_Production" application="" parentkeyid="Page Types" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Page Types" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="HomePage" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="Tag" splittag="(y) page controller name" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@19498e19" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="true" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" name="" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="e490ae39-e434-4316-89b6-e28339e8fd58">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>

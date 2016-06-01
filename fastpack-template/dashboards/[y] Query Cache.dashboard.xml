@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="6.3.0.1305" date="3/8/16 5:39 PM">
+  <dashboardconfig memento.version="6.3.0.1305" suppresssavewarning="false" created="2016-03-08T17:39:08+0100" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="r.brandstaedter" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="00000153-5718-b3b0-b715-6f315758e84a" locationassource="true" localizationenabled="false" name="[y] Query Cache" authorname="r.brandstaedter" modified="2016-03-08T17:39:10+0100" id="9dc6ce82-5afe-476a-af41-8ed0c80c7962">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="all" type="applications" />
+      <criterion showrendering="true" isactive="true" shownetwork="true" type="browserpathtype" showjavascript="true" />
+      <criterion pageenabled="false" timerenabled="false" type="browsersectionfilter">
+        <timername>
+          <stringmatchpattern match="contains" text="" />
+        </timername>
+        <pageurl>
+          <stringmatchpattern match="contains" text="" />
+        </pageurl>
+      </criterion>
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" type="incident" rulesmode="all" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion contenttypegroupsmode="all" showrendering="true" javascripttriggersmode="all" isactive="false" shownetwork="true" requestcriterion="ALL" type="riapurepathtype" showjavascript="true" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe type="Last 24h" />
+      </criterion>
+      <criterion type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+    <designconfig namefontsize="12" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="10" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="LEFT" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="f1074e17-6911-49d5-b45e-78e5106d25c0" folderid="org.eclipse.ui.internal.ViewStack@3b94c810" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="false" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="RIGHT" />
+      </portletfolder>
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@e4c4bc9" relatedfolderid="org.eclipse.ui.internal.ViewStack@3b94c810" ratio="0.29955947" />
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="caeaeaca-321c-4a3a-9c45-6039b95a8f43" folderid="org.eclipse.ui.internal.ViewStack@6c36c4fd" relatedfolderid="org.eclipse.ui.internal.ViewStack@e4c4bc9" ratio="0.13909775">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="03e9fe82-8a21-4c01-96d0-cfb3e46b5ec1" folderid="org.eclipse.ui.internal.ViewStack@6c8cd653" relatedfolderid="org.eclipse.ui.internal.ViewStack@6c36c4fd" ratio="0.11949685">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="fca31069-9346-4389-88d2-07d10004b367" folderid="org.eclipse.ui.internal.ViewStack@5c7069a2" relatedfolderid="org.eclipse.ui.internal.ViewStack@6c8cd653" ratio="0.33214286">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="b8facb9f-f562-469f-b379-591d0f3c3846" folderid="org.eclipse.ui.internal.ViewStack@45e55a58" relatedfolderid="org.eclipse.ui.internal.ViewStack@5c7069a2" ratio="0.47860962">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="1fd32440-f6f2-42a5-8d7d-02d9a1d4eedd" folderid="org.eclipse.ui.internal.ViewStack@6d63d19" relatedfolderid="org.eclipse.ui.internal.ViewStack@45e55a58" ratio="0.4974359">
+        <designconfig namefontsize="12" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@2953754f" relatedfolderid="org.eclipse.ui.internal.ViewStack@e4c4bc9" ratio="0.12893082" />
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@1bae2dd4" relatedfolderid="org.eclipse.ui.internal.ViewStack@2953754f" ratio="0.35849056" />
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@8a292cd" relatedfolderid="org.eclipse.ui.internal.ViewStack@1bae2dd4" ratio="0.4764151" />
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="d0f11d13-5b34-4531-800e-72f08ff3ad60" folderid="org.eclipse.ui.internal.ViewStack@2ebcbf83" relatedfolderid="org.eclipse.ui.internal.ViewStack@3b94c810" ratio="0.48897058">
+        <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="16f6c959-e651-4979-91d0-4b9a0844e7d0" folderid="org.eclipse.ui.internal.ViewStack@7fc022e3" relatedfolderid="org.eclipse.ui.internal.ViewStack@2ebcbf83" ratio="0.4964029">
+        <designconfig namefontsize="12" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="551df75c-2db0-4293-b9ca-6caac7bbea4c" folderid="org.eclipse.ui.internal.ViewStack@3ba0ae71" relatedfolderid="org.eclipse.ui.internal.ViewStack@3b94c810" ratio="0.48120302">
+        <designconfig namefontsize="12" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="a low cache hit ratio indicates a problem with cache size or cached items, please tune the cache" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@45e55a58" locationassource="true" addfilterinfo="false" name="Query Cache Hit Ratio" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="b8facb9f-f562-469f-b379-591d0f3c3846">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="all" type="applications" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 24h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" bounds.y.upper="105.0" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,64,255)" dynamicconfig="true" fetchthreshold="true" scale="0" sessionid="y_Production" parentid="213b22ec-88b3-4d84-ba47-aab0350f3570" groupingcriterion="AgentName" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="0dd3ce7e-069a-3362-8bc6-e456fc3203c2" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-HitRatio" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-HitRatio" agentname="hybris-app-2" metricsimpledisplayname="Custom JMX Percentage Measure" agenthost="-" metrickeyid="Custom JMX Percentage Measure" keyid="Query Region Cache-HitRatio" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-2" agenthost="ip-192-168-111-20" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,64,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" groupingcriterion="AgentName" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="213b22ec-88b3-4d84-ba47-aab0350f3570" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-HitRatio" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-HitRatio" agentname="" metricsimpledisplayname="Custom JMX Percentage Measure" agenthost="" metrickeyid="Custom JMX Percentage Measure" keyid="Query Region Cache-HitRatio" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,64,255)" dynamicconfig="true" fetchthreshold="true" scale="0" sessionid="y_Production" parentid="213b22ec-88b3-4d84-ba47-aab0350f3570" groupingcriterion="AgentName" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="6ae1cbc7-d9a1-388b-a062-58f699fe5ba8" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-HitRatio" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-HitRatio" agentname="hybris-app-1" metricsimpledisplayname="Custom JMX Percentage Measure" agenthost="-" metrickeyid="Custom JMX Percentage Measure" keyid="Query Region Cache-HitRatio" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-1" agenthost="ip-192-168-111-10" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@6c36c4fd" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Incident" id="caeaeaca-321c-4a3a-9c45-6039b95a8f43">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="5" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 24h" />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <table structuremode="hierarchicalincident" sortcolumn="2" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7">
+          <column forcevisible="false" hidden="false" width="150" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="20" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="Up" />
+          <column forcevisible="false" hidden="false" width="120" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="60" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
+        </table>
+        <chart axis.x.title="" axis.y.title.show="false" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" maxdisplayitems="10" zoomable="true" charttype="IncidentTrafficLight" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="false" axis.y.title="" splitcharts="true" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition measure="true" splittings="true">
+            <pielabelcomposition unit="true" measure="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="y_Production" autoscale="false" name="High Query Cache Demand Ratio" overridesource="false" sourcetype="INCIDENT_RULE" id="a3c96268-f6e7-4924-ba6b-f4415195a346" position="1" displayrate="10s">
+            <incidentrule incidentdashboardname="[y] Query Cache" timeframe="300" visible="true" flags="1" description="" id="High Query Cache Demand Ratio">
+              <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
+              <actions>
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+              </actions>
+            </incidentrule>
+          </chartsource>
+          <chartsource systemid="y_Production" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="y_Production" autoscale="false" name="Low Query Cache Hit Ratio" overridesource="false" sourcetype="INCIDENT_RULE" id="df2f53d8-3baf-4ba9-8317-9da30eabe18b" position="3" displayrate="10s">
+            <incidentrule incidentdashboardname="Incident Dashboard" timeframe="300" visible="true" flags="1" description="" id="Low Query Cache Hit Ratio">
+              <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
+              <actions>
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+              </actions>
+            </incidentrule>
+          </chartsource>
+          <chartsource systemid="y_Production" visible="true" dynamicconfig="false" sessiontype="live" scale="0" sessionid="y_Production" autoscale="false" name="Low Query Cache Fill Ratio" overridesource="false" sourcetype="INCIDENT_RULE" id="fb75878c-d364-4e07-b6f8-5e05f236faa0" position="2" displayrate="10s">
+            <incidentrule incidentdashboardname="[y] Query Cache" timeframe="300" visible="true" flags="1" description="" id="Low Query Cache Fill Ratio">
+              <sensitivity duration="0" delay="0" minnonviolatedperiod="60" id="immediate" />
+              <actions>
+                <actionref severity="severe" execution="begin" smartalert="false" type="Logging Notification" bundleversion="0.0.0" refaction="com.dynatrace.diagnostics.logging" rolekey="com.dynatrace.diagnostics.logging" roletype="1" smartexecution="begin" key="com.dynatrace.diagnostics.logging" />
+              </actions>
+            </incidentrule>
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+      </datamodelconfig>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@2ebcbf83" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="d0f11d13-5b34-4531-800e-72f08ff3ad60">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="all" type="applications" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 24h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(0,255,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="560b0493-7a08-4732-8265-65cd2f899d03" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="c1f0d92c-803f-3f09-b906-ce99ee3588f4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="number" name="Query Region Cache-MaximumCacheSize" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-MaximumCacheSize" agentname="hybris-app-2" metricsimpledisplayname="Custom JMX Measure" agenthost="ip-192-168-111-20" metrickeyid="Custom JMX Measure" keyid="Query Region Cache-MaximumCacheSize" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-app-2" agenthost="ip-192-168-111-20" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(0,0,255,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="3c92a845-f13f-4e56-ac20-658e1ae79eaf" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="number" name="Query Region Cache-CurrentCacheSize" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-CurrentCacheSize" agentname="" metricsimpledisplayname="Custom JMX Measure" agenthost="" metrickeyid="Custom JMX Measure" keyid="Query Region Cache-CurrentCacheSize" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(0,255,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="560b0493-7a08-4732-8265-65cd2f899d03" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="463a2655-f242-3757-b59b-4006d6c3523c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="number" name="Query Region Cache-MaximumCacheSize" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-MaximumCacheSize" agentname="hybris-app-1" metricsimpledisplayname="Custom JMX Measure" agenthost="ip-192-168-111-10" metrickeyid="Custom JMX Measure" keyid="Query Region Cache-MaximumCacheSize" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-app-1" agenthost="ip-192-168-111-10" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(0,255,255,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="AgentOrMonitor" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="560b0493-7a08-4732-8265-65cd2f899d03" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="number" name="Query Region Cache-MaximumCacheSize" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-MaximumCacheSize" agentname="" metricsimpledisplayname="Custom JMX Measure" agenthost="" metrickeyid="Custom JMX Measure" keyid="Query Region Cache-MaximumCacheSize" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(0,0,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="3c92a845-f13f-4e56-ac20-658e1ae79eaf" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="61894402-759e-3bf1-b8e1-b9c0243e499a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="number" name="Query Region Cache-CurrentCacheSize" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-CurrentCacheSize" agentname="hybris-app-2" metricsimpledisplayname="Custom JMX Measure" agenthost="ip-192-168-111-20" metrickeyid="Custom JMX Measure" keyid="Query Region Cache-CurrentCacheSize" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-app-2" agenthost="ip-192-168-111-20" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(0,0,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="3c92a845-f13f-4e56-ac20-658e1ae79eaf" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="73a486ed-60b6-3432-ac51-751596892283" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="number" name="Query Region Cache-CurrentCacheSize" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-CurrentCacheSize" agentname="hybris-app-1" metricsimpledisplayname="Custom JMX Measure" agenthost="ip-192-168-111-10" metrickeyid="Custom JMX Measure" keyid="Query Region Cache-CurrentCacheSize" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-app-1" agenthost="ip-192-168-111-10" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="[Help for this Dashboard|https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-query_cache]" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@3b94c810" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="true" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" name="" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="f1074e17-6911-49d5-b45e-78e5106d25c0">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="9008">
+        <chunk offset="0" data="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" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="a low cache fill ratio indicates a problem with cache size or cached items, please tune the cache" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@5c7069a2" locationassource="true" addfilterinfo="false" name="Query Cache Fill Ratio" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="fca31069-9346-4389-88d2-07d10004b367">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="all" type="applications" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 24h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" bounds.y.upper="105.0" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,64,255)" dynamicconfig="true" fetchthreshold="true" scale="0" sessionid="y_Production" parentid="14e1a597-fe17-42d0-853d-d97c6491a80c" groupingcriterion="AgentName" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="ef5504d9-bb1d-3629-b20f-b0a54d9317d3" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-CacheFillRatio" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-CacheFillRatio" agentname="hybris-app-2" metricsimpledisplayname="Custom JMX Percentage Measure" agenthost="-" metrickeyid="Custom JMX Percentage Measure" keyid="Query Region Cache-CacheFillRatio" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-2" agenthost="ip-192-168-111-20" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,64,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" groupingcriterion="AgentName" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="14e1a597-fe17-42d0-853d-d97c6491a80c" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-CacheFillRatio" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-CacheFillRatio" agentname="" metricsimpledisplayname="Custom JMX Percentage Measure" agenthost="" metrickeyid="Custom JMX Percentage Measure" keyid="Query Region Cache-CacheFillRatio" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,64,255)" dynamicconfig="true" fetchthreshold="true" scale="0" sessionid="y_Production" parentid="14e1a597-fe17-42d0-853d-d97c6491a80c" groupingcriterion="AgentName" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="1d7ce58e-a18a-3f20-9e42-f6aa4fad97f8" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-CacheFillRatio" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-CacheFillRatio" agentname="hybris-app-1" metricsimpledisplayname="Custom JMX Percentage Measure" agenthost="-" metrickeyid="Custom JMX Percentage Measure" keyid="Query Region Cache-CacheFillRatio" metricgroupkey="Custom JMX" collector="" measuretype="JmxMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-1" agenthost="ip-192-168-111-10" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="a high cache demand ratio indicates a problem with cache size and/or cached items" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@6c8cd653" locationassource="true" addfilterinfo="false" name="Query Cache Demand Ratio" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="03e9fe82-8a21-4c01-96d0-cfb3e46b5ec1">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="3" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="all" type="applications" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 24h" />
+        </criterion>
+        <criterion type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" bounds.y.upper="10.0" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,102,102,255)" dynamicconfig="true" fetchthreshold="true" scale="0" sessionid="y_Production" parentid="e6facda7-7313-48bd-82cb-53716f4e8f9c" groupingcriterion="AgentName" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="a2524945-32d8-3e82-a473-fec680ae6b3f" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxRateMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-Demand Rate" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-Demand Rate" agentname="hybris-app-2" metricsimpledisplayname="Custom JMX Rate Measure" agenthost="-" metrickeyid="Custom JMX Rate Measure" keyid="Query Region Cache-Demand Rate" metricgroupkey="Custom JMX" collector="" measuretype="JmxRateMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-2" agenthost="ip-192-168-111-20" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,255,255)" dynamicconfig="true" fetchthreshold="true" scale="0" sessionid="y_Production" parentid="e6facda7-7313-48bd-82cb-53716f4e8f9c" groupingcriterion="AgentName" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="ccdb3aa1-d230-35e8-b4e3-0c38b551c922" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxRateMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-Hit/Eviction" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-Hit/Eviction" agentname="hybris-app-1" metricsimpledisplayname="Custom JMX Rate Measure" agenthost="-" metrickeyid="Custom JMX Rate Measure" keyid="Query Region Cache-Hit/Eviction" metricgroupkey="Custom JMX" collector="" measuretype="JmxRateMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-1" agenthost="ip-192-168-111-10" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,102,102,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" groupingcriterion="AgentName" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="e6facda7-7313-48bd-82cb-53716f4e8f9c" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxRateMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-Demand Rate" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-Demand Rate" agentname="" metricsimpledisplayname="Custom JMX Rate Measure" agenthost="" metrickeyid="Custom JMX Rate Measure" keyid="Query Region Cache-Demand Rate" metricgroupkey="Custom JMX" collector="" measuretype="JmxRateMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,102,102,255)" dynamicconfig="true" fetchthreshold="true" scale="0" sessionid="y_Production" parentid="e6facda7-7313-48bd-82cb-53716f4e8f9c" groupingcriterion="AgentName" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f4d65615-a8b0-3a59-8676-f98bccf04ea2" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxRateMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-Demand Rate" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-Demand Rate" agentname="hybris-app-1" metricsimpledisplayname="Custom JMX Rate Measure" agenthost="-" metrickeyid="Custom JMX Rate Measure" keyid="Query Region Cache-Demand Rate" metricgroupkey="Custom JMX" collector="" measuretype="JmxRateMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-1" agenthost="ip-192-168-111-10" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,255,255)" dynamicconfig="true" fetchthreshold="true" scale="0" sessionid="y_Production" parentid="e6facda7-7313-48bd-82cb-53716f4e8f9c" groupingcriterion="AgentName" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="7caddda6-1c9a-3442-894e-6090839378f0" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="JmxRateMeasure" fetchbaseline="false" unit="percent" name="Query Region Cache-Hit/Eviction" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Query Region Cache-Hit/Eviction" agentname="hybris-app-2" metricsimpledisplayname="Custom JMX Rate Measure" agenthost="-" metrickeyid="Custom JMX Rate Measure" keyid="Query Region Cache-Hit/Eviction" metricgroupkey="Custom JMX" collector="" measuretype="JmxRateMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-2" agenthost="ip-192-168-111-20" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors threshold_warning_color="RGB(102,204,255,51)" threshold_severe_color="RGB(0,128,255,51)" />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@7fc022e3" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="true" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" name="Query Cache: Demand Rate, Fill Rate, Hit Rate" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="16f6c959-e651-4979-91d0-4b9a0844e7d0">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@6d63d19" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="true" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" name="" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="1fd32440-f6f2-42a5-8d7d-02d9a1d4eedd">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" folderid="org.eclipse.ui.internal.ViewStack@3ba0ae71" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" locationassource="true" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" name="Query Cache: Maximum Size and Current Size" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="551df75c-2db0-4293-b9ca-6caac7bbea4c">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>

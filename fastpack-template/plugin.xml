@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.dynatrace.diagnostics.InstallerContent" name="com.dynatrace.diagnostics.InstallerContent" schema="schema/com.dynatrace.diagnostics.InstallerContent.exsd"/>
+   <extension point="com.dynatrace.diagnostics.InstallerContent">
+      <metainfo installer_type="resourcepack" name="FastPack Resources">
+      </metainfo>
+   </extension>
+</plugin>
