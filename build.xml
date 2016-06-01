@@ -364,12 +364,14 @@
 			</fileset>
 		</foreach>
 		
-		<zip destfile="${dist}/${customer.prefix}-fastpack.dtp">
+		<zip destfile="${dist}/${customer.prefix}-fastpack-${build.version}.dtp">
 			<fileset dir="${build}">
 				<exclude name="**/[y]*"/>
 				<exclude name="**/Production*"/>
 			</fileset>
 		</zip>
+		
+		<copy file="${dist}/${customer.prefix}-fastpack-${build.version}.dtp" tofile="${dist}/hybris-fastpack-latest.dtp"/>
 	</target>
 	
 	<target name="deploy">
@@ -378,7 +380,7 @@
 			<arg value="-v"/>
 			<arg value="-X POST"/>
 			<arg value="-F"/>
-			<arg value="file=@${customer.prefix}-fastpack.dtp"/>
+			<arg value="file=@${customer.prefix}-fastpack-${build.version}.dtp"/>
 			<arg value="-k" />
 			<arg value="-u"/>
 			<arg value="${deploy.user}:${deploy.passwd}"/>
