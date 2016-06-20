@@ -410,6 +410,16 @@
 	</target>
 	
 	<target name="dist" depends="clean" if="profiles.list" description="create a new fastpack" >
-		<foreach target="build.multiple" param="prefix" list="${profiles.list}"/>
+		<propertyregex property="profiles.list.trimmed"
+		              input="${profiles.list}"
+		              regexp=" "
+		              replace=""
+					  global="true"
+		              casesensitive="false" />
+		<echo>Build configurations for: ${profiles.list.trimmed}</echo>
+		<echo>Build production: ${build.production}</echo>
+		<echo>Build staging: ${build.staging}</echo>
+		<echo>Enable UEM: ${config.uem}</echo>			
+		<foreach target="build.multiple" param="prefix" list="${profiles.list.trimmed}"/>
 	</target>
 </project>
