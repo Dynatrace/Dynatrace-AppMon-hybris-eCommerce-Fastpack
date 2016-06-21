@@ -415,7 +415,8 @@
 		              regexp=" "
 		              replace=""
 					  global="true"
-		              casesensitive="false" />
+		              casesensitive="false"
+					  defaultValue="${profiles.list}" />
 		<echo>Build configurations for: ${profiles.list.trimmed}</echo>
 		<echo>Build production: ${build.production}</echo>
 		<echo>Build staging: ${build.staging}</echo>
