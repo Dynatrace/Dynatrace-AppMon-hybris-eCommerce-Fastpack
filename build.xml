@@ -1,4 +1,4 @@
-<project name="hybris-managed-services-template" default="dist" basedir=".">
+<project name="hybris-performance-management" default="dist" basedir=".">
     <description>
         A script to generate a Dynatrace fastpack for SAP Hybris environments.
     	It creates a fastpack with profiles and dashboards that are ready to use 
@@ -143,6 +143,7 @@
 				<xmltask source="${build}/profiles/${customer.prefix}${prod-profile-postfix}" dest="${build}/profiles/${customer.prefix}${prod-profile-postfix}">
 					<replace path="//agentmapping[@id='applicationserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-app.*"/>
 					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-adm.*"/>
+					<replace path="//agentmapping[@id='datahub']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-dhb.*"/>
 					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-web.*"/>
 					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-search.*"/>
 				</xmltask>
@@ -163,6 +164,7 @@
 				<xmltask source="${build}/profiles/${customer.prefix}${stag-profile-postfix}" dest="${build}/profiles/${customer.prefix}${stag-profile-postfix}">
 					<replace path="//agentmapping[@id='applicationserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-app.*"/>
 					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-adm.*"/>
+					<replace path="//agentmapping[@id='datahub']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-dhb.*"/>
 					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-web.*"/>
 					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-search.*"/>
 				</xmltask>
