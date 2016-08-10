@@ -388,6 +388,19 @@
 			<arg value="${deploy.user}:${deploy.passwd}"/>
 			<arg value="https://${deploy.server}:8021/rest/management/installjobs"/>
 		</exec>
+		<!-- create an incident for deployment 
+		<exec executable="curl" dir="${dist}">
+			<arg value="-s"/>
+			<arg value="-v"/>
+			<arg value="-X POST"/>
+			<arg value="-HContent-Type: application/xml"/>
+			<arg value="-d '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><incident><message>${customer.prefix}_${prod} deployed</message><description>${customer.prefix}_${prod} deployed</description><severity>informational</severity><start>2016-08-10T17:30:00:00+09:00</start><end>2016-08-10T20:30:00:00+09:00</end></incident>'"/>
+			<arg value="-k" />
+			<arg value="-u"/>
+			<arg value="${deploy.user}:${deploy.passwd}"/>
+			<arg value="https://${deploy.server}:8021/rest/management/profiles/${customer.prefix}_${prod}/incidentrules/Deployment/incidents/"/>
+		</exec>
+		-->
 	</target>
 	
 	<target name="clean" description="clean up" >

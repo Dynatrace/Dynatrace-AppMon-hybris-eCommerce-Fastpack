@@ -1,0 +1,26 @@
+providers: [
+  {
+    key: "java-ant"
+    config:
+      file: "./build.xml"
+      props:
+        wd: "."
+        env: {}
+        modifier: {}
+        environment:
+          name: "child_process"
+          config:
+            stdoe: "both"
+        stdout:
+          pipeline: []
+        stderr:
+          pipeline: []
+        output:
+          console:
+            close_success: true
+            queue_in_buffer: true
+            colors: false
+            stdin: false
+        version: 2
+  }
+]

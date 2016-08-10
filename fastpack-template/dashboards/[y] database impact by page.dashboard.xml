@@ -2,8 +2,8 @@
 <!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
 <!-- Manual changes can cause severe problems and system instability -->
 <!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
-<dynatrace version="6.3.1.1402" date="5/16/16 2:00 PM">
-  <dashboardconfig memento.version="6.3.1.1402" suppresssavewarning="false" created="2016-05-16T14:00:06+0200" sessiontype="live" icon="com.dynatrace.diagnostics.portlets/icons/transaction.gif" description="" modifiedbyname="r.brandstaedter" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="00000154-b970-0d28-8a77-14cdd8db9169" locationassource="true" localizationenabled="false" name="[y] database impact by page" authorname="r.brandstaedter" modified="2016-05-16T14:00:09+0200" id="8ede0e59-aab4-47b6-a78f-71dad38601b1">
+<dynatrace version="6.5.0.1232" date="8/10/16 5:09 PM">
+  <dashboardconfig memento.version="6.5.0.1232" suppresssavewarning="false" created="2016-08-10T17:09:33+0200" sessiontype="live" icon="com.dynatrace.diagnostics.portlets/icons/transaction.gif" description="" modifiedbyname="r.brandstaedter" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="00000156-7500-5fb0-85b8-5e6e5a35872b" locationassource="true" localizationenabled="false" name="[y] database impact by page" authorname="r.brandstaedter" modified="2016-08-10T17:09:34+0200" id="f0fe9776-e50e-4531-9b89-c9082a6875eb">
     <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
     <filter>
       <criterion type="admfilteranalyzer" />
@@ -14,15 +14,6 @@
       <criterion type="and" />
       <criterion mode="all" excludeexternalsubpaths="false" type="api" />
       <criterion mode="all" type="applications" />
-      <criterion showrendering="true" isactive="true" shownetwork="true" type="browserpathtype" showjavascript="true" />
-      <criterion pageenabled="false" timerenabled="false" type="browsersectionfilter">
-        <timername>
-          <stringmatchpattern match="contains" text="" />
-        </timername>
-        <pageurl>
-          <stringmatchpattern match="contains" text="" />
-        </pageurl>
-      </criterion>
       <criterion type="btm">
         <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Page Types - DB Usage" />
       </criterion>
@@ -34,14 +25,13 @@
       <criterion severitiesmode="all" statesmode="all" type="incident" rulesmode="all" severities="" states="" />
       <criterion type="or" />
       <criterion mode="all" enduser="false" type="purepaths" />
-      <criterion contenttypegroupsmode="all" showrendering="true" javascripttriggersmode="all" isactive="false" shownetwork="true" requestcriterion="ALL" type="riapurepathtype" showjavascript="true" />
-      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,MISSING,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API" />
       <criterion includeplatform="true" type="testsoverview" />
       <criterion type="threads" enabled="false" filterbyid="false" />
       <criterion type="timeframe">
         <timeframe type="Last 24h" />
       </criterion>
-      <criterion type="visits">
+      <criterion useendtimefortimeframefilter="false" type="visits">
         <visitidset />
       </criterion>
       <criterion type="webpage">
@@ -58,7 +48,7 @@
       </criterion>
     </filter>
     <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
-    <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <designconfig autoscroll="false" namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
     <dashboardlayout>
       <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="cff5fdb0-0ff2-4ad0-a4a7-13f818fdf5b1" folderid="org.eclipse.ui.internal.ViewStack@5864e1ba" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
         <designconfig namefontsize="10" descriptionshow="true" headertype="CUSTOM" nameshow="false" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="RIGHT" />
@@ -100,7 +90,7 @@
         <criterion type="timeframe">
           <timeframe type="Last 24h" />
         </criterion>
-        <criterion type="visits">
+        <criterion useendtimefortimeframefilter="false" type="visits">
           <visitidset />
         </criterion>
         <inheritancemap />
@@ -108,7 +98,7 @@
       <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
       <sashconfig displayoption="CHART" weights="500,500" />
       <datamodelconfig>
-        <chart axis.x.title=" " axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="5min" axis.x.show="true" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Bottom" axis.x.title.show="true" axis.y.title="DB Statements/Transaction" splitcharts="true" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+        <chart axis.x.title=" " axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="5min" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Bottom" axis.x.title.show="true" axis.y.title="DB Statements/Transaction" splitcharts="true" limititems="false" showlegend="true" lockyaxis="false" showlabels="true">
           <legendcomposition aggregation="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
@@ -416,7 +406,7 @@
             </lightweightuniquemeasureidentifier>
             <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types - DB Usage" measurerate="purepath" />
           </chartsource>
-          <chartsource systemid="y_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="bdcd9493-6df5-4284-9b7f-1e81ef766f33" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Page Types - DB Usage - DB Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="number">
+          <chartsource systemid="y_Production" sourcecolor="RGB(242,134,10,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="bdcd9493-6df5-4284-9b7f-1e81ef766f33" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Page Types - DB Usage - DB Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
             <tagtolabel>
               <taglabelentry value="(y) page controller name" key="BTSP1" />
             </tagtolabel>
@@ -963,7 +953,7 @@
             </lightweightuniquemeasureidentifier>
             <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Page Types - DB Usage" measurerate="purepath" />
           </chartsource>
-          <chartsource systemid="y_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="3ba0fafd-f5fd-4cf6-806a-4d4776ba806b" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Page Types - DB Usage - DB Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+          <chartsource systemid="y_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="3ba0fafd-f5fd-4cf6-806a-4d4776ba806b" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Page Types - DB Usage - DB Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="number">
             <tagtolabel>
               <taglabelentry value="(y) page controller name" key="BTSP1" />
             </tagtolabel>
