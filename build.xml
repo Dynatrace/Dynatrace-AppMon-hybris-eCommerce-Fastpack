@@ -145,7 +145,7 @@
 					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-adm.*"/>
 					<replace path="//agentmapping[@id='datahub']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-dth.*"/>
 					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-web.*"/>
-					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-search.*"/>
+					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-srch.*"/>
 				</xmltask>
 				<!-- adding a version tag as description -->
 				<xmltask source="${build}/profiles/${customer.prefix}${prod-profile-postfix}" dest="${build}/profiles/${customer.prefix}${prod-profile-postfix}">
@@ -166,7 +166,7 @@
 					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-adm.*"/>
 					<replace path="//agentmapping[@id='datahub']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-dth.*"/>
 					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-web.*"/>
-					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-search.*"/>
+					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-srch.*"/>
 				</xmltask>
 				<!-- adding a version tag as description -->
 				<xmltask source="${build}/profiles/${customer.prefix}${stag-profile-postfix}" dest="${build}/profiles/${customer.prefix}${stag-profile-postfix}">
