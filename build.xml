@@ -261,8 +261,8 @@
 		<var name="dashlet-id" unset="true"/>
 		<xmltask source="${dashboard}" dest="${dashboard}">
 			<!-- using the image length as identifier to find the header image dashlets -->
-			<replace path="//image[contains(@length,'8132')]/../@description" withText="[Help for this Dashboard|https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-${dashboard.anchor.lower}]"/>
-			<copy path="//image[contains(@length,'8132')]/../@id" property="dashlet-id"/>
+			<replace path="//image[contains(@length,'9008')]/../@description" withText="[Help for this Dashboard|https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-${dashboard.anchor.lower}]"/>
+			<copy path="//image[contains(@length,'9008')]/../@id" property="dashlet-id"/>
 		</xmltask>
 		
 		<!-- set sub-header dashlet style (blue bar headers) -->
@@ -336,6 +336,20 @@
 		</xmltask>
 	</target>
 	
+	<target name="add-web-dashboard-config">
+			<var name="dashboard.name" unset="true"/>
+			<basename file="${dashboard}" property="dashboard.name"/>
+			<xmltask source="${build}/plugin.xml" dest="${build}/plugin.xml">
+				<insert path="/plugin/extension/metainfo">
+					<![CDATA[
+					<resource resource="web-dashboards/${dashboard.name}" resource_type="resource" target_dir="conf/dashboards/web">
+		            	<instance instance="server"/>
+		         	</resource>
+					]]>
+				</insert>
+			</xmltask>
+		</target>
+	
 	<target name="add-profile-config">
 		<var name="profile.name" unset="true"/>
 		<basename file="${profile}" property="profile.name"/>
@@ -359,6 +373,14 @@
 				<include name="*.dashboard.xml"/>
 			</fileset>
 		</foreach>
+		
+		<foreach target="add-web-dashboard-config" param="dashboard">
+			<fileset dir="${build}/web-dashboards">
+				<include name="*.xml"/>
+				<include name="*.json"/>
+			</fileset>
+		</foreach>
+				
 		
 		<foreach target="add-profile-config" param="profile">
 			<fileset dir="${build}/profiles">
