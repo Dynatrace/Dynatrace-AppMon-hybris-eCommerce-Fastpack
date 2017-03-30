@@ -140,12 +140,17 @@
 			<istrue value="${build.production}"/>
 			<then>
 				<!-- production profile -->
+				<var name="mapping.env" value="${prod.short}" />
+				<var name="mapping.idx" value="${mapping.productionidx}" />
+				<var name="pattern" value="${mapping.pattern}" />
+				<lower string="${pattern}" to="pattern.lower" />
+				<echo>Mapping: ${pattern.lower}-web|app|adm|dth|srch.*</echo>
 				<xmltask source="${build}/profiles/${customer.prefix}${prod-profile-postfix}" dest="${build}/profiles/${customer.prefix}${prod-profile-postfix}">
-					<replace path="//agentmapping[@id='applicationserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-app.*"/>
-					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-adm.*"/>
-					<replace path="//agentmapping[@id='datahub']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-dth.*"/>
-					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-web.*"/>
-					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${prod.short}-[^-]*-srch.*"/>
+					<replace path="//agentmapping[@id='applicationserver']/@namepattern" withText="${pattern.lower}-app.*"/>
+					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${pattern.lower}-adm.*"/>
+					<replace path="//agentmapping[@id='datahub']/@namepattern" withText="${pattern.lower}-dth.*"/>
+					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${pattern.lower}-web.*"/>
+					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${pattern.lower}-srch.*"/>
 				</xmltask>
 				<!-- adding a version tag as description -->
 				<xmltask source="${build}/profiles/${customer.prefix}${prod-profile-postfix}" dest="${build}/profiles/${customer.prefix}${prod-profile-postfix}">
@@ -161,12 +166,17 @@
 			<istrue value="${build.staging}"/>
 			<then>
 				<!-- staging profile -->
+				<var name="mapping.env" value="${stag.short}" />
+				<var name="mapping.idx" value="${mapping.stagingidx}" />
+				<var name="pattern" value="${mapping.pattern}" />
+				<lower string="${pattern}" to="pattern.lower" />
+				<echo>Mapping: ${pattern.lower}-web|app|adm|dth|srch.*</echo>
 				<xmltask source="${build}/profiles/${customer.prefix}${stag-profile-postfix}" dest="${build}/profiles/${customer.prefix}${stag-profile-postfix}">
-					<replace path="//agentmapping[@id='applicationserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-app.*"/>
-					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-adm.*"/>
-					<replace path="//agentmapping[@id='datahub']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-dth.*"/>
-					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-web.*"/>
-					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${customer.prefix.lower}-${stag.short}-[^-]*-srch.*"/>
+					<replace path="//agentmapping[@id='applicationserver']/@namepattern" withText="${pattern.lower}-app.*"/>
+					<replace path="//agentmapping[@id='adminserver']/@namepattern" withText="${pattern.lower}-adm.*"/>
+					<replace path="//agentmapping[@id='datahub']/@namepattern" withText="${pattern.lower}-dth.*"/>
+					<replace path="//agentmapping[@id='webserver']/@namepattern" withText="${pattern.lower}-web.*"/>
+					<replace path="//agentmapping[@id='searchengine']/@namepattern" withText="${pattern.lower}-srch.*"/>
 				</xmltask>
 				<!-- adding a version tag as description -->
 				<xmltask source="${build}/profiles/${customer.prefix}${stag-profile-postfix}" dest="${build}/profiles/${customer.prefix}${stag-profile-postfix}">
