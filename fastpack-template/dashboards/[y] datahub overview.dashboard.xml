@@ -2,8 +2,8 @@
 <!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
 <!-- Manual changes can cause severe problems and system instability -->
 <!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
-<dynatrace version="7.0.2.1010" date="8/18/17 1:58 AM">
-  <dashboardconfig memento.version="7.0.2.1010" suppresssavewarning="false" created="2017-08-18T01:58:52+0200" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="s.beutel" locationascomparesource="false" source="server://ip-172-31-69-178" sessionid="y_Production" opendrilldowninnewdashboard="false" groupname="" autoreplacesession="false" revision="0000015d-f2a2-a660-99e9-078ce1ba0457" locationassource="false" localizationenabled="false" name="y_Production - [y] datahub overview" authorname="s.beutel" modified="2017-08-18T01:58:52+0200" id="e40cd92a-b5f2-48b1-8c9b-da9c0bb00999">
+<dynatrace version="7.0.2.1010" date="8/22/17 5:15 PM">
+  <dashboardconfig memento.version="7.0.2.1010" suppresssavewarning="false" created="2017-08-22T17:15:28+0200" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="s.beutel" locationascomparesource="false" source="server://ip-172-31-69-178" sessionid="y_Production" opendrilldowninnewdashboard="false" groupname="" autoreplacesession="false" revision="0000015e-0a83-4668-a165-c235dfcb3dbc" locationassource="false" localizationenabled="false" name="[y] datahub overview" authorname="s.beutel" modified="2017-08-22T17:15:29+0200" id="5b64ff31-6779-42e2-bd97-dc1d17d83d73">
     <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
     <filter>
       <criterion type="admfilteranalyzer" />
@@ -27,7 +27,7 @@
       <criterion includeplatform="true" type="testsoverview" />
       <criterion type="threads" enabled="false" filterbyid="false" />
       <criterion type="timeframe">
-        <timeframe start="0" end="9223372036854775807" type="Auto" />
+        <timeframe type="Last 30min" />
       </criterion>
       <criterion useendtimefortimeframefilter="false" type="visits">
         <visitidset />
@@ -51,7 +51,7 @@
       <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="fda29665-fffb-45c9-9502-06d2c44497d5" folderid="folder" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
         <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
-      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="87b2176d-2e1d-4d8c-aa0a-dfbcb4402459" folderid="org.eclipse.ui.internal.ViewStack@72e8db59" relatedfolderid="folder" ratio="0.5">
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="87b2176d-2e1d-4d8c-aa0a-dfbcb4402459, ffcdf199-8104-4099-9bd1-99a7003f7fb1" folderid="org.eclipse.ui.internal.ViewStack@72e8db59" relatedfolderid="folder" ratio="0.5">
         <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
       </portletfolder>
       <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="4410f07a-cd73-40f2-92ed-849fac87abe1" folderid="org.eclipse.ui.internal.ViewStack@62151bf4" relatedfolderid="org.eclipse.ui.internal.ViewStack@72e8db59" ratio="0.5">
@@ -72,7 +72,7 @@
         <criterion type="btm" />
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
-          <timeframe start="0" end="9223372036854775807" type="Auto" />
+          <timeframe type="Last 30min" />
         </criterion>
         <inheritancemap />
       </filter>
@@ -204,7 +204,7 @@
         <criterion type="btm" />
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
-          <timeframe start="0" end="9223372036854775807" type="Auto" />
+          <timeframe type="Last 30min" />
         </criterion>
         <inheritancemap />
       </filter>
@@ -301,6 +301,100 @@
       </descriptors>
       <ccontent enabled="both" ratio="0.447" />
     </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" showdetails="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://ip-172-31-69-178" usedashboardsource="false" folderid="org.eclipse.ui.internal.ViewStack@72e8db59" locationassource="false" addfilterinfo="false" detailsfolderselectionindex="0" name="Agents Overview" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.realtime.global.GlobalAgent" showoffline="false" id="ffcdf199-8104-4099-9bd1-99a7003f7fb1">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="5" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig>
+        <scheduletable global="false">
+          <table sortcolumn="0" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13">
+            <column forcevisible="false" hidden="false" width="180" index="0" sort="Up" />
+            <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+            <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+            <column forcevisible="false" hidden="false" width="20" index="3" sort="None" />
+            <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+            <column forcevisible="false" hidden="false" width="20" index="5" sort="None" />
+            <column forcevisible="false" hidden="false" width="100" index="6" sort="None" />
+            <column forcevisible="false" hidden="true" width="100" index="7" sort="None" />
+            <column forcevisible="false" hidden="true" width="70" index="8" sort="None" />
+            <column forcevisible="false" hidden="true" width="100" index="9" sort="None" />
+            <column forcevisible="false" hidden="false" width="100" index="10" sort="None" />
+            <column forcevisible="false" hidden="false" width="150" index="11" sort="None" />
+            <column forcevisible="false" hidden="false" width="90" index="12" sort="None" />
+            <column forcevisible="false" hidden="false" width="100" index="13" sort="None" />
+          </table>
+        </scheduletable>
+        <table structuremode="agents" sortcolumn="0" drawcolumn="-1" columnorder="0,1,45,46,2,43,6,42,50,47,37,44,15,3,4,5,48,7,8,9,10,11,12,13,14,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,38,39,40,41,49">
+          <column forcevisible="false" hidden="false" width="270" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="20" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="20" index="6" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="7" sort="None" />
+          <column forcevisible="false" hidden="false" width="90" index="8" sort="None" />
+          <column forcevisible="false" hidden="false" width="115" index="9" sort="None" />
+          <column forcevisible="false" hidden="false" width="135" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="130" index="11" sort="None" />
+          <column forcevisible="false" hidden="false" width="150" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="125" index="13" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="None" />
+          <column forcevisible="false" hidden="false" width="125" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="115" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="205" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="205" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="250" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="30" index="22" sort="None" />
+          <column forcevisible="false" hidden="false" width="95" index="23" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="26" sort="None" />
+          <column forcevisible="false" hidden="false" width="150" index="27" sort="None" />
+          <column forcevisible="false" hidden="false" width="130" index="28" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="170" index="30" sort="None" />
+          <column forcevisible="false" hidden="false" width="205" index="31" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="32" sort="None" />
+          <column forcevisible="false" hidden="true" width="170" index="33" sort="None" />
+          <column forcevisible="false" hidden="true" width="170" index="34" sort="None" />
+          <column forcevisible="false" hidden="true" width="140" index="35" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="36" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="37" sort="None" />
+          <column forcevisible="false" hidden="true" width="90" index="38" sort="None" />
+          <column forcevisible="false" hidden="false" width="70" index="39" sort="None" />
+          <column forcevisible="false" hidden="true" width="205" index="40" sort="None" />
+          <column forcevisible="false" hidden="true" width="205" index="41" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="42" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="43" sort="None" />
+          <column forcevisible="false" hidden="false" width="160" index="44" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="45" sort="None" />
+          <column forcevisible="false" hidden="false" width="60" index="46" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="47" sort="None" />
+          <column forcevisible="false" hidden="false" width="270" index="48" sort="None" />
+          <column forcevisible="false" hidden="false" width="90" index="49" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="50" sort="None" />
+        </table>
+        <table structuremode="flat" sortcolumn="0" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9">
+          <column forcevisible="false" hidden="false" width="140" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="270" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="3" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="6" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="7" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="9" sort="None" />
+        </table>
+      </datamodelconfig>
+      <ccontent enabled="both" ratio="0.6" />
+    </portletconfig>
     <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" source="server://ip-172-31-69-178" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@62151bf4" locationassource="false" addfilterinfo="false" name="Customization Hotspots" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.BtHistoricalCompare" id="4410f07a-cd73-40f2-92ed-849fac87abe1" treestructuremode="Hierarchy">
       <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
       <filter>
@@ -312,7 +406,7 @@
         <criterion type="btm" />
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
-          <timeframe start="0" end="9223372036854775807" type="Auto" />
+          <timeframe type="Last 30min" />
         </criterion>
         <inheritancemap />
       </filter>
@@ -326,15 +420,15 @@
                 <techtypes />
               </sessionreference>
               <childsourceconfigs>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="8e4bd4c0-fde5-450e-97de-1878766d75be" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.compose" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="8e4bd4c0-fde5-450e-97de-1878766d75be" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.compose" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - CompositionRuleHandler.compose" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - CompositionRuleHandler.compose" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="b05376cf-034e-450f-9a25-3f3c1d3945af" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.compose" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="b05376cf-034e-450f-9a25-3f3c1d3945af" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.compose" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - CompositionRuleHandler.compose" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - CompositionRuleHandler.compose" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="ebfd1700-4c73-48b7-9bb1-be134ef6519c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.compose" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="ebfd1700-4c73-48b7-9bb1-be134ef6519c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.compose" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - CompositionRuleHandler.compose" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - CompositionRuleHandler.compose" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
@@ -347,15 +441,15 @@
                 <techtypes />
               </sessionreference>
               <childsourceconfigs>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="9b948afd-84b4-4a42-8049-1f7e59e6adbd" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="9b948afd-84b4-4a42-8049-1f7e59e6adbd" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="5f09145f-c913-4401-aa04-d8e114869acb" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="5f09145f-c913-4401-aa04-d8e114869acb" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="fe8cad65-3453-4f3c-a8b2-9ad9a07e8913" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="fe8cad65-3453-4f3c-a8b2-9ad9a07e8913" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
@@ -368,15 +462,15 @@
                 <techtypes />
               </sessionreference>
               <childsourceconfigs>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="8111c918-2092-4f25-9baa-5295e1c425d4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - DataHubEventListener.handleEvent" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="8111c918-2092-4f25-9baa-5295e1c425d4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - DataHubEventListener.handleEvent" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - DataHubEventListener.handleEvent" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - DataHubEventListener.handleEvent" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="2eb56704-b30e-4959-8098-277ed477555a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - DataHubEventListener.handleEvent" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="2eb56704-b30e-4959-8098-277ed477555a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - DataHubEventListener.handleEvent" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - DataHubEventListener.handleEvent" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - DataHubEventListener.handleEvent" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="471afeb4-7c3b-4f08-9e0f-cd4bc5d7b46a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - DataHubEventListener.handleEvent" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="471afeb4-7c3b-4f08-9e0f-cd4bc5d7b46a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - DataHubEventListener.handleEvent" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - DataHubEventListener.handleEvent" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - DataHubEventListener.handleEvent" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
@@ -389,15 +483,15 @@
                 <techtypes />
               </sessionreference>
               <childsourceconfigs>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="b9381f9c-1e03-44de-b8ea-f6b847e76c20" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="b9381f9c-1e03-44de-b8ea-f6b847e76c20" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - GroupingHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - GroupingHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="5d286586-eee7-419c-9529-9882099b3342" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="5d286586-eee7-419c-9529-9882099b3342" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - GroupingHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - GroupingHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="0503b4b4-4c0a-40e9-8ca9-55f01184f100" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="0503b4b4-4c0a-40e9-8ca9-55f01184f100" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - GroupingHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - GroupingHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
@@ -410,15 +504,15 @@
                 <techtypes />
               </sessionreference>
               <childsourceconfigs>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f9ec7d9e-5513-4e0f-9170-e0a60e04b680" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.group" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f9ec7d9e-5513-4e0f-9170-e0a60e04b680" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.group" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - PublicationGroupingHandler.group" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - PublicationGroupingHandler.group" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="c8a5d30d-4877-4a04-a244-7e2dae79bdbd" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.group" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="c8a5d30d-4877-4a04-a244-7e2dae79bdbd" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.group" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - PublicationGroupingHandler.group" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - PublicationGroupingHandler.group" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="a5eb96c3-f067-4e39-b574-9a0023a8f2eb" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.group" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="a5eb96c3-f067-4e39-b574-9a0023a8f2eb" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - PublicationGroupingHandler.group" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - PublicationGroupingHandler.group" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - PublicationGroupingHandler.group" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
@@ -431,15 +525,15 @@
                 <techtypes />
               </sessionreference>
               <childsourceconfigs>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="608ec50b-a3cd-439e-a333-23d40dc13c6c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="608ec50b-a3cd-439e-a333-23d40dc13c6c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="ad537580-d38b-46a1-99bf-f7f82f95b2be" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="ad537580-d38b-46a1-99bf-f7f82f95b2be" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="1c872f84-81b4-4759-b183-d93d11d0d9e9" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="1c872f84-81b4-4759-b183-d93d11d0d9e9" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
@@ -452,15 +546,15 @@
                 <techtypes />
               </sessionreference>
               <childsourceconfigs>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="4bc62058-3124-41b7-990b-812097872307" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.group" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="4bc62058-3124-41b7-990b-812097872307" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.group" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - GroupingHandler.group" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - GroupingHandler.group" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="883c127c-de18-449f-b618-496b968650d7" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.group" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="883c127c-de18-449f-b618-496b968650d7" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.group" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - GroupingHandler.group" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - GroupingHandler.group" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
-                <chartsource systemid="y_Production" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="7640ab01-3e51-410b-b972-c455dfb1fb15" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.group" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+                <chartsource systemid="y_Production" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="7640ab01-3e51-410b-b972-c455dfb1fb15" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Datahub 6.4 Customize - GroupingHandler.group" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
                   <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Datahub 6.4 Customize - GroupingHandler.group" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Datahub 6.4 Customize - GroupingHandler.group" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
                   <displaysourceinfo />
                 </chartsource>
@@ -543,7 +637,7 @@
         <criterion type="btm" />
         <criterion mode="all" type="hosts" completepurepath="true" />
         <criterion type="timeframe">
-          <timeframe start="0" end="9223372036854775807" type="Auto" />
+          <timeframe type="Last 30min" />
         </criterion>
         <inheritancemap />
       </filter>

@@ -2,8 +2,8 @@
 <!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
 <!-- Manual changes can cause severe problems and system instability -->
 <!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
-<dynatrace version="7.0.2.1010" date="8/18/17 2:00 AM">
-  <dashboardconfig memento.version="7.0.2.1010" suppresssavewarning="false" created="2017-08-18T02:00:05+0200" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="s.beutel" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000015d-f2a3-c388-b300-ccf87f05036d" locationassource="true" localizationenabled="false" name="y_Production - [y] datahub monitoring" authorname="s.beutel" modified="2017-08-18T02:00:05+0200" id="4d810dd5-ce7f-4cf2-85bd-01509264f132">
+<dynatrace version="7.0.2.1010" date="8/22/17 5:17 PM">
+  <dashboardconfig memento.version="7.0.2.1010" suppresssavewarning="false" created="2017-08-22T17:17:49+0200" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="s.beutel" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000015e-0a85-6d30-bf88-c087b9160870" locationassource="true" localizationenabled="false" name="[y] datahub monitoring" authorname="s.beutel" modified="2017-08-22T17:17:50+0200" id="3bab167a-27f0-456b-b72c-eb02795f7495">
     <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
     <filter>
       <criterion type="admfilteranalyzer" />
@@ -45,7 +45,7 @@
         </filterquerypattern>
       </criterion>
     </filter>
-    <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+    <autorefreshconfig unit="MINUTES" time="1" enabled="true" />
     <designconfig autoscroll="false" namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
     <dashboardlayout>
       <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="bce68624-18f5-4490-a08c-cb7d2aa2d6f0" folderid="folder" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
