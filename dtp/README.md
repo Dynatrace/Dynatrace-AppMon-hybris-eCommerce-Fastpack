@@ -2,7 +2,7 @@
 
 This fastpack contains a configuration and dashboards for Dynatrace AppMon 7 for monitoring SAP Hybris ECP environments.
 
-This latest version is compatilbe with Dynatrace AppMon 7. 17 of the 23 client dashboards have been converted into Web dashboards. 
+This latest version is compatilbe with Dynatrace AppMon 7. 16 of the 23 client dashboards have been converted into Web dashboards. 
 
 To view the webdashboards, go to https://(YourAppMonServer):9911
 
