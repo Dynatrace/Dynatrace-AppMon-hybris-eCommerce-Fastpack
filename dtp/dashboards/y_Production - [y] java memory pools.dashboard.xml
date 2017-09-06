@@ -2,8 +2,8 @@
 <!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
 <!-- Manual changes can cause severe problems and system instability -->
 <!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
-<dynatrace version="7.0.6.1013" date="9/6/17 2:30 PM">
-  <dashboardconfig memento.version="7.0.6.1013" suppresssavewarning="false" created="2017-09-06T14:30:30-0600" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="emperorwilson" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000015e-58e3-1a40-a5ea-ce32888857bc" locationassource="true" localizationenabled="false" name="y_Production - [y] java memory pools" authorname="emperorwilson" modified="2017-09-06T14:30:32-0600" id="a310da6d-98c5-4e62-b3ab-0d46785fdca0">
+<dynatrace version="7.0.6.1013" date="9/6/17 4:20 PM">
+  <dashboardconfig memento.version="7.0.6.1013" suppresssavewarning="false" created="2017-09-06T16:20:21-0600" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="emperorwilson" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000015e-5947-a870-8f13-1aef3b1a513e" locationassource="true" localizationenabled="false" name="y_Production - [y] java memory pools" authorname="emperorwilson" modified="2017-09-06T16:20:22-0600" id="e5f2d6e4-4def-4847-8d67-8be690a748e7">
     <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
     <filter>
       <criterion type="admfilteranalyzer" />
@@ -154,6 +154,15 @@
             <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Memory Pool Usage Used" agentname="" metricsimpledisplayname="Memory Pool Usage Used" agenthost="" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure" />
             <displaysourceinfo measureunit="megabytes" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
           </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="036af32a-3761-471f-876a-f1649c5ef45c" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="b529f0a0-310e-3cb7-9aaf-e80b443010e7" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Survivor Space - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-app-002" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Survivor Space - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-app-002" agenthost="pna-p-ma-app-002" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
           <chartsource systemid="y_Production" sourcecolor="RGB(102,255,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="9cc43650-e61d-4678-9d51-71c81029b706" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="c2e58848-64d9-36a1-b24b-f7341346607d" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="Measure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="Sun/Oracle - Survivor Space - used" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="megabytes">
             <tagtolabel>
               <taglabelentry value="Memory pool" key="pool" />
@@ -162,6 +171,15 @@
               <tag type="0" value="Sun/Oracle - Survivor Space - used" key="pool" />
             </lightweightuniquemeasureidentifier>
             <displaysourceinfo measureunit="megabytes" agentname="APCPHYBKWS8" agenthost="degtlun2446" agentgroup="hybris accelerator" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="036af32a-3761-471f-876a-f1649c5ef45c" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="c86c3664-3d90-3992-9c51-84422e08ca25" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Survivor Space - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-adm-001" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Survivor Space - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-adm-001" agenthost="pna-p-ma-adm-001" agentgroup="AdminServer" measurerate="purepath" />
           </chartsource>
           <chartsource systemid="y_Production" sourcecolor="RGB(102,255,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="9cc43650-e61d-4678-9d51-71c81029b706" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="d4d63929-31c7-396e-a300-783cd32c06ab" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="Measure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="Sun/Oracle - Survivor Space - used" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="megabytes">
             <tagtolabel>
@@ -180,6 +198,22 @@
               <tag type="0" value="Sun/Oracle - Survivor Space - used" key="pool" />
             </lightweightuniquemeasureidentifier>
             <displaysourceinfo measureunit="megabytes" agentname="hybris-app-10" agenthost="ip-192-168-111-61" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="036af32a-3761-471f-876a-f1649c5ef45c" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="fe8255f7-5a6d-3e7a-a4ad-e50552be5f84" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Survivor Space - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-app-001" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Survivor Space - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-app-001" agenthost="pna-p-ma-app-001" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(0,0,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" groupingcriterion="pool" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="036af32a-3761-471f-876a-f1649c5ef45c" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Survivor Space - used" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="" metricsimpledisplayname="Memory Pool Usage Used" agenthost="" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure" />
+            <displaysourceinfo measureunit="megabytes" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
           </chartsource>
           <chartsource systemid="y_Production" sourcecolor="RGB(0,255,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="9cc43650-e61d-4678-9d51-71c81029b706" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="107b57d5-cafb-3958-9ef7-aa3570049547" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="Sun/Oracle - Survivor Space - used" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="megabytes">
             <tagtolabel>
@@ -412,6 +446,31 @@
           <legendcomposition agent="true" measure="true" host="true" splittings="true">
             <pielabelcomposition unit="true" value="true" />
           </legendcomposition>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="ef79e66e-a972-41dd-aade-8edf27d27c87" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="839733a1-4140-30e7-9f30-a062bee0b355" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Old Gen - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-app-001" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Old Gen - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-app-001" agenthost="pna-p-ma-app-001" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="ef79e66e-a972-41dd-aade-8edf27d27c87" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="ecc65d72-c003-3b32-9074-0c7403e77368" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Old Gen - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-app-002" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Old Gen - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-app-002" agenthost="pna-p-ma-app-002" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(0,0,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" groupingcriterion="pool" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="ef79e66e-a972-41dd-aade-8edf27d27c87" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Old Gen - used" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="" metricsimpledisplayname="Memory Pool Usage Used" agenthost="" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure" />
+            <displaysourceinfo measureunit="megabytes" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
           <chartsource systemid="y_Production" sourcecolor="RGB(0,128,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="4a4ba201-b113-4d2f-a2cc-7aba8a824444" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="291787f7-5090-3f52-a5de-2062f695fa48" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="Sun/Oracle - Old Gen - used" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="megabytes">
             <tagtolabel>
               <taglabelentry value="Memory pool" key="pool" />
@@ -429,6 +488,15 @@
               <tag type="0" value="Sun/Oracle - Old Gen - used" key="pool" />
             </lightweightuniquemeasureidentifier>
             <displaysourceinfo measureunit="megabytes" agentname="hybris-search-2" agenthost="ip-192-168-111-62" agentgroup="SearchEngine" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="ef79e66e-a972-41dd-aade-8edf27d27c87" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="378c5eba-3ae4-3620-86ad-1273381afc92" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Old Gen - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-adm-001" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Old Gen - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-adm-001" agenthost="pna-p-ma-adm-001" agentgroup="AdminServer" measurerate="purepath" />
           </chartsource>
           <chartsource systemid="y_Production" sourcecolor="RGB(0,128,255,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="pool" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="4a4ba201-b113-4d2f-a2cc-7aba8a824444" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="Sun/Oracle - Old Gen - used" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="megabytes">
             <tagtolabel>
@@ -511,6 +579,33 @@
             </lightweightuniquemeasureidentifier>
             <displaysourceinfo measureunit="megabytes" agentname="hybris-app-10" agenthost="ip-192-168-111-61" agentgroup="ApplicationServer" measurerate="purepath" />
           </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="6d4aa66a-8ec7-471c-a4a9-105ac6202026" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="859a5921-4912-338a-a16b-0fd1a7b8eb3c" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Eden Space - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-adm-001" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Eden Space - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-adm-001" agenthost="pna-p-ma-adm-001" agentgroup="AdminServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="6d4aa66a-8ec7-471c-a4a9-105ac6202026" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="89d17040-cdd5-352c-b9b4-def3d146c94e" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Eden Space - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-app-001" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Eden Space - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-app-001" agenthost="pna-p-ma-app-001" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" parentid="6d4aa66a-8ec7-471c-a4a9-105ac6202026" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="bc1b15b6-5bc4-31bb-8d7d-f2bedbce8fc9" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Eden Space - used" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="pna-p-ma-app-002" metricsimpledisplayname="Memory Pool Usage Used" agenthost="-" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure">
+              <tag type="0" value="SAP - Eden Space - used" key="pool" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="megabytes" agentname="pna-p-ma-app-002" agenthost="pna-p-ma-app-002" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
           <chartsource systemid="y_Production" sourcecolor="RGB(102,204,255,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="030eb25a-7f5b-4432-888e-662fb87fdee2" groupingcriterion="pool" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="d500f1e7-3a1e-3696-a14d-15bf423abee0" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="Sun/Oracle - Eden Space - used" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="megabytes">
             <tagtolabel>
               <taglabelentry value="Memory pool" key="pool" />
@@ -535,6 +630,13 @@
               <tag type="0" value="Sun/Oracle - Eden Space - used" key="pool" />
             </lightweightuniquemeasureidentifier>
             <displaysourceinfo measureunit="megabytes" agentname="hybris-app-20" agenthost="ip-192-168-111-62" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="PNA_Production/20170810170314_0.session" sourcecolor="RGB(0,0,64,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="PNA_Production/20170810170314_0.session" groupingcriterion="pool" colorinheritancemode="random" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="6d4aa66a-8ec7-471c-a4a9-105ac6202026" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="stored" fetch.dynamic.measures="true" groupingcriterion2="AgentName" autoscale="false" measuretype="JvmStatMeasure" fetchbaseline="false" unit="megabytes" name="Memory Pool Usage Used" groupingvalue="SAP - Eden Space - used" overridesource="false" fetchmeasurecolor="true" position="2" uiunit="megabytes">
+            <tagtolabel>
+              <taglabelentry value="Memory pool" key="pool" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="PNA_Production/20170810170314_0.session" application="" parentkeyid="Memory Pool Usage Used" agentname="" metricsimpledisplayname="Memory Pool Usage Used" agenthost="" metrickeyid="Memory Pool Usage Used" keyid="Memory Pool Usage Used" metricgroupkey="Java Virtual Machine" collector="" measuretype="JvmStatMeasure" />
+            <displaysourceinfo measureunit="megabytes" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
           </chartsource>
           <splitconfig splitlayout="Horizontal" splitmode="AgentName" />
         </chart>
