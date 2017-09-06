@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="7.0.6.1013">
+  <webuidashboard memento.version="7.0.6.1013">
+    <metadata owner="admin" name="y_Production - [y] external webservices" id="8b52c1af-b111-41fb-8a10-3a0db95d2bc3" modificationdate="1504648173334" sharemode="PUBLIC_SHARED" version="27" revision="6ad49942-cd92-4b72-9849-7be0a4c820bb" />
+  </webuidashboard>
+</dynatrace>

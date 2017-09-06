@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="7.0.5.1020" date="8/25/17 4:04 PM">
+  <dashboardconfig memento.version="7.0.5.1020" suppresssavewarning="false" created="2017-01-25T10:16:32+0000" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="admin" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000015e-1a23-7dac-8ea2-0a0f55f71075" locationassource="true" localizationenabled="false" name="y_Production - [y] ecommerce metrics" authorname="reinhard.brandstaedter@dynatrace.com" modified="2017-08-25T16:04:47+0000" id="84a4027c-9dcb-43bb-974f-9950c75e5cf8">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" matchpattern="" assignees="" type="incident" matchstring="contains" rulesmode="ALL" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,MISSING,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API,EXTERNAL" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe type="Last 72h" />
+      </criterion>
+      <criterion useendtimefortimeframefilter="false" type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+    <designconfig autoscroll="true" namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="NIGHT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="aa45513e-2d36-41ea-887a-50eabb46ef98" folderid="org.eclipse.ui.internal.ViewStack@1bba64b2" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="a1765bcf-15d3-4547-8d21-bd0602c6642b" folderid="org.eclipse.ui.internal.ViewStack@3d29f2b4" relatedfolderid="org.eclipse.ui.internal.ViewStack@1bba64b2" ratio="0.5826271">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="6cad980f-e6e2-4239-93a8-dc9aaf4ea686" folderid="org.eclipse.ui.internal.ViewStack@e3b8b6e" relatedfolderid="org.eclipse.ui.internal.ViewStack@3d29f2b4" ratio="0.49746192">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="5e0ae31b-ab98-404e-9dd2-14107f5cfb9e" folderid="org.eclipse.ui.internal.ViewStack@77988646" relatedfolderid="org.eclipse.ui.internal.ViewStack@e3b8b6e" ratio="0.49937028">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="7a1b8f7e-9df3-44e2-87c9-e6e8863a3107" folderid="folder" relatedfolderid="org.eclipse.ui.internal.ViewStack@1bba64b2" ratio="0.10727273">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="30b3a192-81b3-4143-98ea-ae1ace3c8ce5" folderid="org.eclipse.ui.internal.ViewStack@524c61a0" relatedfolderid="folder" ratio="0.7493703">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="8a9b6355-7910-46a1-86a9-5fdcc082d596, 83aed9ec-c262-472a-95b7-4049f21c702b" folderid="org.eclipse.ui.internal.ViewStack@7946add3" relatedfolderid="folder" ratio="0.33193278">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="6b8fbdce-ffdb-4bbc-8af6-6be6028b5e3a" folderid="org.eclipse.ui.internal.ViewStack@5ece6454" relatedfolderid="org.eclipse.ui.internal.ViewStack@1bba64b2" ratio="0.49874055">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="cb57d92f-7dd8-4c19-942f-48b9110cb384" folderid="org.eclipse.ui.internal.ViewStack@20d7337b" relatedfolderid="org.eclipse.ui.internal.ViewStack@5ece6454" ratio="0.49748743">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="fe2bae1d-db00-4012-a069-fe52cdf8ae6c" folderid="org.eclipse.ui.internal.ViewStack@616171ef" relatedfolderid="org.eclipse.ui.internal.ViewStack@1bba64b2" ratio="0.5">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@7946add3" rightaxistimeframeoffsetunit="MILLISECONDS" locationassource="true" addfilterinfo="false" rightaxistimeframeoffset="0" name="Dual Axis Chart" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.DualAxisChart" id="83aed9ec-c262-472a-95b7-4049f21c702b">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="7" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig axisboundsmode="SHARED" rightaxisdatascale="1.0" leftaxisdatascale="1.0" axisdrawingorder="RIGHT">
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="ClusteredBarChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,234,131,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="27032431-10da-4f93-bcfc-3ab14a4f8ad8" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(163,255,139,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="47130017-c21d-4dae-a65d-13f4b30914dc" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Not Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits Not Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <ccontent enabled="first" ratio="0.5" />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@7946add3" locationassource="true" addfilterinfo="false" name="Converted vs Non-Converted Cart Value" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="8a9b6355-7910-46a1-86a9-5fdcc082d596">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition measure="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,234,131,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="83e22c38-fc84-4af3-b993-344002357341" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(163,255,139,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="32933210-ee89-467a-a124-b4e0ff981b99" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="a65d6436-b5f2-3d6e-b043-c3e64bf8cd67" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Not Converted Visits" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="83e22c38-fc84-4af3-b993-344002357341" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="2a4d9469-0bef-30ed-8567-af101c88e643" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Visits Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(163,255,139,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="32933210-ee89-467a-a124-b4e0ff981b99" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Not Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits Not Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,102,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="32933210-ee89-467a-a124-b4e0ff981b99" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="782e1b20-0c41-32d6-a6d1-3906f64e7f22" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Not Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Visits Not Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="true" hidden="false" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@3d29f2b4" locationassource="true" addfilterinfo="false" name="Visits" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="a1765bcf-15d3-4547-8d21-bd0602c6642b">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="8" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="15min" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(128,0,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="8020b98c-401a-4749-84d0-76745b1b8ed6" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits by Channel - Visit Count" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="count">
+            <tagtolabel>
+              <taglabelentry value="Client Type of Visits" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits by Channel (Visit Count;Visits;Visit Count)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits by Channel (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="count" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits by Channel" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(163,255,139,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="8020b98c-401a-4749-84d0-76745b1b8ed6" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="b47869c7-6fe1-3b5f-83c8-c225d8c73b24" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits by Channel - Visit Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="count">
+            <tagtolabel>
+              <taglabelentry value="Client Type of Visits" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits by Channel (Visit Count;Visits;Visit Count)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits by Channel (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="Desktop Browser" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="count" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Visits by Channel" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,234,131,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="8020b98c-401a-4749-84d0-76745b1b8ed6" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="c002aacb-713f-3166-be92-fee0689877e1" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits by Channel - Visit Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="count">
+            <tagtolabel>
+              <taglabelentry value="Client Type of Visits" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits by Channel (Visit Count;Visits;Visit Count)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits by Channel (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="Mobile Browser" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="count" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Visits by Channel" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" templatetext="{0}" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" sessionid="y_Production" folderid="org.eclipse.ui.internal.ViewStack@1bba64b2" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="CENTER" addfilterinfo="false" shownasinteger="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(18,18,18,255)" invertcolors="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(102,255,102,255)" typeid="com.dynatrace.diagnostics.portlets.text.measure.MeasureText" id="aa45513e-2d36-41ea-887a-50eabb46ef98" unitshown="false" usespecificautorefresh="false" sessiontype="live" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="true" name="Converted Visits" thresholdcolors="true" onlylastvalue="false">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="6" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="28" />
+      <chartsource systemid="y_Production" sourcecolor="RGB(192,64,64,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="60e01824-7519-4517-8f26-f2eaf016e6ef" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits Converted - Visit Count" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="-1" uiunit="count">
+        <tagtolabel>
+          <taglabelentry value="(y) order currency" key="BTSP1" />
+        </tagtolabel>
+        <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted (Visit Count;Visits;Visit Count)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Converted (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+        <displaysourceinfo />
+      </chartsource>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" templatetext="{0}" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" sessionid="y_Production" folderid="org.eclipse.ui.internal.ViewStack@20d7337b" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="CENTER" addfilterinfo="false" shownasinteger="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(19,19,19,255)" invertcolors="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(255,102,102,255)" typeid="com.dynatrace.diagnostics.portlets.text.measure.MeasureText" id="cb57d92f-7dd8-4c19-942f-48b9110cb384" unitshown="false" usespecificautorefresh="false" sessiontype="live" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="true" name="Not Converted Visits" thresholdcolors="true" onlylastvalue="false">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="6" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="28" />
+      <chartsource systemid="y_Production" sourcecolor="RGB(192,64,64,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="8153aaac-6f0d-4c36-9070-aefa2ac7fb49" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits Not Converted - Visit Count" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="-1" uiunit="count">
+        <tagtolabel>
+          <taglabelentry value="(y) order currency" key="BTSP1" />
+        </tagtolabel>
+        <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted (Visit Count;Visits;Visit Count)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Not Converted (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+        <displaysourceinfo />
+      </chartsource>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" templatetext="{0}" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" sessionid="y_Production" folderid="org.eclipse.ui.internal.ViewStack@616171ef" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="CENTER" addfilterinfo="false" shownasinteger="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(18,18,18,255)" invertcolors="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(102,255,102,255)" typeid="com.dynatrace.diagnostics.portlets.text.measure.MeasureText" id="fe2bae1d-db00-4012-a069-fe52cdf8ae6c" unitshown="false" usespecificautorefresh="false" sessiontype="live" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="true" name="Total Converted Cart Value" thresholdcolors="true" onlylastvalue="false">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="6" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="28" />
+      <chartsource systemid="y_Production" sourcecolor="RGB(0,128,192,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="81a1e5ff-241d-46ea-b6b1-1b375c1122de" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="-1" uiunit="number">
+        <tagtolabel>
+          <taglabelentry value="(y) order currency" key="BTSP1" />
+        </tagtolabel>
+        <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+        <displaysourceinfo />
+      </chartsource>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@524c61a0" locationassource="true" addfilterinfo="false" name="Converted vs Non-Converted Cart Value" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="30b3a192-81b3-4143-98ea-ae1ace3c8ce5">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="3" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" maxdisplayitems="10" zoomable="true" charttype="PieChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition measure="true">
+            <pielabelcomposition splittings="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,102,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="1d67a2a1-b8d8-4d03-84f9-0faedb5d081b" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="95edcb93-f1e4-3077-a043-d9948904b33f" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Not Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Visits Not Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(163,255,139,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="1d67a2a1-b8d8-4d03-84f9-0faedb5d081b" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="b7f1aee3-3ff5-3b30-b092-696f72eb02d6" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Not Converted Visits" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="1c9c75e6-bc8d-4d9d-8e78-3263cc5fc8eb" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="05fc5929-da4a-34aa-b2a6-24d891bba6b7" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Visits Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,234,131,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="1c9c75e6-bc8d-4d9d-8e78-3263cc5fc8eb" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(163,255,139,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="1d67a2a1-b8d8-4d03-84f9-0faedb5d081b" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Not Converted - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits Not Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@77988646" locationassource="true" addfilterinfo="false" name="Bounce Rate" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="5e0ae31b-ab98-404e-9dd2-14107f5cfb9e">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="5" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,102,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="e658898f-865b-4585-9625-c81695db6ae3" groupingcriterion="Application" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="96ed6304-f294-32ec-8a1e-438c75b08fe0" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="EndUserVisitMeasure" fetchbaseline="false" unit="percent" name="Bounce Rate" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Bounce Rate" agentname="-" metricsimpledisplayname="Bounce Count" agenthost="-" metrickeyid="Bounce Count" keyid="Bounce Rate" metricgroupkey="Visits" collector="" measuretype="EndUserVisitMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,102,102,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="Application" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="e658898f-865b-4585-9625-c81695db6ae3" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="EndUserVisitMeasure" fetchbaseline="false" unit="percent" name="Bounce Rate" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Bounce Rate" agentname="" metricsimpledisplayname="Bounce Count" agenthost="" metrickeyid="Bounce Count" keyid="Bounce Rate" metricgroupkey="Visits" collector="" measuretype="EndUserVisitMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" templatetext="{0}" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" sessionid="y_Production" folderid="org.eclipse.ui.internal.ViewStack@5ece6454" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="CENTER" addfilterinfo="false" shownasinteger="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(18,18,18,255)" invertcolors="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(255,102,102,255)" typeid="com.dynatrace.diagnostics.portlets.text.measure.MeasureText" id="6b8fbdce-ffdb-4bbc-8af6-6be6028b5e3a" unitshown="false" usespecificautorefresh="false" sessiontype="live" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="true" name="Total Not Converted Cart Value" thresholdcolors="true" onlylastvalue="false">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="6" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="28" />
+      <chartsource systemid="y_Production" sourcecolor="RGB(0,128,192,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="beee6399-49ff-46b9-8b62-68202e6d25fc" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="-1" uiunit="number">
+        <tagtolabel>
+          <taglabelentry value="(y) order currency" key="BTSP1" />
+        </tagtolabel>
+        <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Not Converted ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+        <displaysourceinfo />
+      </chartsource>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@e3b8b6e" locationassource="true" addfilterinfo="false" name="Conversion Rate" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="6cad980f-e6e2-4239-93a8-dc9aaf4ea686">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(102,255,102,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="Application" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="0f900864-83ff-4f4b-8858-9bc741d1d07a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="EndUserVisitMeasure" fetchbaseline="false" unit="percent" name="Conversion Rate for &quot;(y) order creation&quot;" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Conversion Rate for &quot;(y) order creation&quot;" agentname="" metricsimpledisplayname="Conversion Count" agenthost="" metrickeyid="Conversion Count" keyid="Conversion Rate for &quot;(y) order creation&quot;" metricgroupkey="Visits" collector="" measuretype="EndUserVisitMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="0f900864-83ff-4f4b-8858-9bc741d1d07a" groupingcriterion="Application" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="2ddf4090-169a-3d41-9972-a43956bfb4be" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="EndUserVisitMeasure" fetchbaseline="false" unit="percent" name="Conversion Rate for &quot;(y) order creation&quot;" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Conversion Rate for &quot;(y) order creation&quot;" agentname="-" metricsimpledisplayname="Conversion Count" agenthost="-" metrickeyid="Conversion Count" keyid="Conversion Rate for &quot;(y) order creation&quot;" metricgroupkey="Visits" collector="" measuretype="EndUserVisitMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="folder" locationassource="true" addfilterinfo="false" name="Converted vs Non-Converted Carts" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="7a1b8f7e-9df3-44e2-87c9-e6e8863a3107">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="PieChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition measure="true">
+            <pielabelcomposition value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(163,255,139,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="80891813-4fb3-473c-82a2-5e8d70cc36a2" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits Not Converted - Visit Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="count">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted (Visit Count;Visits;Visit Count)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Not Converted (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="count" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits Not Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(163,255,139,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="80891813-4fb3-473c-82a2-5e8d70cc36a2" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="aebbe7ae-4565-3dc8-8e89-56248537f310" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits Not Converted (Visit Count;Visits;Visit Count)" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="count">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted (Visit Count;Visits;Visit Count)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Not Converted (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="count" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Not Converted Visits" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,102,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="80891813-4fb3-473c-82a2-5e8d70cc36a2" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="d135fc46-ff56-3785-a19e-e98be02e4d15" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits Not Converted - Visit Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="count">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Not Converted (Visit Count;Visits;Visit Count)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Not Converted (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="count" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Visits Not Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(255,234,131,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="fd7fc546-c9eb-4ed1-bff3-345b698de5ea" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits Converted - Visit Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="count">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted (Visit Count;Visits;Visit Count)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Visits Converted (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="count" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Visits Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="fd7fc546-c9eb-4ed1-bff3-345b698de5ea" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="628f1341-ba57-3807-8140-7462330ad483" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Visits Converted - Visit Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="count">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Visits Converted (Visit Count;Visits;Visit Count)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Visits Converted (Visit Count;Visits;Visit Count)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="count" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Visits Converted" transactioncontext="Visit" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>

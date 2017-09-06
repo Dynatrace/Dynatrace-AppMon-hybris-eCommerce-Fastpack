@@ -1,0 +1,477 @@
+{
+  "timeframe" : {
+    "type" : "OFFSET",
+    "offsetDurationValue" : 72,
+    "offsetDurationUnit" : "HOURS",
+    "offsetShiftValue" : null,
+    "offsetShiftUnit" : null,
+    "customRangeStart" : null,
+    "customRangeEnd" : null
+  },
+  "session" : {
+    "name" : "y_Production",
+    "id" : "y_Production",
+    "sessionType" : "live",
+    "timeFrameStart" : -1,
+    "timeFrameEnd" : -1
+  },
+  "application" : "B2C",
+  "locked" : false,
+  "tiles" : [ {
+    "id" : "6c1396a7-d020-48c3-9163-5dfee2d4beba",
+    "name" : "Page Action Response Time",
+    "tileType" : "CHART_TILE_METER",
+    "overrideApplication" : false,
+    "application" : null,
+    "timeframe" : null,
+    "description" : "Page Class Perceived Render Time",
+    "sizeX" : 1,
+    "sizeY" : 1,
+    "row" : 1,
+    "column" : 1,
+    "bounds" : "80,0,1920,320",
+    "fixed" : false,
+    "chartTile" : {
+      "leftMeasures" : [ {
+        "id" : "6589ffb8-f4e1-41f6-bed1-7119c7973343",
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Perceived Render Time;Page Actions;Perceived Render Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Perceived Render Time;Page Actions;Perceived Render Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "name" : "Value",
+        "measureType" : "TransactionMeasure",
+        "unitId" : "",
+        "selectedUnit" : "",
+        "usingAutoFormatter" : true,
+        "metricGroupName" : "",
+        "alias" : "Response Time",
+        "aggregation" : "AVG",
+        "splittingKey" : "BTSP1",
+        "splittingValues" : [ ],
+        "splittingValueColors" : { },
+        "hasCustomSplittingValues" : false,
+        "showOnlyLastValue" : false,
+        "showOnlySplittingValue" : true,
+        "customColor" : "#4a67e8"
+      } ],
+      "rightMeasures" : [ ],
+      "overriddenAxisTitles" : [ null, null ],
+      "showLegend" : true,
+      "customValueLabel" : "",
+      "resolutionId" : null,
+      "topNItems" : null,
+      "showChart" : true
+    },
+    "btTile" : null,
+    "btListTile" : null,
+    "imageTile" : null,
+    "iFrameTile" : null,
+    "alertTile" : null,
+    "monitorSummaryTile" : null,
+    "topListTile" : null,
+    "textAndMeasuresTile" : null
+  }, {
+    "id" : "a1fd2351-5ab5-4719-b5e6-28f694f28703",
+    "name" : "Count",
+    "tileType" : "CHART_TILE_METER",
+    "overrideApplication" : false,
+    "application" : null,
+    "timeframe" : null,
+    "description" : "Page Class Count",
+    "sizeX" : 1,
+    "sizeY" : 1,
+    "row" : 1,
+    "column" : 3,
+    "bounds" : "400,0,1920,320",
+    "fixed" : false,
+    "chartTile" : {
+      "leftMeasures" : [ {
+        "id" : "67ea5721-f240-4f47-96be-b56166362146",
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Page Action Response Time;Page Actions;Page Action PurePath Response Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Page Action Response Time;Page Actions;Page Action PurePath Response Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "name" : "Page Type User Experience - User Action Duration",
+        "measureType" : "TransactionMeasure",
+        "unitId" : "ms",
+        "selectedUnit" : "",
+        "usingAutoFormatter" : false,
+        "metricGroupName" : "Business Transaction Results",
+        "alias" : "",
+        "aggregation" : "COUNT",
+        "splittingKey" : "BTSP1",
+        "splittingValues" : [ ],
+        "splittingValueColors" : { },
+        "hasCustomSplittingValues" : false,
+        "showOnlyLastValue" : false,
+        "showOnlySplittingValue" : true,
+        "customColor" : null
+      } ],
+      "rightMeasures" : [ ],
+      "overriddenAxisTitles" : [ null, null ],
+      "showLegend" : true,
+      "customValueLabel" : "",
+      "resolutionId" : null,
+      "topNItems" : null,
+      "showChart" : true
+    },
+    "btTile" : null,
+    "btListTile" : null,
+    "imageTile" : null,
+    "iFrameTile" : null,
+    "alertTile" : null,
+    "monitorSummaryTile" : null,
+    "topListTile" : null,
+    "textAndMeasuresTile" : null
+  }, {
+    "id" : "c7b05b52-8101-454d-a7f9-1f0c16f43025",
+    "name" : "",
+    "tileType" : "TEXT_AND_MEASURE",
+    "overrideApplication" : false,
+    "application" : null,
+    "timeframe" : null,
+    "description" : "",
+    "sizeX" : 1,
+    "sizeY" : 1,
+    "row" : 1,
+    "column" : 4,
+    "bounds" : "0,0,1920,80",
+    "fixed" : false,
+    "chartTile" : null,
+    "btTile" : null,
+    "btListTile" : null,
+    "imageTile" : null,
+    "iFrameTile" : null,
+    "alertTile" : null,
+    "monitorSummaryTile" : null,
+    "topListTile" : null,
+    "textAndMeasuresTile" : {
+      "markDownText" : "{color:3399ff}{style:font-size: 1em} **Page Class User Experience** {style}{color}",
+      "editableMeasures" : [ ],
+      "measureSplittingsMap" : { },
+      "customValues" : { }
+    }
+  }, {
+    "id" : "63bec2e2-d642-415b-ae89-0da517fe3073",
+    "name" : "Last 6 Hours",
+    "tileType" : "BUSINESS_TRANSACTION_LIST_TILE",
+    "overrideApplication" : false,
+    "application" : null,
+    "timeframe" : {
+      "type" : "OFFSET",
+      "offsetDurationValue" : 6,
+      "offsetDurationUnit" : "HOURS",
+      "offsetShiftValue" : null,
+      "offsetShiftUnit" : null,
+      "customRangeStart" : null,
+      "customRangeEnd" : null
+    },
+    "description" : "",
+    "sizeX" : 1,
+    "sizeY" : 1,
+    "row" : 2,
+    "column" : 1,
+    "bounds" : "800,0,640,480",
+    "fixed" : false,
+    "chartTile" : null,
+    "btTile" : null,
+    "btListTile" : {
+      "businessTransactionId" : "Page Type User Experience",
+      "resultMeasures" : [ {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Page Action Response Time;Page Actions;Page Action PurePath Response Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Page Action Response Time;Page Actions;Page Action PurePath Response Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "User Action Duration",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Speed Index;Page Actions;Speed Index)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Speed Index;Page Actions;Speed Index)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Speed Index",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Visually Complete Time;Page Actions;Visually Complete Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Visually Complete Time;Page Actions;Visually Complete Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Visually Complete Time",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Perceived Render Time;Page Actions;Perceived Render Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Perceived Render Time;Page Actions;Perceived Render Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Perceived Render Time",
+        "selectedSortAggregation" : null
+      } ],
+      "selectedSplittingKey" : "BTSP1",
+      "columnDisplayName" : "",
+      "sortAscending" : false
+    },
+    "imageTile" : null,
+    "iFrameTile" : null,
+    "alertTile" : null,
+    "monitorSummaryTile" : null,
+    "topListTile" : null,
+    "textAndMeasuresTile" : null
+  }, {
+    "id" : "cdfc35e6-11f6-43bd-a287-ccceddaa2134",
+    "name" : "",
+    "tileType" : "TEXT_AND_MEASURE",
+    "overrideApplication" : false,
+    "application" : null,
+    "timeframe" : null,
+    "description" : "",
+    "sizeX" : 1,
+    "sizeY" : 1,
+    "row" : 2,
+    "column" : 2,
+    "bounds" : "720,0,1920,80",
+    "fixed" : false,
+    "chartTile" : null,
+    "btTile" : null,
+    "btListTile" : null,
+    "imageTile" : null,
+    "iFrameTile" : null,
+    "alertTile" : null,
+    "monitorSummaryTile" : null,
+    "topListTile" : null,
+    "textAndMeasuresTile" : {
+      "markDownText" : "{color:3399ff}{style:font-size: 1em} **Page Class User Experience and Error Breakdown** {style}{color}",
+      "editableMeasures" : [ ],
+      "measureSplittingsMap" : { },
+      "customValues" : { }
+    }
+  }, {
+    "id" : "72f2a89e-fdc9-4109-b448-478e77db50ad",
+    "name" : "Last 24 Hours",
+    "tileType" : "BUSINESS_TRANSACTION_LIST_TILE",
+    "overrideApplication" : false,
+    "application" : null,
+    "timeframe" : {
+      "type" : "LAST_24_H",
+      "offsetDurationValue" : null,
+      "offsetDurationUnit" : null,
+      "offsetShiftValue" : null,
+      "offsetShiftUnit" : null,
+      "customRangeStart" : null,
+      "customRangeEnd" : null
+    },
+    "description" : "",
+    "sizeX" : 1,
+    "sizeY" : 1,
+    "row" : 0,
+    "column" : 0,
+    "bounds" : "800,640,640,480",
+    "fixed" : false,
+    "chartTile" : null,
+    "btTile" : null,
+    "btListTile" : {
+      "businessTransactionId" : "Page Type User Experience",
+      "resultMeasures" : [ {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Page Action Response Time;Page Actions;Page Action PurePath Response Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Page Action Response Time;Page Actions;Page Action PurePath Response Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "User Action Duration",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Speed Index;Page Actions;Speed Index)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Speed Index;Page Actions;Speed Index)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Speed Index",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Visually Complete Time;Page Actions;Visually Complete Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Visually Complete Time;Page Actions;Visually Complete Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Visually Complete Time",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Perceived Render Time;Page Actions;Perceived Render Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Perceived Render Time;Page Actions;Perceived Render Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Perceived Render Time",
+        "selectedSortAggregation" : null
+      } ],
+      "selectedSplittingKey" : "BTSP1",
+      "columnDisplayName" : "",
+      "sortAscending" : false
+    },
+    "imageTile" : null,
+    "iFrameTile" : null,
+    "alertTile" : null,
+    "monitorSummaryTile" : null,
+    "topListTile" : null,
+    "textAndMeasuresTile" : null
+  }, {
+    "id" : "c76fd7b4-3853-44ac-8503-ff9d5b5ec76a",
+    "name" : "Last 7 Days",
+    "tileType" : "BUSINESS_TRANSACTION_LIST_TILE",
+    "overrideApplication" : false,
+    "application" : null,
+    "timeframe" : {
+      "type" : "OFFSET",
+      "offsetDurationValue" : 7,
+      "offsetDurationUnit" : "DAYS",
+      "offsetShiftValue" : null,
+      "offsetShiftUnit" : null,
+      "customRangeStart" : null,
+      "customRangeEnd" : null
+    },
+    "description" : "",
+    "sizeX" : 1,
+    "sizeY" : 1,
+    "row" : 0,
+    "column" : 0,
+    "bounds" : "800,1280,640,480",
+    "fixed" : false,
+    "chartTile" : null,
+    "btTile" : null,
+    "btListTile" : {
+      "businessTransactionId" : "Page Type User Experience",
+      "resultMeasures" : [ {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Page Action Response Time;Page Actions;Page Action PurePath Response Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Page Action Response Time;Page Actions;Page Action PurePath Response Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "User Action Duration",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Speed Index;Page Actions;Speed Index)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Speed Index;Page Actions;Speed Index)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Speed Index",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Visually Complete Time;Page Actions;Visually Complete Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Visually Complete Time;Page Actions;Visually Complete Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Visually Complete Time",
+        "selectedSortAggregation" : null
+      }, {
+        "measureIdentifier" : {
+          "keyId" : "Page Type User Experience (Perceived Render Time;Page Actions;Perceived Render Time)",
+          "metricGroupKeyId" : "Business Transaction Results",
+          "metricKeyId" : "Value",
+          "parentKeyId" : "Page Type User Experience (Perceived Render Time;Page Actions;Perceived Render Time)",
+          "agentName" : "",
+          "agentHost" : "",
+          "collectorId" : "",
+          "application" : ""
+        },
+        "aggregations" : [ "AVG" ],
+        "name" : "Perceived Render Time",
+        "selectedSortAggregation" : null
+      } ],
+      "selectedSplittingKey" : "BTSP1",
+      "columnDisplayName" : "",
+      "sortAscending" : false
+    },
+    "imageTile" : null,
+    "iFrameTile" : null,
+    "alertTile" : null,
+    "monitorSummaryTile" : null,
+    "topListTile" : null,
+    "textAndMeasuresTile" : null
+  } ],
+  "logo" : "",
+  "nocMode" : false,
+  "zoomMode" : "FIT_WIDTH"
+}

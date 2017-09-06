@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+   <extension-point id="com.dynatrace.diagnostics.InstallerContent" name="com.dynatrace.diagnostics.InstallerContent" schema="schema/com.dynatrace.diagnostics.InstallerContent.exsd"/>
+   <extension point="com.dynatrace.diagnostics.InstallerContent">
+      <metainfo installer_type="resourcepack" name="FastPack Resources">
+<resource resource="dashboards/y_Production - [y] Entity Cache.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] Query Cache.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] UEM page class performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] cache metrics.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] cron jobs.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] database connection pool.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] database impact by page.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] database performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] ecommerce metrics.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] end user performance overview.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] external webrequests.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] external webservices.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] java garbage collection.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] java memory pools.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] orders and sales volume.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] page class percentiles.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] page class performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] request balancing.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] session counters.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] solr request performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] taskengine.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] webrequest distribution.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Production - [y] webrequest performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] Entity Cache.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] Query Cache.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] UEM page class performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] cache metrics.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] cron jobs.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] database connection pool.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] database impact by page.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] database performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] ecommerce metrics.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] end user performance overview.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] external webrequests.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] external webservices.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] java garbage collection.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] java memory pools.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] orders and sales volume.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] page class percentiles.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] page class performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] request balancing.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] session counters.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] solr request performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] taskengine.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] webrequest distribution.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/y_Staging - [y] webrequest performance.dashboard.xml" resource_type="dashboard">
+	            	<instance instance="server"/>
+	         	</resource>         	
+<resource resource="dashboards/web/1f692d30-6591-44b7-be8d-1a6f763bb03f.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/1f692d30-6591-44b7-be8d-1a6f763bb03f.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/4d8bb1e4-6c9e-419b-a05c-b02c1eaab6d2.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/4d8bb1e4-6c9e-419b-a05c-b02c1eaab6d2.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/6e25c99e-6e5b-483d-8d34-b571e6d18cb4.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/6e25c99e-6e5b-483d-8d34-b571e6d18cb4.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/8b52c1af-b111-41fb-8a10-3a0db95d2bc3.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/8b52c1af-b111-41fb-8a10-3a0db95d2bc3.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/64c6ed3e-fa93-43c3-8002-3d5d2dcabc60.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/64c6ed3e-fa93-43c3-8002-3d5d2dcabc60.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/72c6f2e2-ced9-4d60-9be2-569c2a1d26ca.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/72c6f2e2-ced9-4d60-9be2-569c2a1d26ca.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/502cdff9-d637-4a6a-9221-da0e996c2bdf.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/502cdff9-d637-4a6a-9221-da0e996c2bdf.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/980d7cf2-fb72-4fd6-ac75-ad9a9a69208b.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/980d7cf2-fb72-4fd6-ac75-ad9a9a69208b.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/223477a2-20c5-4fe3-ac59-dff842a4fe8f.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/223477a2-20c5-4fe3-ac59-dff842a4fe8f.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/aff2d6a1-89d1-46e6-a25d-a0b8f9884c91.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/aff2d6a1-89d1-46e6-a25d-a0b8f9884c91.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/c6f4fc2a-52b9-4e5f-8781-3c5caad524ee.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/c6f4fc2a-52b9-4e5f-8781-3c5caad524ee.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d4d645b8-560c-4533-baab-c2ef92fd8f7b.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d4d645b8-560c-4533-baab-c2ef92fd8f7b.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d06adc58-45be-46e7-b7c1-7141b7199ec5.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d06adc58-45be-46e7-b7c1-7141b7199ec5.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d8a1d514-cd2f-4c80-839a-43f089de2fed.json.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d8a1d514-cd2f-4c80-839a-43f089de2fed.json.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d39dcc1f-0699-4e3d-aa5f-e0f0988c5736.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d39dcc1f-0699-4e3d-aa5f-e0f0988c5736.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d81bf94d-7e52-4afd-b5c6-4f55214b2500.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/d81bf94d-7e52-4afd-b5c6-4f55214b2500.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/fa6cc170-e75c-4841-acc2-b651bb6e21c6.json" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>
+<resource resource="dashboards/web/fa6cc170-e75c-4841-acc2-b651bb6e21c6.xml" resource_type="resource" target_dir="conf/dashboards/web">
+	            	<instance instance="server"/>
+	         	</resource>	         	         	
+<resource resource="profiles/y_Production.profile.xml" resource_type="systemProfile">
+		            <instance instance="server"/>
+		        </resource>
+<resource resource="profiles/y_Staging.profile.xml" resource_type="systemProfile">
+		            <instance instance="server"/>
+		        </resource>
+</metainfo>
+   </extension>
+</plugin>

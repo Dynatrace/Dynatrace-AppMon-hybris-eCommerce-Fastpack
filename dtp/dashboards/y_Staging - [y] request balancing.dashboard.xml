@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="7.0.5.1020" date="8/29/17 8:18 PM">
+  <dashboardconfig memento.version="7.0.5.1020" suppresssavewarning="false" created="2017-08-29T20:17:59+0000" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="admin" locationascomparesource="false" sessionid="y_Staging" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000015e-2fa5-238e-8483-ae429f97f229" locationassource="true" localizationenabled="false" name="y_Staging - [y] request balancing" authorname="admin" modified="2017-08-29T20:18:25+0000" id="3c6a1a67-b17e-4784-b576-f2222efb37b0">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" matchpattern="" assignees="" type="incident" matchstring="contains" rulesmode="ALL" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,MISSING,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API,EXTERNAL" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe type="Last 72h" />
+      </criterion>
+      <criterion useendtimefortimeframefilter="false" type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+    <designconfig autoscroll="false" namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="bce68624-18f5-4490-a08c-cb7d2aa2d6f0" folderid="folder" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="false" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="RIGHT" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="ca8a6e23-59ea-4690-8b3c-a48c47aee233" folderid="org.eclipse.ui.internal.ViewStack@51cafeb4" relatedfolderid="folder" ratio="0.7472015">
+        <designconfig namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="a48888e0-4e29-4bb1-a6dc-c54676999a7a" folderid="org.eclipse.ui.internal.ViewStack@2fc81cdd" relatedfolderid="folder" ratio="0.49438202">
+        <designconfig namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="f8c17909-b08a-44b7-a50c-6ea9e3a39a47" folderid="org.eclipse.ui.internal.ViewStack@3860c084" relatedfolderid="org.eclipse.ui.internal.ViewStack@2fc81cdd" ratio="0.48395061">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="59e4f51d-1acd-4ef6-97e8-666eb11b00d1" folderid="org.eclipse.ui.internal.ViewStack@7f1f54ab" relatedfolderid="org.eclipse.ui.internal.ViewStack@3860c084" ratio="0.37584305">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="d4757fbf-f5f5-4ee6-8083-a8c31fcbcbfe" folderid="org.eclipse.ui.internal.ViewStack@3216e88c" relatedfolderid="org.eclipse.ui.internal.ViewStack@7f1f54ab" ratio="0.5333988">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="fbed4c0e-6757-4016-a75b-e976f2604aff" folderid="9a91dc54-2753-4180-9834-e7f6a7fd2c7d" relatedfolderid="folder" ratio="0.49242425">
+        <designconfig namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="-1" relationtype="RIGHT" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@5e78955a" relatedfolderid="9a91dc54-2753-4180-9834-e7f6a7fd2c7d" ratio="0.49724096" />
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="61789371-2d86-4222-b30a-41351021472d" folderid="org.eclipse.ui.internal.ViewStack@659dacca" relatedfolderid="9a91dc54-2753-4180-9834-e7f6a7fd2c7d" ratio="0.47761193">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="cfe6dedf-66d9-435f-a68a-c0797d8fd990" folderid="org.eclipse.ui.internal.ViewStack@331e3d39" relatedfolderid="org.eclipse.ui.internal.ViewStack@659dacca" ratio="0.37400368">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="f64290a2-3cc7-4de5-9135-6813a1e8100c" folderid="org.eclipse.ui.internal.ViewStack@4913bd38" relatedfolderid="org.eclipse.ui.internal.ViewStack@331e3d39" ratio="0.53476983">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@2fc81cdd" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="a48888e0-4e29-4bb1-a6dc-c54676999a7a" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="Webserver Request Balancing" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="[Help for this Dashboard|https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-request_balancing]" folderid="folder" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="bce68624-18f5-4490-a08c-cb7d2aa2d6f0" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="9008">
+        <chunk offset="0" data="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" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@51cafeb4" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="ca8a6e23-59ea-4690-8b3c-a48c47aee233" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Java Thread Count" locationascomparesource="false" sessionid="y_Staging" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@331e3d39" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="cfe6dedf-66d9-435f-a68a-c0797d8fd990">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="selectedAgentGroups" type="agents" completepurepath="true">
+          <agentgroupref name="ApplicationServer" />
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="agents" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title=" " axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StepChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Right" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition host="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(255,128,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="AgentOrMonitor" colorinheritancemode="parent" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="d3ec9105-e3e2-4802-842b-75643f2a6567" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="Measure" fetchbaseline="false" unit="number" name="Thread Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="Thread Count" agentname="" metricsimpledisplayname="Thread Count" agenthost="" metrickeyid="Thread Count" keyid="Thread Count" metricgroupkey="Java Virtual Machine" collector="" measuretype="Measure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(255,128,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="d3ec9105-e3e2-4802-842b-75643f2a6567" groupingcriterion="AgentOrMonitor" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="45199d6f-a800-3ed2-b3d9-a3147d56c018" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="Measure" fetchbaseline="false" unit="number" name="Thread Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="Thread Count" agentname="hybris-app-10" metricsimpledisplayname="Thread Count" agenthost="ip-192-168-111-61" metrickeyid="Thread Count" keyid="Thread Count" metricgroupkey="Java Virtual Machine" collector="" measuretype="Measure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-app-10" agenthost="ip-192-168-111-61" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(255,128,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="d3ec9105-e3e2-4802-842b-75643f2a6567" groupingcriterion="AgentOrMonitor" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="4560d1d7-21e4-3aaa-ae72-994cde778c2d" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="Measure" fetchbaseline="false" unit="number" name="Thread Count" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="Thread Count" agentname="hybris-app-20" metricsimpledisplayname="Thread Count" agenthost="ip-192-168-111-62" metrickeyid="Thread Count" keyid="Thread Count" metricgroupkey="Java Virtual Machine" collector="" measuretype="Measure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-app-20" agenthost="ip-192-168-111-62" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Vertical" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Transfer Rate" locationascomparesource="false" sessionid="y_Staging" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@3216e88c" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="d4757fbf-f5f5-4ee6-8083-a8c31fcbcbfe">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="5" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="selectedAgentGroups" type="agents" completepurepath="true">
+          <agentgroupref name="WebServer" />
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="agents" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title=" " axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Top" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" host="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="AgentOrMonitor" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="9fc2726b-6395-45df-b3b5-386882a06f0d" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="kilobytes" name="Transfer Rate per Second" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="kilobytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="" metricsimpledisplayname="Transfer Rate per Second" agenthost="" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="b26c5dde-471c-3fe9-92e6-1be038b6f3e2" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="kilobytes" name="Transfer Rate per Second" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="kilobytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="tbr-p-fr-web-001[Apache 2.2]" metricsimpledisplayname="Transfer Rate per Second" agenthost="tbr-p-fr-web-001" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="tbr-p-fr-web-001[Apache 2.2]" agenthost="tbr-p-fr-web-001" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="cbd60d23-eda2-3b8e-a74f-2b62ab6494d2" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="kilobytes" name="Transfer Rate per Second" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="kilobytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="hybris-web-1[Apache 2.4][1]" metricsimpledisplayname="Transfer Rate per Second" agenthost="ip-192-168-111-101" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="hybris-web-1[Apache 2.4][1]" agenthost="ip-192-168-111-101" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f3c4c717-8e7c-3aeb-bfa4-a991ce50192c" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="kilobytes" name="Transfer Rate per Second" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="kilobytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="tbr-p-fr-web-004[Apache 2.2]" metricsimpledisplayname="Transfer Rate per Second" agenthost="tbr-p-fr-web-004" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="tbr-p-fr-web-004[Apache 2.2]" agenthost="tbr-p-fr-web-004" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="f4f21e6d-7939-3c4d-bc1b-250f6c2cc4c2" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="kilobytes" name="Transfer Rate per Second" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="kilobytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="tbr-p-fr-web-003[Apache 2.2]" metricsimpledisplayname="Transfer Rate per Second" agenthost="tbr-p-fr-web-003" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="tbr-p-fr-web-003[Apache 2.2]" agenthost="tbr-p-fr-web-003" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="06cb2eb0-7adc-37b0-8c4b-259f80d82676" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="kilobytes" name="Transfer Rate per Second" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="kilobytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="tbr-p-fr-web-002[Apache 2.2]" metricsimpledisplayname="Transfer Rate per Second" agenthost="tbr-p-fr-web-002" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="tbr-p-fr-web-002[Apache 2.2]" agenthost="tbr-p-fr-web-002" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="115667fb-c38c-3516-9633-b9cf6310e6e6" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="bytes" name="Transfer Rate per Second" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="hybris-web-1[Apache 2.4]" metricsimpledisplayname="Transfer Rate per Second" agenthost="ip-192-168-111-101" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="hybris-web-1[Apache 2.4]" agenthost="ip-192-168-111-101" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="16737e8b-8409-304a-b053-b871db5d8807" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="kilobytes" name="Transfer Rate per Second" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="kilobytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="y-s-fiori-web[Apache 2.4]" metricsimpledisplayname="Transfer Rate per Second" agenthost="ip-192-168-111-200" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="y-s-fiori-web[Apache 2.4]" agenthost="ip-192-168-111-200" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="37fee4d2-c7c7-3327-8106-92ca1d300334" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="bytes" name="Transfer Rate per Second" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="hybris-web-2[Apache 2.4]" metricsimpledisplayname="Transfer Rate per Second" agenthost="ip-192-168-111-102" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="hybris-web-2[Apache 2.4]" agenthost="ip-192-168-111-102" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="5c790c1a-9bb1-3ae3-b79d-7990f5e7c2e4" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="bytes" name="Transfer Rate per Second" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="hybris-web-1[Apache 2.4]" metricsimpledisplayname="Transfer Rate per Second" agenthost="ip-192-168-111-101" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="hybris-web-1[Apache 2.4]" agenthost="ip-192-168-111-101" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="66f06bfe-47e2-3224-9b05-312d63a4ec03" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="bytes" name="Transfer Rate per Second" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="bytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="hybris-web-2[Apache 2.4]" metricsimpledisplayname="Transfer Rate per Second" agenthost="ip-192-168-111-102" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="hybris-web-2[Apache 2.4]" agenthost="ip-192-168-111-102" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(102,255,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc2726b-6395-45df-b3b5-386882a06f0d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="692fa4e8-2082-3d43-a576-d5d9322f6445" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="kilobytes" name="Transfer Rate per Second" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="kilobytes">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver transfer rate per second" agentname="hybris-web-1[Apache 2.4]" metricsimpledisplayname="Transfer Rate per Second" agenthost="ip-192-168-111-190" metrickeyid="webserver transfer rate per second" keyid="webserver transfer rate per second" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="bytes" agentname="hybris-web-1[Apache 2.4]" agenthost="ip-192-168-111-190" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Vertical" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="CPU Load" locationascomparesource="false" sessionid="y_Staging" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@4913bd38" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="f64290a2-3cc7-4de5-9135-6813a1e8100c">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="selectedAgentGroups" type="agents" completepurepath="true">
+          <agentgroupref name="ApplicationServer" />
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="agents" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title=" " axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="AreaChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Top" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition agent="true" host="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="7eca27a4-2af9-43d5-8abd-82543a14f69d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="e06cd9c6-01b8-3dab-b135-33ff3661bb7a" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="ProcessPerformanceMeasure" fetchbaseline="false" unit="percent" name="Current CPU load" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="Current CPU load" agentname="hybris-app-10" metricsimpledisplayname="Current CPU load" agenthost="ip-192-168-111-61" metrickeyid="Current CPU load" keyid="Current CPU load" metricgroupkey="Process Performance" collector="" measuretype="ProcessPerformanceMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-10" agenthost="ip-192-168-111-61" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(255,204,102,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="7eca27a4-2af9-43d5-8abd-82543a14f69d" groupingcriterion="AgentOrMonitor" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="68cad8d6-2968-31eb-b60f-45edac9b3312" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="ProcessPerformanceMeasure" fetchbaseline="false" unit="percent" name="Current CPU load" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="Current CPU load" agentname="hybris-app-20" metricsimpledisplayname="Current CPU load" agenthost="ip-192-168-111-62" metrickeyid="Current CPU load" keyid="Current CPU load" metricgroupkey="Process Performance" collector="" measuretype="ProcessPerformanceMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="hybris-app-20" agenthost="ip-192-168-111-62" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(255,204,102,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="AgentOrMonitor" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="7eca27a4-2af9-43d5-8abd-82543a14f69d" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="ProcessPerformanceMeasure" fetchbaseline="false" unit="percent" name="Current CPU load" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="Current CPU load" agentname="" metricsimpledisplayname="Current CPU load" agenthost="" metrickeyid="Current CPU load" keyid="Current CPU load" metricgroupkey="Process Performance" collector="" measuretype="ProcessPerformanceMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Vertical" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Request Distribution" locationascomparesource="false" sessionid="y_Staging" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@3860c084" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="f8c17909-b08a-44b7-a50c-6ea9e3a39a47">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="3" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="selectedAgentGroups" type="agents" completepurepath="true">
+          <agentgroupref name="WebServer" />
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="agents" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedPctBarchart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Left" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" bounds.y.upper="1.0" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition host="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(222,140,33,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="99359957-cd06-43ad-9c38-83aa2311faf4" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="83c06b68-4d03-3493-beb7-54c5666e2e50" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) web server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) web server subpaths" agentname="tbr-p-fr-web-003[Apache 2.2]" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) web server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-web-003[Apache 2.2]" agenthost="tbr-p-fr-web-003" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(0,128,255,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="AgentName" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="99359957-cd06-43ad-9c38-83aa2311faf4" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) web server subpaths" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) web server subpaths" agentname="" metricsimpledisplayname="Count" agenthost="" metrickeyid="Count" keyid="(y) web server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(235,186,122,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="99359957-cd06-43ad-9c38-83aa2311faf4" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="b8c166b8-9eb0-3f46-a757-ac464456e188" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) web server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) web server subpaths" agentname="tbr-p-fr-web-001[Apache 2.2]" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) web server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-web-001[Apache 2.2]" agenthost="tbr-p-fr-web-001" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(229,163,77,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="99359957-cd06-43ad-9c38-83aa2311faf4" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="118542d5-cf87-33ad-ba3e-0aeba32d4e18" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) web server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) web server subpaths" agentname="tbr-p-fr-web-002[Apache 2.2]" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) web server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-web-002[Apache 2.2]" agenthost="tbr-p-fr-web-002" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="9a91dc54-2753-4180-9834-e7f6a7fd2c7d" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="fbed4c0e-6757-4016-a75b-e976f2604aff" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="Application Server Request Balancing" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Busy Threads" locationascomparesource="false" sessionid="y_Staging" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@7f1f54ab" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="59e4f51d-1acd-4ef6-97e8-666eb11b00d1">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="5" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="selectedAgentGroups" type="agents" completepurepath="true">
+          <agentgroupref name="WebServer" />
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="agents" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title=" " axis.y.title.show="true" showtooltips="true" bounds.y.enabled="false" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" maxdisplayitems="10" zoomable="true" charttype="StepChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Right" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition host="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(64,128,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="AgentOrMonitor" colorinheritancemode="parent" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="9f10df70-b4e7-46dd-9091-f674331d6a45" ratesupported="false" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="number" name="Busy Threads" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver busy threads" agentname="" metricsimpledisplayname="Busy Threads" agenthost="" metrickeyid="webserver busy threads" keyid="webserver busy threads" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(64,128,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9f10df70-b4e7-46dd-9091-f674331d6a45" groupingcriterion="AgentOrMonitor" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="d68ccd83-99dc-337e-be4b-326c11aec73f" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="number" name="Busy Threads" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver busy threads" agentname="hybris-web-1[Apache 2.4]" metricsimpledisplayname="Busy Threads" agenthost="ip-192-168-111-101" metrickeyid="webserver busy threads" keyid="webserver busy threads" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-web-1[Apache 2.4]" agenthost="ip-192-168-111-101" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(64,128,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9f10df70-b4e7-46dd-9091-f674331d6a45" groupingcriterion="AgentOrMonitor" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="e090f253-4856-3469-9278-85648d03236e" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="number" name="Busy Threads" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver busy threads" agentname="hybris-web-2[Apache 2.4]" metricsimpledisplayname="Busy Threads" agenthost="ip-192-168-111-102" metrickeyid="webserver busy threads" keyid="webserver busy threads" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-web-2[Apache 2.4]" agenthost="ip-192-168-111-102" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(64,128,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9f10df70-b4e7-46dd-9091-f674331d6a45" groupingcriterion="AgentOrMonitor" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="ecd58b5f-c433-3f3f-9c93-3e2916a5f64f" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="number" name="Busy Threads" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver busy threads" agentname="y-s-fiori-web[Apache 2.4]" metricsimpledisplayname="Busy Threads" agenthost="ip-192-168-111-200" metrickeyid="webserver busy threads" keyid="webserver busy threads" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="number" agentname="y-s-fiori-web[Apache 2.4]" agenthost="ip-192-168-111-200" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(64,128,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9f10df70-b4e7-46dd-9091-f674331d6a45" groupingcriterion="AgentOrMonitor" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="f4d65751-7872-398a-88f5-d96325db9fef" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="number" name="Busy Threads" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver busy threads" agentname="hybris-web-1[Apache 2.4]" metricsimpledisplayname="Busy Threads" agenthost="ip-192-168-111-190" metrickeyid="webserver busy threads" keyid="webserver busy threads" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-web-1[Apache 2.4]" agenthost="ip-192-168-111-190" agentgroup="WebServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(64,128,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9f10df70-b4e7-46dd-9091-f674331d6a45" groupingcriterion="AgentOrMonitor" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="1414b0b9-e9ee-3315-9bbb-40203f268cf3" ratesupported="false" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="WebserverMeasure" fetchbaseline="false" unit="number" name="Busy Threads" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="webserver busy threads" agentname="hybris-web-1[Apache 2.4][1]" metricsimpledisplayname="Busy Threads" agenthost="ip-192-168-111-101" metrickeyid="webserver busy threads" keyid="webserver busy threads" metricgroupkey="Web Server" collector="" measuretype="WebserverMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris-web-1[Apache 2.4][1]" agenthost="ip-192-168-111-101" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Vertical" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Request Distribution" locationascomparesource="false" sessionid="y_Staging" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@659dacca" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="61789371-2d86-4222-b30a-41351021472d">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="3" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="selectedAgentGroups" type="agents" completepurepath="true">
+          <agentgroupref name="ApplicationServer" />
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="agents" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedPctBarchart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Left" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" bounds.y.upper="1.0" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition host="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(235,122,122,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="898b0dc4-348e-33d6-bbf1-0badfaa16ac7" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-008" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-008" agenthost="tbr-p-fr-app-008" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(89,13,13,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="8b5e4b3b-0e15-3eb8-9c25-8b2b08f44347" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-013" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-013" agenthost="tbr-p-fr-app-013" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(229,77,77,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="9b145605-7321-3919-97b3-c471311bee8d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-002" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-002" agenthost="tbr-p-fr-app-002" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(222,33,33,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="b2baa84d-9ba9-31f3-86ce-fa00dbd6f626" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-003" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-003" agenthost="tbr-p-fr-app-003" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(178,235,122,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="d7d98db9-845f-3e15-8bd5-1f5bb01c99ff" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="hybris_1" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris_1" agenthost="ip-10-58-82-254" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(133,20,20,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="dd9cc156-5049-3ac5-a43b-37957b799538" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-012" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-012" agenthost="tbr-p-fr-app-012" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(222,33,33,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="ee77f6cd-dd99-32a5-8d0b-4f27ad095609" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-010" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-010" agenthost="tbr-p-fr-app-010" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="0e6cc770-c749-3d6e-a369-2cdea8eb639e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="hybris_2" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="hybris_2" agenthost="ip-10-58-82-254" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(235,122,122,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="2b375de6-0c6e-34c0-bab5-c15fd13e583e" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-001" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-001" agenthost="tbr-p-fr-app-001" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(178,26,26,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="354351ae-c1d3-3a64-bf66-009b9eaa42c6" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-004" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-004" agenthost="tbr-p-fr-app-004" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(0,128,255,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="AgentName" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="4505c5e1-a798-4f43-9292-ad9b7ccbb702" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="" metricsimpledisplayname="Count" agenthost="" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(178,26,26,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="454e1025-5449-3d84-a8e8-da848e1c446a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-011" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-011" agenthost="tbr-p-fr-app-011" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,166,166,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="4ad8ed79-4e81-3841-b53f-b47b45ac584a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-007" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-007" agenthost="tbr-p-fr-app-007" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(133,20,20,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="617bade6-5f69-3722-985a-176cf50f3b9d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-005" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-005" agenthost="tbr-p-fr-app-005" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(229,77,77,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="6c29e81b-ca6f-37fd-bd15-044f8dbf783a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-009" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-009" agenthost="tbr-p-fr-app-009" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(89,13,13,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="4505c5e1-a798-4f43-9292-ad9b7ccbb702" groupingcriterion="AgentName" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="6cfe8fe2-2ea1-348a-a24e-0152b135ac24" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TierSubPathMeasure" fetchbaseline="false" unit="number" name="(y) application server subpaths" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="(y) application server subpaths" agentname="tbr-p-fr-app-006" metricsimpledisplayname="Count" agenthost="-" metrickeyid="Count" keyid="(y) application server subpaths" metricgroupkey="Tier Subpaths" collector="" measuretype="TierSubPathMeasure" />
+            <displaysourceinfo measureunit="number" agentname="tbr-p-fr-app-006" agenthost="tbr-p-fr-app-006" agentgroup="ApplicationServer" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="AgentName" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>

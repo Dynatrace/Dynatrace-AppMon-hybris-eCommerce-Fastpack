@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="7.0.5.1020" date="8/25/17 5:32 PM">
+  <dashboardconfig memento.version="7.0.5.1020" suppresssavewarning="false" created="2015-12-04T13:11:29+0000" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="admin" locationascomparesource="false" sessionid="y_Production" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000015e-1a73-dd4b-b5e8-34f1aafc9359" locationassource="true" localizationenabled="false" name="y_Production - [y] orders and sales volume" authorname="reinhard.brandstaedter@dynatrace.com" modified="2017-08-25T17:32:34+0000" id="6f1acc92-36a2-4b89-b426-1ad787ac71d2">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" matchpattern="" assignees="" type="incident" matchstring="contains" rulesmode="ALL" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,MISSING,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API,EXTERNAL" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe type="Last 72h" />
+      </criterion>
+      <criterion useendtimefortimeframefilter="false" type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+    <designconfig autoscroll="false" namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="d8e82f70-ca2a-48e6-9c01-33a81a00113c" folderid="org.eclipse.ui.internal.ViewStack@6083f677" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="false" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="RIGHT" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="01a52906-aad1-4097-b1f7-76163f0f3449" folderid="org.eclipse.ui.internal.ViewStack@374faa9b" relatedfolderid="org.eclipse.ui.internal.ViewStack@6083f677" ratio="0.74682206">
+        <designconfig namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="198df482-7d95-4213-83f5-d010320e916c" folderid="org.eclipse.ui.internal.ViewStack@389a2386" relatedfolderid="org.eclipse.ui.internal.ViewStack@6083f677" ratio="0.24255319">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="38f08974-5aa6-433e-b00f-dd4f17d499e6" folderid="org.eclipse.ui.internal.ViewStack@7b6ab8ce" relatedfolderid="org.eclipse.ui.internal.ViewStack@389a2386" ratio="0.5674157">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="aa769a5a-6202-4095-af8d-339a4a8d2bf1" folderid="org.eclipse.ui.internal.ViewStack@5007821" relatedfolderid="org.eclipse.ui.internal.ViewStack@7b6ab8ce" ratio="0.46753246">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="f30a2732-6d73-4512-9e7d-563ff47983eb" folderid="org.eclipse.ui.internal.ViewStack@5c135bb6" relatedfolderid="org.eclipse.ui.internal.ViewStack@5007821" ratio="0.50440806">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="105ede8d-d21a-496b-a6c0-207e0d88ac6d" folderid="org.eclipse.ui.internal.ViewStack@5f642bcd" relatedfolderid="org.eclipse.ui.internal.ViewStack@5c135bb6" ratio="0.28455284">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="29bce246-39b4-4be2-81e1-409916203784" folderid="org.eclipse.ui.internal.ViewStack@3bde338f" relatedfolderid="org.eclipse.ui.internal.ViewStack@5f642bcd" ratio="0.9021601">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@1da710ad" relatedfolderid="org.eclipse.ui.internal.ViewStack@5f642bcd" ratio="0.4659091" />
+      <portletfolder selectionindex="-1" relationtype="RIGHT" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@265a2413" relatedfolderid="org.eclipse.ui.internal.ViewStack@1da710ad" ratio="0.115492955" />
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="c404d950-96fa-4b0d-9601-6076366b3d17" folderid="org.eclipse.ui.internal.ViewStack@50a227df" relatedfolderid="org.eclipse.ui.internal.ViewStack@5f642bcd" ratio="0.115492955">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="7911a22d-6983-47ee-a0b2-19e65d155fb8" folderid="org.eclipse.ui.internal.ViewStack@575e9057" relatedfolderid="org.eclipse.ui.internal.ViewStack@5c135bb6" ratio="0.9021601">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="7c6d947e-1542-4a9a-a392-50cd12ab8c2e" folderid="org.eclipse.ui.internal.ViewStack@7d95dd8" relatedfolderid="org.eclipse.ui.internal.ViewStack@5007821" ratio="0.28455284">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="a06f5af4-b9a4-4f2e-a7dc-65b9dfcf20b0" folderid="org.eclipse.ui.internal.ViewStack@34a19811" relatedfolderid="org.eclipse.ui.internal.ViewStack@7d95dd8" ratio="0.08988764">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@6a7b7d99" relatedfolderid="org.eclipse.ui.internal.ViewStack@34a19811" ratio="0.4659091" />
+      <portletfolder selectionindex="-1" relationtype="RIGHT" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@367a6434" relatedfolderid="org.eclipse.ui.internal.ViewStack@6a7b7d99" ratio="0.87791497" />
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="9b545e73-d49e-4750-af6f-3036b38a55dd" folderid="org.eclipse.ui.internal.ViewStack@57641a4d" relatedfolderid="org.eclipse.ui.internal.ViewStack@34a19811" ratio="0.87791497">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="01fbfcfb-e0e4-42a1-895b-4dc6eb331528" folderid="org.eclipse.ui.internal.ViewStack@38663c0f" relatedfolderid="org.eclipse.ui.internal.ViewStack@5007821" ratio="0.08988764">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="9ac823e8-0f2d-4cd5-947f-d4e3af4af6ca" folderid="org.eclipse.ui.internal.ViewStack@3c0ae242" relatedfolderid="org.eclipse.ui.internal.ViewStack@7b6ab8ce" ratio="0.4722222">
+        <designconfig namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="-1" relationtype="RIGHT" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@9ca4261" relatedfolderid="org.eclipse.ui.internal.ViewStack@7b6ab8ce" ratio="0.94899243" />
+      <portletfolder selectionindex="-1" relationtype="RIGHT" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@624ab524" relatedfolderid="org.eclipse.ui.internal.ViewStack@389a2386" ratio="0.94899243" />
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@471038b7" relatedfolderid="org.eclipse.ui.internal.ViewStack@624ab524" ratio="0.4719472" />
+      <portletfolder selectionindex="-1" relationtype="BOTTOM" portletconfigorder="" isplaceholder="true" folderid="org.eclipse.ui.internal.ViewStack@44e42933" relatedfolderid="org.eclipse.ui.internal.ViewStack@624ab524" ratio="0.69966996" />
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="9981531d-1fd7-4c03-bdf1-f92c33b86e01" folderid="org.eclipse.ui.internal.ViewStack@7ba92958" relatedfolderid="org.eclipse.ui.internal.ViewStack@389a2386" ratio="0.4950495">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="e1270955-2b89-4cdf-aa87-27c78667c7d8" folderid="org.eclipse.ui.internal.ViewStack@556535d1" relatedfolderid="org.eclipse.ui.internal.ViewStack@6083f677" ratio="0.47368422">
+        <designconfig namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Sales Volume" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@7ba92958" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="9981531d-1fd7-4c03-bdf1-f92c33b86e01">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Top" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition sum="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(17,76,13,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="7c52fd04-b5c9-4f8b-9ef0-e2538b4bbdfa" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="f3faefb5-50d6-3357-b4da-54425c487518" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="£" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(17,76,13,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="7c52fd04-b5c9-4f8b-9ef0-e2538b4bbdfa" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="22ef328a-e0d8-39c4-b22b-26f30fe530fc" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="€" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(17,76,13,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="7c52fd04-b5c9-4f8b-9ef0-e2538b4bbdfa" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="32de5d55-3f7b-34c1-aef4-ecfa26358f89" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="$" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(229,145,77,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="7c52fd04-b5c9-4f8b-9ef0-e2538b4bbdfa" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="34101724-d715-3642-b0bf-c9037b10b0ff" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(17,76,13,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="7c52fd04-b5c9-4f8b-9ef0-e2538b4bbdfa" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Order" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="Tag" splittag="(y) order currency" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@3c0ae242" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="9ac823e8-0f2d-4cd5-947f-d4e3af4af6ca" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@57641a4d" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="9b545e73-d49e-4750-af6f-3036b38a55dd" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="9" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name=".Helvetica Neue DeskInterface" style="NORMAL" height="12" />
+      <image offset="-1" length="208">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAAEAAAAyCAIAAAASmSbdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QgOCzMTzltSrAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDw1DHAHbcA2BrFoyQAAAAAElFTkSuQmCC" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@34a19811" locationassource="true" addfilterinfo="true" name="Orders" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="a06f5af4-b9a4-4f2e-a7dc-65b9dfcf20b0">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 7d" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="timeframe" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="1d" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="ClusteredBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="20" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(64,128,128,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="c724a514-908d-46ce-8f05-9bb94a4e086f" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Order - PurePath Response Time" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Order" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(29,156,136,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="c724a514-908d-46ce-8f05-9bb94a4e086f" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="deb4e561-2d3d-301e-ad3e-996a913f0b26" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(122,150,235,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="c724a514-908d-46ce-8f05-9bb94a4e086f" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="fb6b272f-473f-3417-bf92-1914dd3c2c34" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="$" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(33,80,222,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="c724a514-908d-46ce-8f05-9bb94a4e086f" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="4dd5757a-c2de-3a4f-870c-cf561919ef5d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="£" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(77,115,229,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="c724a514-908d-46ce-8f05-9bb94a4e086f" groupingcriterion="BTSP1" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="7985d295-d2fb-3b83-8d33-8980da6ad875" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="€" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="Measure" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@5007821" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="aa769a5a-6202-4095-af8d-339a4a8d2bf1" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="8" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="12" />
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@50a227df" locationassource="true" addfilterinfo="true" name="Sales Volume" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="c404d950-96fa-4b0d-9601-6076366b3d17">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="4" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 7d" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="timeframe" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="1d" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="ClusteredBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="20" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="false" limititems="false" showlegend="false" lockyaxis="true" showlabels="true">
+          <legendcomposition splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(127,222,33,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="ce518b67-0f3e-4d50-89a5-b774758cd951" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="928bdc3f-4633-3bbf-a63e-a43c6849330a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="£" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(17,76,13,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="ce518b67-0f3e-4d50-89a5-b774758cd951" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Order" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(169,77,229,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="ce518b67-0f3e-4d50-89a5-b774758cd951" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="f1360277-5115-3d1f-b390-d9dbc8caec52" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(152,229,77,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="ce518b67-0f3e-4d50-89a5-b774758cd951" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="18fe389d-bb22-3aef-8872-d3e9f36e86dc" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="€" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(178,235,122,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="ce518b67-0f3e-4d50-89a5-b774758cd951" groupingcriterion="BTSP1" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="2bef4161-fe49-3d93-86b3-3378ffa7ab25" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order - (y) order total price" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="$" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="[Help for this Dashboard|https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-orders_and_sales_volume]" folderid="org.eclipse.ui.internal.ViewStack@6083f677" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="d8e82f70-ca2a-48e6-9c01-33a81a00113c" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="9008">
+        <chunk offset="0" data="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" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@556535d1" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="e1270955-2b89-4cdf-aa87-27c78667c7d8" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="Orders and Sales Volume" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" templatetext="{0}" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" sessionid="y_Production" folderid="org.eclipse.ui.internal.ViewStack@5c135bb6" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="CENTER" addfilterinfo="true" shownasinteger="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,255,255)" typeid="com.dynatrace.diagnostics.portlets.text.measure.MeasureText" id="f30a2732-6d73-4512-9e7d-563ff47983eb" unitshown="false" usespecificautorefresh="true" sessiontype="live" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="Sales Volume" thresholdcolors="true" onlylastvalue="false">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="7" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Today" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="timeframe" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="SECONDS" time="10" enabled="true" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="28" />
+      <image offset="-1" length="208">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAAEAAAAyCAIAAAASmSbdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QgOCzMTzltSrAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDw1DHAHbcA2BrFoyQAAAAAElFTkSuQmCC" />
+      </image>
+      <chartsource systemid="y_Production" sourcecolor="RGB(0,128,192,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" groupingcriterion="BTSP1" colorinheritancemode="random" aggregationtype="Sum" rate="10s" sourcetype="MEASURE" id="ffb48523-7688-4027-bd57-d5b5bf2eb711" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="-1" uiunit="number">
+        <tagtolabel>
+          <taglabelentry value="(y) order currency" key="BTSP1" />
+        </tagtolabel>
+        <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Order ((y) order total price;Business Transaction Evaluation/Filter/Grouping Values;Argument Value)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+        <displaysourceinfo />
+      </chartsource>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@374faa9b" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="01a52906-aad1-4097-b1f7-76163f0f3449" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" templatetext="{0}" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" sessionid="y_Production" folderid="org.eclipse.ui.internal.ViewStack@38663c0f" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="CENTER" addfilterinfo="true" shownasinteger="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,52,255,255)" typeid="com.dynatrace.diagnostics.portlets.text.measure.MeasureText" id="01fbfcfb-e0e4-42a1-895b-4dc6eb331528" unitshown="false" usespecificautorefresh="true" sessiontype="live" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="Orders" thresholdcolors="true" onlylastvalue="false">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="7" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Today" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="timeframe" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="SECONDS" time="10" enabled="true" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="26" />
+      <image offset="-1" length="208">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAAEAAAAyCAIAAAASmSbdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QgOCzMTzltSrAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDw1DHAHbcA2BrFoyQAAAAAElFTkSuQmCC" />
+      </image>
+      <chartsource systemid="y_Production" sourcecolor="RGB(64,128,128,255)" dynamicconfig="false" fetchthreshold="true" scale="0" sessionid="y_Production" colorinheritancemode="random" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="ec5d9379-3a8c-49b0-ac14-04126414d405" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="false" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Order - PurePath Response Time" groupingvalue="" overridesource="false" fetchmeasurecolor="true" position="-1" uiunit="ms">
+        <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+        <displaysourceinfo />
+      </chartsource>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@5f642bcd" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="105ede8d-d21a-496b-a6c0-207e0d88ac6d" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="9" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name=".Helvetica Neue DeskInterface" style="NORMAL" height="12" />
+      <image offset="-1" length="208">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAAEAAAAyCAIAAAASmSbdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QgOCzMTzltSrAAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAEklEQVQI12P4//8/EwMDw1DHAHbcA2BrFoyQAAAAAElFTkSuQmCC" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Orders" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@389a2386" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="198df482-7d95-4213-83f5-d010320e916c">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="3" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Top" axis.x.title.show="false" axis.y.title="" splitcharts="true" limititems="false" showlegend="true" lockyaxis="true" showlabels="true">
+          <legendcomposition count="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="138865ed-59e0-4152-8f66-4f7f4c1e603f" groupingcriterion="Application" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="c316ea39-99a6-3cb5-8eee-6f41066d4bad" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="BTSP1" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="€" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(33,170,222,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="138865ed-59e0-4152-8f66-4f7f4c1e603f" groupingcriterion="Application" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="dbed8e34-1571-3a74-b542-0325fd275fab" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="BTSP1" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="US" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="138865ed-59e0-4152-8f66-4f7f4c1e603f" groupingcriterion="Application" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="dfd83d02-575e-38fc-9551-2d1bd66cfa4d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="BTSP1" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="$" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="138865ed-59e0-4152-8f66-4f7f4c1e603f" groupingcriterion="Application" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="e668fcaa-d32a-3786-b88e-1063aafa3c8c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="BTSP1" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="£" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(74,103,232,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="Application" colorinheritancemode="parent" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="138865ed-59e0-4152-8f66-4f7f4c1e603f" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="BTSP1" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="Order" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="138865ed-59e0-4152-8f66-4f7f4c1e603f" groupingcriterion="Application" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="2adc3fc1-b12c-368e-96ea-4bf68ead25b0" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="BTSP1" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(133,20,20,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="138865ed-59e0-4152-8f66-4f7f4c1e603f" groupingcriterion="Application" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="348748c1-b4e2-398c-9785-629da8e695b3" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="BTSP1" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="count" name="Order - PurePath Response Time" groupingvalue="" overridesource="false" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="Backoffice" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(74,103,232,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="138865ed-59e0-4152-8f66-4f7f4c1e603f" groupingcriterion="Application" aggregationtype="Count" rate="10s" sourcetype="MEASURE" id="363fdf5c-204d-315c-b0bc-81a90ca76ceb" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" groupingcriterion2="BTSP1" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="Order - PurePath Response Time" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) order currency" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="Order (PurePath Response Time;PurePaths;PurePath Response Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="USD" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="Order" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="Tag" splittag="(y) order currency" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@3bde338f" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="29bce246-39b4-4be2-81e1-409916203784" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="8" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="12" />
+      <image offset="-1" length="212">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAAEAAAB4CAIAAAC8Wg/XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QgODC8ErrCcswAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAFElEQVQY02P4//8/EwMDwygenhgAdcAD7FugOGYAAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Conversion Rate / Bounce Rate" locationascomparesource="false" sessionid="y_Production" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@7b6ab8ce" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="38f08974-5aa6-433e-b00f-dd4f17d499e6">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="10" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 72h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="5min" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Bottom" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" showlegend="false" lockyaxis="false" showlabels="true">
+          <legendcomposition agent="true" measure="true" host="true" splittings="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Production" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="4cfe36c8-285c-4757-b02d-3cede0bc5476" groupingcriterion="Application" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="2d75b3d0-0a5d-3ced-85e0-7ae11c47c792" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="EndUserVisitMeasure" fetchbaseline="false" unit="percent" name="Conversion Rate for &quot;(y) order creation&quot;" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Conversion Rate for &quot;(y) order creation&quot;" agentname="-" metricsimpledisplayname="Conversion Count" agenthost="-" metrickeyid="Conversion Count" keyid="Conversion Rate for &quot;(y) order creation&quot;" metricgroupkey="Visits" collector="" measuretype="EndUserVisitMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(177,78,207,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="Application" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="45623088-e868-4aee-921b-dbc683a520ee" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="EndUserVisitMeasure" fetchbaseline="false" unit="percent" name="Bounce Rate" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Bounce Rate" agentname="" metricsimpledisplayname="Bounce Count" agenthost="" metrickeyid="Bounce Count" keyid="Bounce Rate" metricgroupkey="Visits" collector="" measuretype="EndUserVisitMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(71,209,193,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Production" groupingcriterion="Application" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="4cfe36c8-285c-4757-b02d-3cede0bc5476" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="EndUserVisitMeasure" fetchbaseline="false" unit="percent" name="Conversion Rate for &quot;(y) order creation&quot;" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="" parentkeyid="Conversion Rate for &quot;(y) order creation&quot;" agentname="" metricsimpledisplayname="Conversion Count" agenthost="" metrickeyid="Conversion Count" keyid="Conversion Rate for &quot;(y) order creation&quot;" metricgroupkey="Visits" collector="" measuretype="EndUserVisitMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Production" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Production" parentid="45623088-e868-4aee-921b-dbc683a520ee" groupingcriterion="Application" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="5ed9557f-3b5e-3ed2-9a6c-bb72da5a1862" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="EndUserVisitMeasure" fetchbaseline="false" unit="percent" name="Bounce Rate" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="percent">
+            <lightweightuniquemeasureidentifier systemid="y_Production" application="B2C" parentkeyid="Bounce Rate" agentname="-" metricsimpledisplayname="Bounce Count" agenthost="-" metrickeyid="Bounce Count" keyid="Bounce Rate" metricgroupkey="Visits" collector="" measuretype="EndUserVisitMeasure" />
+            <displaysourceinfo measureunit="percent" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Horizontal" splitmode="Measure" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@575e9057" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="7911a22d-6983-47ee-a0b2-19e65d155fb8" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="8" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="12" />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@7d95dd8" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="7c6d947e-1542-4a9a-a392-50cd12ab8c2e" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="8" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="" style="NORMAL" height="12" />
+      <image offset="-1" length="212">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAAEAAAB4CAIAAAC8Wg/XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QgODC8ErrCcswAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAFElEQVQY02P4//8/EwMDwygenhgAdcAD7FugOGYAAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>

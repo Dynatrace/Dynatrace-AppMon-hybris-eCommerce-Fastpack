@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="7.0.5.1020" date="8/29/17 7:27 PM">
+  <dashboardconfig memento.version="7.0.5.1020" suppresssavewarning="false" created="2017-08-29T19:27:21+0000" sessiontype="live" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" modifiedbyname="admin" locationascomparesource="false" sessionid="y_Staging" opendrilldowninnewdashboard="true" groupname="" autoreplacesession="false" revision="0000015e-2f76-bb9c-ab7f-e1dedf7e889d" locationassource="true" localizationenabled="false" name="y_Staging - [y] external webrequests" authorname="admin" modified="2017-08-29T19:27:44+0000" id="c124b710-35fc-4f1d-ad07-aff3233b1922">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="ALL" patternstring="" type="applications" matchmode="contains">
+        <applicationmetadata name="Default Application" isdefault="true" />
+      </criterion>
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" matchpattern="" assignees="" type="incident" matchstring="contains" rulesmode="ALL" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,MISSING,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,LOAD,WEB_API,EXTERNAL" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe type="Last 24h" />
+      </criterion>
+      <criterion useendtimefortimeframefilter="false" type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+    <designconfig autoscroll="false" namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="38281826-48a7-4745-8f1d-a334eeeb26bc" folderid="org.eclipse.ui.internal.ViewStack@5f1d9dea" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="false" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="RIGHT" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="1a9d9a9a-143b-44fb-b6f7-265caef77ba4" folderid="org.eclipse.ui.internal.ViewStack@5ebdcddb" relatedfolderid="org.eclipse.ui.internal.ViewStack@5f1d9dea" ratio="0.75">
+        <designconfig namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="297e5f0f-b67d-4ae1-b4cc-2bc0a1975f71" folderid="folder" relatedfolderid="org.eclipse.ui.internal.ViewStack@5f1d9dea" ratio="0.25">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="RIGHT" portletconfigorder="4bad5789-3e73-44de-8c52-b3abfbe810b2" folderid="org.eclipse.ui.internal.ViewStack@2e202224" relatedfolderid="folder" ratio="0.4996624">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="10" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+      <portletfolder selectionindex="0" relationtype="BOTTOM" portletconfigorder="e9578d15-9520-4197-84f2-ae7b3b4b5626" folderid="org.eclipse.ui.internal.ViewStack@3839ced4" relatedfolderid="org.eclipse.ui.internal.ViewStack@5f1d9dea" ratio="0.5">
+        <designconfig namefontsize="12" dashletheight="0" dashletwidth="0" descriptionshow="false" headertype="CUSTOM" nameshow="true" descriptionfontstyle="NORMAL" namealignment="LEFT" namefontstyle="BOLD" descriptionfontsize="0" inherited="false" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@3839ced4" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="e9578d15-9520-4197-84f2-ae7b3b4b5626" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="External Webrequest Usage" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" folderid="org.eclipse.ui.internal.ViewStack@5ebdcddb" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="stretchBoth" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="1a9d9a9a-143b-44fb-b6f7-265caef77ba4" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="2" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="1036">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAoAAAAAFCAYAAADVL11hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDgUEQHUCxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAACbElEQVRo3u2ZXU4DMQyEbS7HbTgMt+FyOzzAQxX553PaggSxhES23djjOPbYdXv7kB05cuQvir7/uv/NzK5lreQdge/R/azREe1RPdfNZwT/7TOKmfigwh/pn75nDRaKufMBtesyMw/8fw3OmmKYYL42/FjZZk2s+oI58t91B74Oa3VXLLCNnHsUq/6AfGEPwrirh+Yumh/onTKQo77W769P52Yvp0YeOfJvxAuiePudbl3t1enyRPeaNOkea/L2AJOKfTzxgYG1J3srsDGyxxcbMv9WegR8G+FWoF8DPJktDt4ROGMDxZ7incQuKbqTWI3wZmduzb707kXnpo0coSRWaXwbiJsovjMSRc+7ygVWNI+3etToEswRXfypuN9Pl0MAjxz5XxPBbk0Tn0BypQVxJWMOikhUSG0hNtrwCfGDmgKdFf2Jn+4hw1nBjIruhMhURHLSWJBCnsVFVdi98bs2cdICr42GiDZIpKlxEKsakM6uOVBxRtmdnBBdGzxbbRY8Dx80hyQ/rn7WZpN7COCRI0eeKqSodcmSTAJVFBaaoElXX9koWEQJdt+cfOwme0oUdya8FUnNsPvGVCY7S234RYVuh8WW+MChD2WzpqcjfF2DpAS3GjKWTWi98XPmD09IjjXEfNLwaBj3UZ5wm01CKUkjPnBAbmW/RAQPATxy5G/KNNE5nBQ4fL8rKGqmG9ogT0oIArVbDclziNMSotNNX+6dUGkzHjT4XAUBmfy0ackZZ1MsMgGtpoyPnOCpIMVZzE6aEB+SMRpP9I7SBk+wodPQn3QPDfNhNdF00GR40xRNckMUGz9OBD8BNTvgGU6Djb8AAAAASUVORK5CYII=" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Time Spent on External Webrequests per Transaction" locationascomparesource="false" sessionid="y_Staging" usedashboardsource="true" folderid="folder" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="297e5f0f-b67d-4ae1-b4cc-2bc0a1975f71">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains">
+          <applicationmetadata name="Default Application" isdefault="true" />
+        </criterion>
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 24h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="true" title="" resolution="5min" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="LineChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="80" legendposition="Left" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" showlegend="true" lockyaxis="false" showlabels="true">
+          <legendcomposition aggregation="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc5232e-14d3-4996-a712-5dd617899f4c" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="8000b627-2aff-30fe-bc52-cc43b752c13d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="my.eu1.fredhopperservices.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="27ca6fbf-3ca4-4952-a024-0c43e2281eef" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="8322e9c0-404a-3307-ae04-3fb117eb6657" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ws5.responsys.net" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="3bd5cc87-71ab-4c90-8543-d344ffbd2fc6" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="995941c7-ed89-3dbf-9e0a-7495b28c94c4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="localhost:8983" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="9fc5232e-14d3-4996-a712-5dd617899f4c" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(0,0,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="6f174933-62ae-43be-9cfb-fc681ab71602" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="a3c6e012-ca7e-35d6-9034-5276b4408060" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ws5.responsys.net" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc5232e-14d3-4996-a712-5dd617899f4c" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="a7bc49d7-276c-3c57-8807-fa4c289ed2ba" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="localhost:8983" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="27ca6fbf-3ca4-4952-a024-0c43e2281eef" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="a8ebed72-439b-3d41-9b24-513078e7b540" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="localhost:8983" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="27ca6fbf-3ca4-4952-a024-0c43e2281eef" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="bd094909-f43c-3f5e-a6d4-9becf9f97f4a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="query.published.live1.fas.eu1.fredhopperservices.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="27ca6fbf-3ca4-4952-a024-0c43e2281eef" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="c25eceb8-9390-3e98-b87e-1d527569f47c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="my.eu1.fredhopperservices.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(0,0,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="6f174933-62ae-43be-9cfb-fc681ab71602" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="c70fc392-0b8b-3339-8ea4-6862b9cbd55f" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="10.47.0.253:7001" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="3bd5cc87-71ab-4c90-8543-d344ffbd2fc6" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="cadf13fc-5af5-3f35-ae37-182e0c4b42cd" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ws5.responsys.net" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(0,0,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="6f174933-62ae-43be-9cfb-fc681ab71602" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="de728910-6894-3d5d-8eae-c1931fbe1656" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="localhost:8983" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc5232e-14d3-4996-a712-5dd617899f4c" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="ebdb65fd-5055-39be-b890-13d8a4e2cc34" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="query.published.live1.fas.eu1.fredhopperservices.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="3bd5cc87-71ab-4c90-8543-d344ffbd2fc6" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="ed0758bb-c051-3524-87c0-457adf310050" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="10.47.0.253:7001" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="27ca6fbf-3ca4-4952-a024-0c43e2281eef" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="122c9ea1-10c6-3bb0-96ca-6a975aa4b50c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="taxcalc.mts.sabrix.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc5232e-14d3-4996-a712-5dd617899f4c" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="141cd542-44bf-3e0d-a28d-374fac9f1fdc" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="10.47.0.253:7001" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="27ca6fbf-3ca4-4952-a024-0c43e2281eef" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="1438a56f-fcf7-32c2-8b9d-9f006cbd66bb" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="10.47.0.253:7001" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="27ca6fbf-3ca4-4952-a024-0c43e2281eef" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="3" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="3bd5cc87-71ab-4c90-8543-d344ffbd2fc6" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc5232e-14d3-4996-a712-5dd617899f4c" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="41a411ac-99f8-3fbb-ba23-022c9270b5bd" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="taxcalc.mts.sabrix.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(0,0,0,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="6f174933-62ae-43be-9cfb-fc681ab71602" groupingcriterion="BTSP1" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="484bdece-b2c9-31ca-8d3d-f5eb58ef6bf6" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="taxcalc.mts.sabrix.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="3bd5cc87-71ab-4c90-8543-d344ffbd2fc6" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="65fb2af5-64e2-3f25-a387-966fdae3c36f" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="query.published.live1.fas.eu1.fredhopperservices.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="9fc5232e-14d3-4996-a712-5dd617899f4c" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="6a4ff2f1-bd3c-3d4d-b8cc-5656794c053c" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ws5.responsys.net" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="3bd5cc87-71ab-4c90-8543-d344ffbd2fc6" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="6bb48897-027f-300b-a119-fa29ad504ff5" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="taxcalc.mts.sabrix.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(0,0,0,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Pct" rate="10s" sourcetype="MEASURE" pctparam="90" id="6f174933-62ae-43be-9cfb-fc681ab71602" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="4" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="ms" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="3bd5cc87-71ab-4c90-8543-d344ffbd2fc6" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="71c639e6-f99c-340e-a9d4-9a22722129ea" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="ms" name="External Webrequests - (y) execute time of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="ms">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execute time of http client;Methods;Time)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execute time of http client;Methods;Time)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="my.eu1.fredhopperservices.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="ms" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Vertical" splitmode="Tag" splittag="(y) external webrequest host" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="[Help for this Dashboard|https://community.dynatrace.com/community/display/EVAL/hybris_fastpack_dashboards#hybris_fastpack_dashboards-external_webrequests]" folderid="org.eclipse.ui.internal.ViewStack@5f1d9dea" com.dynatrace.diagnostics.portlets.text.textportletconfig.alignment="LEFT" addfilterinfo="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.wallpapercolor="RGB(255,255,255,255)" invertcolors="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.backgroundstyle="topLeft" ismaster="false" com.dynatrace.diagnostics.portlets.text.textportletconfig.defaultforegroundcolor="RGB(0,0,0,255)" typeid="com.dynatrace.diagnostics.portlets.text.Text" id="38281826-48a7-4745-8f1d-a334eeeb26bc" usespecificautorefresh="false" heightmode="UseBackgroundImageHeight" locationascomparesource="false" usedashboardsource="true" com.dynatrace.diagnostics.portlets.text.textportletconfig.text="" locationassource="true" offerthresholdcolors="false" name="" thresholdcolors="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <font name="Lucida Grande" style="NORMAL" height="12" />
+      <image offset="-1" length="9008">
+        <chunk offset="0" data="iVBORw0KGgoAAAANSUhEUgAAAU8AAAAwCAYAAACRzvhSAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AELDS4K0/ts8gAAGfFJREFUeNrtnXl8XMWV7791b2/qTa1dsmXLkm0ZMDYGO9isgRBig9niLAOZbEBCEsCeBSYzefPmPfOZSWaGzCeTyBgyhhDC5AUGCCFstgIEAw4YMGBjvFu2te9Sqxf1em+9P2671S3Jlgw2EFO/z0e63Xc5VXX61u+eOudUXVBQUFBQUFBQUFBQUFBQUFBQUFBQOHkg8r6tarwLuBYoUar5xGItDUtvVWpQUJgseVrEeYtSiYIiUAWFiaHlfL5WqUNB3QsKCsdOnmqorqDuBQWF90GeCgoKCgqThE2p4GMMmfknwPonR/aLnG3usdzjY2SJsfsVFBQUeZ5cxCnziU6aI99F5kOWODPbvGskOSdlNqP2KSgoKPI86SAsa9LvslHmteOwCZw2HZcucNh09vdG6QglM4QpshZqld/B7DI3CUOSSJsk0ibJlEl/NEkwboBU1qeCgiLPkxx2XXD7xTV8cUEFTpuG06bjsIFA8L+e2se9m9tz2RaQXH5aGf96xSxAkDBMkoZJMm3y+LYeVm9oImVIZXkqKCjyPLmH7dMDBVw1r5w55R4kMkt5KUOi6+M5NSW6Bj6Xjl3XcihVcOXpZfzy9Xb298WUbhUUFHme1ON2zprmp67EhQAGYmkO9sdIpCXRRIr2oURmqC7yLM+OoSQb9wfxOXUcukZtSQHFbhszSwo4uybA/r64Uq2CwodPnqMDDtLyoeVGesHq0Lm+uDwRIu/y7HGRM/yU4+wbry6jR6B51Run7ImGq7nljomtTOJaIfLrlquPY7A4AXRNcPZ0P26HDYnkwTc6+M8Xm4mlJcm0wXDKzOjqcH2t8tfv7OWlfQM47Boum8ZffXo6f3txDU67xlnVPh5+uxPTHK0nBQWFE0eeOWkzuiYIFNhw2QRpE0LxFPGUzOPCw9FdAQghEICJROaeIEaOj1xolWFmheXl5IziQokuNEuqFEhhZs/XcqLLpmQSgRKJEIIF1V6K3XY6Qwl2dUUyEsSklbRgqo9Kv4MtLSH6IsljJCcJwirR77JzRrUPAUQSBq80BWkbSuT/HkKMicAbUhJOGJBMA/DKgSA3nVuNz2XjrGl+Am4HA5GkuvMVFD408sx06oXT/KyYX855tcUUuW3EUgZNfTFeaQqyflcvzYOJHDtPsOKMMi6ZUwwSntvdzxPbe0e8dxLOqwtw9fxydCGQAgxDEoqnOdAX49VDAxwaSIxPQBKmF7u4YXE1HqfOszt6eWn/ACYQKLBz45JqphY6ebstxP+800UqLSdsYrHbxr8sn8Xi6X5+/mo7q9fvJ23KSXCeZfWdUuFhzRdOYf4UL2s3tbJ6fRPJSZQ7nnVc5rUzo7gABPRGU+zujuY/RI5ozYrMb2U9RPZ0R+kJp/C7bMwodlHutTEQPaxTZXUqKHwow/bz64r44fJZnFtbCAgSaRNNEyya7ufz88vwujQaXmolaVjDVo9L47qzKrlmfjkCKPM6eG7PIJGkke3n86f6uPWCadh1DSlH7NJU2uRPh4b4jxcO8Yc9/TkW7UiHL/U4+Pa5Uylx2+kKJdjYNAhSUmDX+ctFlcyr8vLw2108trWLVN64nhF3Q96wXFLqsRMosOOyafmuAEYN6cd4BSTFbp36cjcep860Ihc2TZAUMn8Yn+uyGOMSOCxUMjXgpMzjAAltwTjdkUSWqB02HSFAE4JYysg+qJy2ESs8aZggoSeSpC0YZ2ZZAUVuG1P8LnZ3Dx/RmFdQUDjO5Om06Xx1URXn1RVhGCb/9Wobz+8bwOfQObeukPoyD683hyzizGBOuYdF0wuzrrUzq33UljjZ3hnNk61rgmTa5LFtPbQH49SWuLjy9DIumV1EKi15rzNCRyiR4yMdsb6E0NA0kccDAtC1zH4BoIEw8lkrS2oi89UiUiGE5UbICNQ0gZRY7gYp8ghTCJCYCGmVv7UtzJ3PH6S+3Mfv3u0mljJzhuMi476QmFIeiUWz9Z9a6KLArgPQOhgnkrDqX+5z8DcX1zKnvIBowqDh5Va2tAxx3cJKvnxmOaYJf9w3wP2bOxhOGUQSBs2DMaAIt93G1IAVgJICPtYMumr9t0H8C1LsZM3Si1VXVfizJc8Sj51F0/yAyd6+YRpebs6mvTyytYvqgJOD/fE8S2pxjZ9Kv4OeSBKnrjG10MXiGQG2d0bGdNpoyuAXm9t4pWmAQIEDXROsmF/Bkhl+6is8dAzF84eqIt9mG9clmtk6dMlplT7cDp22YJxDA/EsccwpdzM14CJtSPb2jZB6wGXjCwsqKPNY9f/TgaAV4ZaCEo/Ogmo/XqeNLS0hlswopMCu8cT2Hl4+MERHOEVPJIHIJBiVeZ0srvFTV1KAEIKWwThb20IcGojnJCCRx8pTC51omuUnbgnGrSCPFESTJjOKXFw9twwJ7OiKsKsrzJXzyrhibimGKXj1YDBD3AJTQlswgWla6qsOOLPxvI+16SnFf2JyAWuXvqO6qcJH9xBvlDQsFR+IPKWUmJmuPrXQxRcXlPPUjn4O9ccYThojxCkt/6jHqXPRrGJsmuDFfUEqfQ4+PSvAeXVF/PebHSRG+QIFwipDQjCWpGUwjiFNHDYNv1OfMOptEwKHrmFKiV23hr8Z25IKfwE/vKKehdN8PPx2F7c9sYeUYeJ12PmnZXVcMbeMV5qC/N2Te7MW5efnl/MXZ1Xg0DXSpmT9rl7uWH+A7Z1RLplTwpovnMJw0mBbR4TPzC7i7bYwu7oj3HnVbBZO9/PjFw6xrT1CXYmL1ctmctW8Mlw2DcO0AlhvNAe55bFdGV9mfrsEgnKfE00ITGnSOZSwrFUB0aTBi/sHuGZ+GQ5dcMHMIt7tCHNOjeVK6QkneeVAEJnxw0oJnaEEhjTRNY1Kn8OyrKV5VH1+5BDCo4hT4aSwPAeGU7zeHOKsaj9+l87/XTaTG5dUs7U9zKYDQZ58r4+D/dGsdTiztICF0/ykDMlL+weYVermwlkBFk/3M72ogH29w/nknBlq2zSdMq+NupICNAHhRJqecCInWj52qKkJwdXzyplZ5kZKKLBrTAs4s9TQORRjT3eES+cUc+HMIqYUOmkeiFFXWsC5tQHcDo03W4YYiI5EoR02jed296EJwdJTS7lmXgWtgwn+/sn9pAyJ12mj1OPA49R5qy3EMzv6GBhOU+qx47bpGbcBfGlBBX9xZiWGlNy/uZMDfcOcVukhkTboHBo/GCaEJOCyIYTANAXBWCrPvfrqwSAtgzFmlbpZPD2A82KNqYVOBPDaoSA7uyKMxOQkg8MpZMa1UOxxoAkwPmjAaNWGIFL8COTXQHhB7sQ0vsfa5S3Zc1Y2fh/kdwADeI/E8M2sW9GVfaKb8no0fgDCjZSNbN/8HU5d5MNuH8yeg3yJhmUXWfKe/QpCux0pioA0yP9HuOtfeeCbiaPK3LjaYGVjCCH/AcmtCOEDDKT5G8Ldd+Cr/D6IryNwIeVrpIZv4ecreq0yf+2D0rsQXIAUAmQThnErdy/fnaePlY39CPkLENchSYN8CvbezppVyTx9CG4GnCB3kk7cxN1XN01KX6PxUbdnMnJu+L0Xr2MdUixGEMWUP0XTfjHGkjtau99vOyejz6O18XtPB/LuQylfYM2yz+bxzmT7SiJt8qvXO3j6vT4SaRO7rlFXUsCK+RXceVU9P1tRz+KaQNZyO7c2wJRCJ72RJG+1hni7LUQ8ZTKtyMXCaf7R0Rb8Tp3bL67hga+cxoNfPZ3LTi0BBM/vGWBXz/BRLU8h4OwaP9cvnsINS6Zw3cJK/C57tohUxg8YiqWpLS5gUbUfgcZ5tUVM8Tvpi6Z4cd8gRs6iRc/s6OPGh3dyy2O7+NPBIACfm1PC9CInacOy2oZTJv/+3EFW3LeNeza1kj6cQJlJzbJpgtllHnQN+qJJGnf3snZTC999dBf/+9n9DMXTo4JSGR+wsII/h9M346lcK1Gwv3eYl5usOgXcOufXBtCEJJ4y2bCrz0pVkiP6snJCrfQtt/04rUIohQ84l3DXItYsrQU2oesPZo/f8sxykGWw91TWLKsH86e43OtGDTcuJ55aQOd9NUj5CBtXG9xzRTDbuRqWiixxrtpwI0K7nHjqUtYsrSWRXAJiNr7K+yaUae33IcXnMGPn07B0GvGh+QgxG1/VNqCS7a+dQud9NUAXdnfDiLzSi8FspGFZHWuW1iLNddj0+8bxERUDft59bQZd9820ds6+M8eH+3WQZxOKnUHD0ioM4wfozq8dk77yy/to2zMZOW7XaqS2lTXLZhLq+hRCu2pMORO1+/22c3L335HbOPo+HEWcx0SeAFtah7j1t7u45bFd/OqNTra2h0kZJjZNcvlppdx4TjUFdh2XTXDhzCLsuqAjlEDXBYm0ZGA4hduu8+mZRdh1Pd8E1gWXnlLCl86q5MKZxSQMye/e7WXNK60MxdJHrZcp4Q97BrhjwwFWb2jiJy82W9ZqDtluPjTE1o4QXpfGRbOK8bk0LphZiE0XbGkZYntXeIylHUmYdIeSNPfHAEmp10Gp15H1UyYNg3c7IwzG0kSTJqPTfwxT0jYYR0qY4nfy71fVs+7aU/n2kqlUeJ1HsftENk/1sCtjxJSUxFMGz+7sIxQ3EEJgt2lIBO91RXlx/8AoNpaYpok4nLEqxKhg1fsdVqMhUv+Ytfq2b74TOJ3vPW09QTX9G7D3H7OWyprLX0bSxXefqMnKSMX/jnVXxnj0UZO7LvvD0cma65B7b2Ddlf0A1nbP9Qguy5Y5kcxU7K9Y+/kB6/ovhzCM2xDMITW8mo2rDR591CQx/CMQn8te07DsSdZc/pvs9+5fPgZi0fg3YuKOUXJyVuTXvkY08U0euGYIgLXL32DNstUjhyehr9H4KNszGTlCfoo1r/0YwLpPjNVjypjUffI+2jlZfR71NztOw/bDSdltwQQPvN7BQ1u6qCp0csOSam7/TA1OXXBebSFVfgcFDo1F0/0AzK308OBfzkVDUO5zALBoup9Kn4PW4Mg861jS5L/f7OBA/zCxlKRlMMbmQ0F6IqkJfXNSSv64t5+fbGzBlJIpfidLTy2j0l+QvaovmuKl/YNcUBfgUzV+FtcUsmiaH8OUvLBngOBwmhKPfbRgJCK7mIZN13DoWo5nMn9600jCv4W0CY9u7aK+3M3nTilhRrGLWSVVfHlBJZsPDfGDp/fz6sHgmGXkJJK0KTMqF+ja6IkCgleaBni9eYhL55SCkEgJ63f20ToQJ3/dTqveYPk/Lav5OC1NF+rbn/28cbXB/MYmbNoMYCtCzIU5CVY15l/jsP8GaAbg59c0HwNZJ2lYlZ/dv2ZVkpUb9mTLnEjm6GNrl7ewqpG8od66FV2saizOfr/12dMR+jpgIQLHUet419Wdo+RU5NwfKe6/OnIUH+/E+vo4tWdychKweuQJnTD24NKPvd3vp52T1edRf7PjRZ4CvA6N4ZSBKTUSBhwaiPG7bV18bVEl04pc2DWBXRecMyPAtIDLiqInDHwuOwIIxw2K3Rr1ZR4WTvPnk2fK4KG3u3i5aXCkc8uJEsLzud2UlqUm5diQuylNntszwLfOqeaUCg/fObeaqQEX7aFEdlg+XqheCChw6AggkTKIJNL4XTaOHNvPx46uCKt+u5vTq7ycVuHhwllFrDijnHNrC1k+t4TXm4MYZv41hoThlDX01gR4nPqoYiT90RS/397DhTMDOG0avZEUrxwYJC3H+oR9zpH6RpJGvn4+CHyhsZJM7bCJnKBhs5bXeT6Qm+AIZrI44pHjA02/GyP9Q6K9z+f5Vo9/esHx1deJbs9k5IjJ/DInqt0nXp/ahJQkrT+3Q2fVp2u4/TO1XFJfzPwpXpbMCHDtwioq/VZwZnfPMKGEwQV11pB9W0eYGx/aydX3vsPV977D95/cS180hcehsWRGIZoQo7q5ObLi+WHrSRydMMmf8JnXm+SoOebbOyJsaQ3hddq4dE4JTh1ePZAJsOSu0g5Ueh1U+p3MrfIwp9yNBPb2DtORnSIpj9C7ZeazRCCZW+VlRnEBrzcPcc+rbfzouYMc7I8hhCBQYLesVzmKgKWkfziFKSVCQKnHPmLRSpG9K5/Z0cPmQ0EkglKvg/PqAhkrdeTBI5CUeq3rTaA3krTIU37AYTuAqJud/XzRah3kTDSzNbOnjVWLTjuO0XcHKxvyLZyVDQ4kc0ibh04Y2UgpWbv8mSxB3PSI/32Sv4Mbfu89yhnHV18nvD2TkCNxweqRHmzT6j/Edp9wfU7s88w0/ZwZfm65cDr/vHwmj1w/nye/vYDHbzyDv76oBrsOXeE4j23rpqjAzpKaQgSCN5tDPLennzebh3ijZYind/SxrzcKAs6vC1DhdWQsxsOUM978c3FE5hQZS/Mwx+dFkKSJlGZOwpIgkkjzwp4B0oaJ12kjaUhe3DfIcErmE7KUXHZaKY9eP5/7rzudRdN8DCcNHt/WQ3ckmZnFI5HSJH92EJn91p/XaeMfLpnBw9+Yxz1fPpW//2wtN58/jekBF7GUyZstoTFW5+E6dIcTmJm1RqoLXeh5xVgE2hJM8ujWHpJpA11IvnhGBfOn+DLTRUd8nFMLXeiawJSSjqEEJvL4ZChJ2z9nCW3eObchxV7WXN6XMfXvRdrv4ruPlwHwvSeqWbmhYQwBTr6whxH193PTU9bL6W56qgRRfz+wgXuuCJ6wHiJIc+tTcwD40pc0nP6/fZ/k+Wu8zl/yzScKLeJ/+lPcuv7/5Djuj7O+TnB7JiNHijdZufi27INOt90xTsDixLT7+Mnt4ub1nzl28sxZDCSSMNjUNEDnUAKnLphSaE0fjCbSbDoQ5J+eOcBDWzqZU+7GbrNmxWw6EMzM7RaZIEySl5sG6Q4nKfHYmVFaQDxl0htJ0BtJZFb7yZw/URJ3JtG7J5KkJ5LMJoVbfmpJbyRJbyRFcDiVtcIksHFfP4cGrADQgf4Ymw4MZkUW2HWiiTQdoQRb28PUFLuYU+6mfSjJzza28qs32i2/oSnpjiTpiaRy5r5bDN4TSdIbSRBLGrjtGn3RNKaEL55RwepldXzj7Cq6wkl+9lILv93ajcTMEl3WapXQHkxgmBJNiMxUT23ch8qT7/Xy/J4BBmNpKnwOLqkvttbyzLTZrltpW0JkAljBhPXAOT4dcQeifjsrNzQjuBSMr474ki57CmE+jd29hZWNHdhdT4P5VF7qzrGgYdkvkOazuOzPsbLxIE7HZiT7CXd964Raaqb5fYTjEVY1tlL1rQMI9Pcl565lDyDly/hc21nV2Imw/Rgt/ZsTpq8T3Z7JyBmOr0ZwFis3NCHqtyPllrF6OUHtPl5ypbwZXfs1qxqfO7JZN57fY9R7dHxOG7NKC5hZWkCxx07ahLbBODu7opkVfySVfifTi5xICbu6o9lphYeJuKrQlc3B3N0zjNOmUVvswpSSnV3RTFoNkwhoSJw2jdOrvOhC0DIYoyuctPyEGsyf4sOhCwZjKfb1xrKmqdtp4/EbF3BJfRHrXm3lbx7fm51S6tAF86q8CCFoHYxTX+6hzGunbSjO1rawNV8cgc+pc2qFBxPY3ZVpo7BSjOZN8eKwabQHE7QPxXDadOrL3Myp8FLithFLm+zuirKtPUzCMDJPATEqaCRZXBPgyW+dSanXztttIa5Y9w7doRTZNTxzls+bW+mh3OfEMCWDw2l2dIWtB5GAcq+Tp246g0XT/fRH01x17ztsPjg08XJ0R5hVkXe/THSOgkIubvovG86aGGuW2U+G5tgm8DNlZwwBhBMG77RHeKc9ktPRRa6ZTlcoQVfocPJ37jx0a9MZSo4khwtryN0byZDCuItlHIk7rfSnt1rDI2tpZjICTCnZ2h4eWbYts3XaNFbML2NelYdwLE3jrv7MIiZWXZIGvNUWzpbdHR7MWZNUZAx1a8m3N1pCo+opMEzJ1vZIzvnW4inbO6Ns74jkr/fJKN/uqLZ1DCXoDMcp9dqp9DupLnLRHc7V64ioHZ1RdnQN58vOyJwacFLld1mLhIQzv00eUSv+U/iQYK+qBw6eLM2ZpM/zSJEbMcG5YvzzswtviPyV0LM5iJPo0GIUyedus6Q0sr/K7+DfrpzND6+YTZnHzm/f7WbjvsFRr+8dJViM1w4x6u9I5TP+OWNkjNc2yUAslZmFZa30tGCKL5MaJbOulExu1DjZCFkPMmdO9VLqsSMR7OkZpi+aAqTqyAonHjevP4+VGz5vfX7Eg+74NwT3nyzN+8S8hiOaNCl220imTe7e1Mbdm9oIxY2PWS1HLNJowgooXTOvDKcuuPL0UmIpawX5lGGyrT1MWzAx5trqgJMzpvqw6xoFdp3lc8tw2KxUrTdbhogk0kd5uCkoHEfo/e8iShtYueGnCFEA8n7izf9xsjTv6D7PkwqSGcUu3A6dpr5hEik5eRfBR0Sgn60v4qGvz6PY48CE7LTQlCG57Ym93PtaG6NnC914zhR+cs2pOPTDASNrGbxgLM1XHnyXxt0DWTfFB/J5Kih8wvGJegHcof74mNdWfHyfZ5J32sK81Rbms/XFaELgyCzQrAnrLZnjPuyFwGkTOPSRDGVTwpa2MG+1RUa5VxQUFBR5HpNl9+dAHIKB4RQPvtFBWzCOXdew6yL7SuGWwfHfgtk6GOfJ7b0IASnDJGVK0obJH/cOZN6ppKCgoIbtx8SZ8s/S4rJWxRd5VRdYuaZjX69k5YXaNJH39hCJ9WK4Y0rvVMN2BQVleX68h+kT28mTegldhlZNSd6rUBQUFE4MNKUCBQUFBUWeCgoKCh86efYrdSioe0FB4djJ82GlDgV1LygoTA75UZRVjXcB1wIlSjWfWKylYemtSg0KCgoKCgoKCgoKCgoKCgoKCgoKCgoKnxz8fwsMofVRp3ulAAAAAElFTkSuQmCC" />
+      </image>
+    </portletconfig>
+    <portletconfig showabsolutevalues="false" usedashboardsourceforcompare="true" usespecificautorefresh="false" sessiontype="live" lastvalue="false" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="Number of External Webrequest Calls per Transaction" locationascomparesource="false" sessionid="y_Staging" usedashboardsource="true" folderid="org.eclipse.ui.internal.ViewStack@2e202224" locationassource="true" addfilterinfo="false" name="" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.chart.Chart" id="4bad5789-3e73-44de-8c52-b3abfbe810b2">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains">
+          <applicationmetadata name="Default Application" isdefault="true" />
+        </criterion>
+        <criterion type="btm" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="timeframe">
+          <timeframe type="Last 24h" />
+        </criterion>
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <inheritancemap />
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="true" />
+      <sashconfig displayoption="CHART" weights="500,500" />
+      <datamodelconfig>
+        <chart axis.x.title="" axis.y.title.show="true" showtooltips="true" bounds.y.enabled="true" showvalues="false" showtitle="false" logxaxis="false" title="" resolution="5min" axis.x.show="true" maxsplitcharts="10" showname="true" bounds.y.lower="0.0" maxdisplayitems="10" zoomable="true" charttype="StackedBarChart" aggregation.absolute="false" showheatfield="false" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="60" legendposition="Right" axis.x.title.show="true" axis.y.title="" splitcharts="true" limititems="false" showlegend="true" lockyaxis="false" showlabels="true">
+          <legendcomposition aggregation="true">
+            <pielabelcomposition unit="true" value="true" />
+          </legendcomposition>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="e4c2d080-e12c-4f2f-b57a-61a560587fb5" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="822e6607-5780-3d99-8319-896687d43f09" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ws5.responsys.net" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="873ce621-7c60-4a9f-8e39-b9a62a11963a" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="2" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="873ce621-7c60-4a9f-8e39-b9a62a11963a" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="8cf06de1-4a33-3ccd-ac01-9629ab762bd4" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="10.47.0.253:7001" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="76dbd6b3-3868-43b5-a559-29b7d76d1b16" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="a4bdd853-176c-389d-9f01-9a19820e1bcc" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ws5.responsys.net" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="76dbd6b3-3868-43b5-a559-29b7d76d1b16" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="da541705-5de7-3ba2-be95-834f42147e17" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="10.47.0.253:7001" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="e4c2d080-e12c-4f2f-b57a-61a560587fb5" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="e4c2d080-e12c-4f2f-b57a-61a560587fb5" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="eaf1756b-1d35-3fc8-ada3-61a7cab91b45" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="10.47.0.253:7001" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="76dbd6b3-3868-43b5-a559-29b7d76d1b16" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="0062a5e8-3a9f-33c7-a22d-f0dee394fc03" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="its-in.elasticera.comnull" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="e4c2d080-e12c-4f2f-b57a-61a560587fb5" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="045c1176-335e-3124-b8e5-43e83f40bfb3" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="localhost:8983" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="e4c2d080-e12c-4f2f-b57a-61a560587fb5" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="06ac48ac-a8f4-3413-8e30-c98278342627" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="taxcalc.mts.sabrix.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="873ce621-7c60-4a9f-8e39-b9a62a11963a" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="0a914a6e-8cfe-3213-9854-64c44ce9f69a" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="taxcalc.mts.sabrix.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="873ce621-7c60-4a9f-8e39-b9a62a11963a" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="12292f0c-3da9-39f6-871f-eab38a5c3501" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="its-in.elasticera.comnull" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="873ce621-7c60-4a9f-8e39-b9a62a11963a" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="26d20626-152c-3de0-97c6-b397e3d7fab1" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="localhost:8983" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="76dbd6b3-3868-43b5-a559-29b7d76d1b16" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="2eed7952-e85c-38b3-92ba-5b4e06f24c99" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="taxcalc.mts.sabrix.com" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(242,217,51,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="873ce621-7c60-4a9f-8e39-b9a62a11963a" groupingcriterion="BTSP1" aggregationtype="Avg" rate="10s" sourcetype="MEASURE" id="5a034243-b37d-3760-93d3-ce05259e37be" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="ws5.responsys.net" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(186,42,32,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="e4c2d080-e12c-4f2f-b57a-61a560587fb5" groupingcriterion="BTSP1" aggregationtype="Max" rate="10s" sourcetype="MEASURE" id="5ed73253-968d-34b1-9ccc-ff8445fd7078" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="its-in.elasticera.comnull" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="false" fetchthreshold="false" scale="0" sessionid="y_Staging" groupingcriterion="BTSP1" colorinheritancemode="parent" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="76dbd6b3-3868-43b5-a559-29b7d76d1b16" ratesupported="true" displayrate="10s" visible="false" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="3" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="" metricsimpledisplayname="Value" agenthost="" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure" />
+            <displaysourceinfo measureunit="number" agentname="" agenthost="" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <chartsource systemid="y_Staging" sourcecolor="RGB(90,196,82,255)" dynamicconfig="true" fetchthreshold="false" scale="0" sessionid="y_Staging" parentid="76dbd6b3-3868-43b5-a559-29b7d76d1b16" groupingcriterion="BTSP1" aggregationtype="Min" rate="10s" sourcetype="MEASURE" id="7b8e77a5-8ffa-34e8-b96f-90845eb7cf7d" ratesupported="true" displayrate="10s" visible="true" autounit="false" sessiontype="live" fetch.dynamic.measures="true" autoscale="false" measuretype="TransactionMeasure" fetchbaseline="false" unit="number" name="External Webrequests - (y) execution count of http client" groupingvalue="" overridesource="true" fetchmeasurecolor="false" position="-1" uiunit="number">
+            <tagtolabel>
+              <taglabelentry value="(y) external webrequest host" key="BTSP1" />
+            </tagtolabel>
+            <lightweightuniquemeasureidentifier systemid="y_Staging" application="" parentkeyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" agentname="-" metricsimpledisplayname="Value" agenthost="-" metrickeyid="Value" keyid="External Webrequests ((y) execution count of http client;Methods;Invocation)" metricgroupkey="Business Transaction Results" collector="" measuretype="TransactionMeasure">
+              <tag type="0" value="localhost:8983" key="BTSP1" />
+            </lightweightuniquemeasureidentifier>
+            <displaysourceinfo measureunit="number" agentname="-" agenthost="-" agentgroup="&lt;all-agents&gt;" transactionname="External Webrequests" transactioncontext="Server" measurerate="purepath" />
+          </chartsource>
+          <splitconfig splitlayout="Vertical" splitmode="Tag" splittag="(y) external webrequest host" />
+        </chart>
+        <table structuremode="measureHierarchy" sortcolumn="16" drawcolumn="-1" columnorder="0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19">
+          <column forcevisible="false" hidden="false" width="400" index="0" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="25" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="4" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="50" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="75" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="105" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="50" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="16" sort="Up" />
+          <column forcevisible="false" hidden="true" width="150" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="19" sort="None" />
+        </table>
+        <heatfieldconfig customevents="true" deploymentevents="true" smartmeasure="true" smartserver="true" filterconfirmed="false">
+          <incidentrules />
+        </heatfieldconfig>
+      </datamodelconfig>
+      <chartcolors />
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>
