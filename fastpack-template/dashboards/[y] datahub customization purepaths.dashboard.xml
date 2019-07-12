@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ATTENTION - THIS IS AN AUTOMATICALLY GENERATED FILE -->
+<!-- Manual changes can cause severe problems and system instability -->
+<!-- Apply manual changes only if you have received explicit instructions from Dynatrace Support -->
+<dynatrace version="7.0.2.1010" date="8/22/17 5:17 PM">
+  <dashboardconfig memento.version="7.0.2.1010" suppresssavewarning="false" created="2017-08-22T17:17:07+0200" sessiontype="live" icon="com.dynatrace.diagnostics.portlets/icons/path.png" description="" modifiedbyname="s.beutel" locationascomparesource="false" source="server://ip-172-31-69-178" sessionid="y_Production" opendrilldowninnewdashboard="false" groupname="" autoreplacesession="false" revision="0000015e-0a84-c538-95e5-c86df7c5b6d0" locationassource="false" localizationenabled="false" name="[y] datahub customization purepaths" authorname="s.beutel" modified="2017-08-22T17:17:07+0200" id="ac6ea02b-ce77-4fa8-a236-0796b757a9e7">
+    <reportconfig print.images="true" formatpdf="com.dynatrace.diagnostics.report.velocity.format.pdfrenderer" orientation="portrait" description="" title="" type="PDF" enabled="true" formathtml="com.dynatrace.diagnostics.report.velocity.format.htmlrenderer" lines.per.table="100" pagesize="A4" override="false" optimizeequalcolumns="true" print.legends="true" levels.per.tree="10" />
+    <filter>
+      <criterion type="admfilteranalyzer" />
+      <criterion mode="all" type="agents" completepurepath="true">
+        <textpattern name="agentname" type="contains" enabled="true" />
+        <textpattern name="agenthost" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="and" />
+      <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+      <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+      <criterion type="btm" />
+      <criterion type="casuemdimension" />
+      <criterion type="dbdetails" />
+      <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+      <criterion analyzeserverpath="true" analyzeclienterrors="false" isactive="true" analyzeenduserpath="true" type="enduserpath" />
+      <criterion mode="all" type="hosts" completepurepath="true" />
+      <criterion severitiesmode="all" statesmode="all" matchpattern="" assignees="" type="incident" matchstring="contains" rulesmode="ALL" severities="" states="" />
+      <criterion type="or" />
+      <criterion mode="all" enduser="false" type="purepaths" />
+      <criterion includemeasurename="true" includeplatform="true" includetestname="true" teststatus="FAILED,INVALIDATED,VOLATILE,DEGRADED,IMPROVED,MISSING,passed" type="tests" testcategory="UNIT,BROWSER_TIMER,BROWSER_AUTO_TIMER,PERFORMANCE,WEB_API,EXTERNAL" />
+      <criterion includeplatform="true" type="testsoverview" />
+      <criterion type="threads" enabled="false" filterbyid="false" />
+      <criterion type="timeframe">
+        <timeframe type="Last 30min" />
+      </criterion>
+      <criterion useendtimefortimeframefilter="false" type="visits">
+        <visitidset />
+      </criterion>
+      <criterion type="webpage">
+        <textpattern name="timerName" type="contains" enabled="true" />
+        <textpattern name="pageContext" type="contains" enabled="true" />
+      </criterion>
+      <criterion type="webrequest">
+        <filteruripattern>
+          <stringmatchpattern match="contains" text="" />
+        </filteruripattern>
+        <filterquerypattern>
+          <stringmatchpattern match="contains" text="" />
+        </filterquerypattern>
+      </criterion>
+    </filter>
+    <autorefreshconfig unit="MINUTES" time="1" enabled="false" />
+    <designconfig autoscroll="false" namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" clienttheme="DEFAULT" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" autoadjustfontsizes="false" />
+    <dashboardlayout>
+      <portletfolder selectionindex="0" relationtype="LEFT" portletconfigorder="e111d2fd-1749-4930-bfb3-7373987b2e78, 117f5d94-a2b5-4d09-bcde-390576463889, 2bf1eed9-86cd-4e23-9b19-2da2e058e994, cb11a5b8-87f7-4dc0-bef9-f39a39538ea1" folderid="3f749f4a-494d-432f-b09a-8c7df66a36ad" relatedfolderid="DashboardLayout.blankArea" ratio="0.95">
+        <designconfig namefontsize="10" dashletheight="0" dashletwidth="0" descriptionshow="true" headertype="DEFAULT" nameshow="true" descriptionfontstyle="NORMAL" namealignment="CENTER" namefontstyle="BOLD" descriptionfontsize="8" inherited="true" descriptionfontcolor="128,128,128" descriptionalignment="CENTER" />
+      </portletfolder>
+    </dashboardlayout>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" source="server://ip-172-31-69-178" sessionid="y_Production" folderid="3f749f4a-494d-432f-b09a-8c7df66a36ad" addfilterinfo="false" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.purepath.PurePath" id="cb11a5b8-87f7-4dc0-bef9-f39a39538ea1" displaymode="Base" usespecificautorefresh="false" showdetails="true" sessiontype="live" showhotspots="true" locationascomparesource="false" usedashboardsource="true" locationassource="false" showonlyrelevantsamplingnodes="true" name="DataHubEventListener" showpathtoentrypoint="false" showpurepaths="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
+        <criterion type="and" />
+        <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Datahub 6.4 Customize - DataHubEventListener.handleEvent" />
+        </criterion>
+        <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
+        <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="or" />
+        <criterion mode="all" enduser="false" type="purepaths" />
+        <criterion type="threads" enabled="false" filterbyid="false" />
+        <criterion type="timeframe">
+          <timeframe type="Last 30min" />
+        </criterion>
+        <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern name="timerName" type="contains" enabled="true" />
+          <textpattern name="pageContext" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern match="contains" text="" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern match="contains" text="" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="btm" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig>
+        <table sortcolumn="11" drawcolumn="-1" columnorder="0,1,11,20,21,19,4,3,18,28,5,2,6,7,8,9,10,12,13,14,15,16,17,22,23,24,25,26,27">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="594" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="200" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="60" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="150" index="11" sort="Down" />
+          <column forcevisible="false" hidden="true" width="80" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="20" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="30" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="18" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="24" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="27" sort="None" />
+          <column forcevisible="false" hidden="false" width="200" index="28" sort="None" />
+        </table>
+        <table sortcolumn="9" drawcolumn="-1" columnorder="0,1,2,31,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="230" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="6" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="7" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="8" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="9" sort="Down" />
+          <column forcevisible="false" hidden="false" width="110" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="11" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="13" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="16" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="18" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="19" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="25" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="27" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="28" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="30" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="31" sort="None" />
+        </table>
+        <table sortcolumn="8" drawcolumn="-1" columnorder="0,30,2,3,6,31,32,1,5,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29">
+          <column forcevisible="false" hidden="false" width="940" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="225" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="534" index="2" sort="None" />
+          <column forcevisible="true" hidden="false" width="461" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="20" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="27" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="28" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="20" index="30" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="31" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="32" sort="None" />
+        </table>
+        <table sortcolumn="5" drawcolumn="-1" columnorder="0,1,2,6,3,4,5">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="200" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="160" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="180" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="6" sort="None" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="10000" requiredrilldowndata="true" />
+      <chart axis.x.title="" axis.y.title.show="false" showtooltips="false" bounds.y.enabled="false" showvalues="true" showtitle="true" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="false" maxdisplayitems="10" zoomable="false" charttype="PieChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Right" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
+        <legendcomposition measure="true">
+          <pielabelcomposition unit="true" measure="true" value="true" />
+        </legendcomposition>
+        <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+      </chart>
+      <detailanalyzerparameters showsummarynodes="true" analyzerrecordlimit="-1" requiredrilldowndata="true" showsamples="true">
+        <keysmap />
+      </detailanalyzerparameters>
+      <purepathviewconfiguration mincellheight="3" verticalrulervisible="false" valuerenderset="APIColoring" mappingtype="Value" horizontalrulervisible="false" usecellmapping="true" hierarchyrenderertype="None" legendvisible="true" pathstructurevisible="false" displayvalue="Exec" />
+      <contentconfigmain>
+        <ccontent enabled="both" ratio="0.322" />
+      </contentconfigmain>
+      <contentconfigtop>
+        <ccontent enabled="both" ratio="0.75" />
+      </contentconfigtop>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" source="server://ip-172-31-69-178" sessionid="y_Production" folderid="3f749f4a-494d-432f-b09a-8c7df66a36ad" addfilterinfo="false" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.purepath.PurePath" id="e111d2fd-1749-4930-bfb3-7373987b2e78" displaymode="Base" usespecificautorefresh="false" showdetails="true" sessiontype="live" showhotspots="true" locationascomparesource="false" usedashboardsource="true" locationassource="false" showonlyrelevantsamplingnodes="false" name="CompositionRuleHandler" showpathtoentrypoint="false" showpurepaths="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
+        <criterion type="and" />
+        <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Datahub 6.4 Customize - CompositionRuleHandler.compose" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Datahub 6.4 Customize - CompositionRuleHandler.isApplicable" />
+        </criterion>
+        <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
+        <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="or" />
+        <criterion mode="all" enduser="false" type="purepaths" />
+        <criterion type="threads" enabled="false" filterbyid="false" />
+        <criterion type="timeframe">
+          <timeframe type="Last 30min" />
+        </criterion>
+        <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern name="timerName" type="contains" enabled="true" />
+          <textpattern name="pageContext" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern match="contains" text="" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern match="contains" text="" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="btm" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig>
+        <table sortcolumn="11" drawcolumn="-1" columnorder="0,1,11,20,21,19,4,3,18,28,5,2,6,7,8,9,10,12,13,14,15,16,17,22,23,24,25,26,27">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="594" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="200" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="60" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="150" index="11" sort="Down" />
+          <column forcevisible="false" hidden="true" width="80" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="20" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="30" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="18" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="24" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="27" sort="None" />
+          <column forcevisible="false" hidden="false" width="200" index="28" sort="None" />
+        </table>
+        <table sortcolumn="9" drawcolumn="-1" columnorder="0,1,2,31,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="230" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="6" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="7" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="8" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="9" sort="Down" />
+          <column forcevisible="false" hidden="false" width="110" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="11" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="13" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="16" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="18" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="19" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="25" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="27" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="28" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="30" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="31" sort="None" />
+        </table>
+        <table sortcolumn="8" drawcolumn="-1" columnorder="0,30,2,3,6,31,32,1,5,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29">
+          <column forcevisible="false" hidden="false" width="764" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="180" index="2" sort="None" />
+          <column forcevisible="true" hidden="false" width="262" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="20" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="27" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="28" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="20" index="30" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="31" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="32" sort="None" />
+        </table>
+        <table sortcolumn="5" drawcolumn="-1" columnorder="0,1,2,6,3,4,5">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="200" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="160" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="180" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="6" sort="None" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="10000" requiredrilldowndata="true" />
+      <chart axis.x.title="" axis.y.title.show="false" showtooltips="false" bounds.y.enabled="false" showvalues="true" showtitle="true" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="false" maxdisplayitems="10" zoomable="false" charttype="PieChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Right" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
+        <legendcomposition measure="true">
+          <pielabelcomposition unit="true" measure="true" value="true" />
+        </legendcomposition>
+        <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+      </chart>
+      <detailanalyzerparameters showsummarynodes="true" analyzerrecordlimit="-1" requiredrilldowndata="true" showsamples="true">
+        <keysmap />
+      </detailanalyzerparameters>
+      <purepathviewconfiguration mincellheight="3" verticalrulervisible="false" valuerenderset="APIColoring" mappingtype="Value" horizontalrulervisible="false" usecellmapping="true" hierarchyrenderertype="None" legendvisible="true" pathstructurevisible="false" displayvalue="Exec" />
+      <contentconfigmain>
+        <ccontent enabled="both" ratio="0.395" />
+      </contentconfigmain>
+      <contentconfigtop>
+        <ccontent enabled="both" ratio="0.75" />
+      </contentconfigtop>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" source="server://ip-172-31-69-178" sessionid="y_Production" folderid="3f749f4a-494d-432f-b09a-8c7df66a36ad" addfilterinfo="false" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.purepath.PurePath" id="117f5d94-a2b5-4d09-bcde-390576463889" displaymode="Base" usespecificautorefresh="false" showdetails="true" sessiontype="live" showhotspots="true" locationascomparesource="false" usedashboardsource="true" locationassource="false" showonlyrelevantsamplingnodes="true" name="GroupingHandler" showpathtoentrypoint="false" showpurepaths="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
+        <criterion type="and" />
+        <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Datahub 6.4 Customize - GroupingHandler.isApplicable" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Datahub 6.4 Customize - GroupingHandler.group" />
+        </criterion>
+        <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
+        <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="or" />
+        <criterion mode="all" enduser="false" type="purepaths" />
+        <criterion type="threads" enabled="false" filterbyid="false" />
+        <criterion type="timeframe">
+          <timeframe type="Last 30min" />
+        </criterion>
+        <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern name="timerName" type="contains" enabled="true" />
+          <textpattern name="pageContext" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern match="contains" text="" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern match="contains" text="" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="btm" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig>
+        <table sortcolumn="11" drawcolumn="-1" columnorder="0,1,11,20,21,19,4,3,18,28,5,2,6,7,8,9,10,12,13,14,15,16,17,22,23,24,25,26,27">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="594" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="200" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="60" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="150" index="11" sort="Down" />
+          <column forcevisible="false" hidden="true" width="80" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="20" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="30" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="18" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="24" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="27" sort="None" />
+          <column forcevisible="false" hidden="false" width="200" index="28" sort="None" />
+        </table>
+        <table sortcolumn="9" drawcolumn="-1" columnorder="0,1,2,31,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="230" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="6" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="7" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="8" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="9" sort="Down" />
+          <column forcevisible="false" hidden="false" width="110" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="11" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="13" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="16" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="18" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="19" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="25" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="27" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="28" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="30" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="31" sort="None" />
+        </table>
+        <table sortcolumn="8" drawcolumn="-1" columnorder="0,30,2,3,6,31,32,1,5,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29">
+          <column forcevisible="false" hidden="false" width="496" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="314" index="2" sort="None" />
+          <column forcevisible="true" hidden="false" width="120" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="20" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="27" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="28" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="20" index="30" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="31" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="32" sort="None" />
+        </table>
+        <table sortcolumn="5" drawcolumn="-1" columnorder="0,1,2,6,3,4,5">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="200" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="160" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="180" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="6" sort="None" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="10000" requiredrilldowndata="true" />
+      <chart axis.x.title="" axis.y.title.show="false" showtooltips="false" bounds.y.enabled="false" showvalues="true" showtitle="true" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="false" maxdisplayitems="10" zoomable="false" charttype="PieChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Right" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
+        <legendcomposition measure="true">
+          <pielabelcomposition unit="true" measure="true" value="true" />
+        </legendcomposition>
+        <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+      </chart>
+      <detailanalyzerparameters showsummarynodes="true" analyzerrecordlimit="-1" requiredrilldowndata="true" showsamples="true">
+        <keysmap />
+      </detailanalyzerparameters>
+      <purepathviewconfiguration mincellheight="3" verticalrulervisible="false" valuerenderset="APIColoring" mappingtype="Value" horizontalrulervisible="false" usecellmapping="true" hierarchyrenderertype="None" legendvisible="true" pathstructurevisible="false" displayvalue="Exec" />
+      <contentconfigmain>
+        <ccontent enabled="both" ratio="0.603" />
+      </contentconfigmain>
+      <contentconfigtop>
+        <ccontent enabled="both" ratio="0.75" />
+      </contentconfigtop>
+    </portletconfig>
+    <portletconfig usedashboardsourceforcompare="true" icon="com.dynatrace.diagnostics.sdk/default_16x16.png" description="" source="server://ip-172-31-69-178" sessionid="y_Production" folderid="3f749f4a-494d-432f-b09a-8c7df66a36ad" addfilterinfo="false" ismaster="false" typeid="com.dynatrace.diagnostics.portlets.purepath.PurePath" id="2bf1eed9-86cd-4e23-9b19-2da2e058e994" displaymode="Base" usespecificautorefresh="false" showdetails="true" sessiontype="live" showhotspots="true" locationascomparesource="false" usedashboardsource="true" locationassource="false" showonlyrelevantsamplingnodes="true" name="PublicationGroupingHandler" showpathtoentrypoint="false" showpurepaths="true">
+      <reportconfig print.images="true" lines.per.table="100" override="false" optimizeequalcolumns="true" print.legends="true" reportposition="1" enabled="true" levels.per.tree="10" />
+      <filter>
+        <criterion mode="all" type="agents" completepurepath="true">
+          <textpattern name="agentname" type="contains" enabled="true" />
+          <textpattern name="agenthost" type="contains" enabled="true" />
+        </criterion>
+        <criterion mode="INACTIVE" type="analysiscache" />
+        <criterion type="and" />
+        <criterion mode="all" excludeexternalsubpaths="false" type="api" />
+        <criterion mode="ALL" patternstring="" type="applications" matchmode="contains" />
+        <criterion type="btm">
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Datahub 6.4 Customize - PublicationGroupingHandler.group" />
+          <record legacymode="false" context="Server" configuredforfullsplit="false" transaction="Datahub 6.4 Customize - PublicationGroupingHandler.isApplicable" />
+        </criterion>
+        <criterion type="casuemdimension" />
+        <criterion type="dbdetails" />
+        <criterion intervalend="0" intervalstart="0" type="dcrumdimension" filterinterval="false" />
+        <criterion mode="all" type="hosts" completepurepath="true" />
+        <criterion type="or" />
+        <criterion mode="all" enduser="false" type="purepaths" />
+        <criterion type="threads" enabled="false" filterbyid="false" />
+        <criterion type="timeframe">
+          <timeframe type="Last 30min" />
+        </criterion>
+        <criterion customdefaultcolumnindex="0" columnlabel="" columnindex="0" isactive="false" sort="highestValues" type="topx" maxnrofrecords="10" customdefaultcolumnlabel="" />
+        <criterion useendtimefortimeframefilter="false" type="visits">
+          <visitidset />
+        </criterion>
+        <criterion type="webpage">
+          <textpattern name="timerName" type="contains" enabled="true" />
+          <textpattern name="pageContext" type="contains" enabled="true" />
+        </criterion>
+        <criterion type="webrequest">
+          <filteruripattern>
+            <stringmatchpattern match="contains" text="" />
+          </filteruripattern>
+          <filterquerypattern>
+            <stringmatchpattern match="contains" text="" />
+          </filterquerypattern>
+        </criterion>
+        <inheritancemap>
+          <inheritanceentry inherited="false" type="btm" />
+        </inheritancemap>
+      </filter>
+      <autorefreshconfig unit="MINUTES" time="5" enabled="false" />
+      <sashconfig displayoption="CHART_AND_TABLE" weights="1,1" />
+      <datamodelconfig>
+        <table sortcolumn="11" drawcolumn="-1" columnorder="0,1,11,20,21,19,4,3,18,28,5,2,6,7,8,9,10,12,13,14,15,16,17,22,23,24,25,26,27">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="594" index="1" sort="None" />
+          <column forcevisible="false" hidden="true" width="200" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="60" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="150" index="11" sort="Down" />
+          <column forcevisible="false" hidden="true" width="80" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="20" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="30" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="100" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="100" index="18" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="24" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="150" index="27" sort="None" />
+          <column forcevisible="false" hidden="false" width="200" index="28" sort="None" />
+        </table>
+        <table sortcolumn="9" drawcolumn="-1" columnorder="0,1,2,31,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="230" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="6" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="7" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="8" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="9" sort="Down" />
+          <column forcevisible="false" hidden="false" width="110" index="10" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="11" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="12" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="13" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="15" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="16" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="17" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="18" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="19" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="20" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="25" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="27" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="28" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="30" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="31" sort="None" />
+        </table>
+        <table sortcolumn="8" drawcolumn="-1" columnorder="0,30,2,3,6,31,32,1,5,4,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29">
+          <column forcevisible="false" hidden="false" width="496" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="314" index="2" sort="None" />
+          <column forcevisible="true" hidden="false" width="120" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="80" index="5" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="6" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="7" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="8" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="9" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="10" sort="None" />
+          <column forcevisible="false" hidden="true" width="80" index="11" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="12" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="13" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="14" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="15" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="16" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="17" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="18" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="19" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="20" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="21" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="22" sort="None" />
+          <column forcevisible="false" hidden="true" width="110" index="23" sort="None" />
+          <column forcevisible="false" hidden="true" width="120" index="24" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="25" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="26" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="27" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="28" sort="None" />
+          <column forcevisible="false" hidden="true" width="70" index="29" sort="None" />
+          <column forcevisible="false" hidden="false" width="20" index="30" sort="None" />
+          <column forcevisible="false" hidden="false" width="140" index="31" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="32" sort="None" />
+        </table>
+        <table sortcolumn="5" drawcolumn="-1" columnorder="0,1,2,6,3,4,5">
+          <column forcevisible="false" hidden="false" width="20" index="0" sort="None" />
+          <column forcevisible="false" hidden="false" width="200" index="1" sort="None" />
+          <column forcevisible="false" hidden="false" width="120" index="2" sort="None" />
+          <column forcevisible="false" hidden="false" width="160" index="3" sort="None" />
+          <column forcevisible="false" hidden="false" width="180" index="4" sort="None" />
+          <column forcevisible="false" hidden="false" width="110" index="5" sort="None" />
+          <column forcevisible="false" hidden="true" width="350" index="6" sort="None" />
+        </table>
+      </datamodelconfig>
+      <analyzerparameters analyzerrecordlimit="10000" requiredrilldowndata="true" />
+      <chart axis.x.title="" axis.y.title.show="false" showtooltips="false" bounds.y.enabled="false" showvalues="true" showtitle="true" logxaxis="false" title="" resolution="Auto" axis.x.show="true" maxsplitcharts="10" showname="false" maxdisplayitems="10" zoomable="false" charttype="PieChart" aggregation.absolute="false" showheatfield="true" axis.y.show="true" isentitymarkable="false" orientation="Horizontal" yaxisalignment="0" legendposition="Right" axis.x.title.show="false" axis.y.title="" splitcharts="false" limititems="true" showlegend="true" lockyaxis="true" showlabels="true">
+        <legendcomposition measure="true">
+          <pielabelcomposition unit="true" measure="true" value="true" />
+        </legendcomposition>
+        <splitconfig splitlayout="Horizontal" splitmode="PerSeries" />
+      </chart>
+      <detailanalyzerparameters showsummarynodes="true" analyzerrecordlimit="-1" requiredrilldowndata="true" showsamples="true">
+        <keysmap />
+      </detailanalyzerparameters>
+      <purepathviewconfiguration mincellheight="3" verticalrulervisible="false" valuerenderset="APIColoring" mappingtype="Value" horizontalrulervisible="false" usecellmapping="true" hierarchyrenderertype="None" legendvisible="true" pathstructurevisible="false" displayvalue="Exec" />
+      <contentconfigmain>
+        <ccontent enabled="both" ratio="0.603" />
+      </contentconfigmain>
+      <contentconfigtop>
+        <ccontent enabled="both" ratio="0.75" />
+      </contentconfigtop>
+    </portletconfig>
+  </dashboardconfig>
+</dynatrace>
