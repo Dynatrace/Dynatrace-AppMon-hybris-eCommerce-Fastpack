@@ -384,14 +384,18 @@
 			</fileset>
 		</foreach>
 		
-		<foreach target="add-web-dashboard-config" param="dashboard">
-			<fileset dir="${build}/web-dashboards">
-				<include name="*.xml"/>
-				<include name="*.json"/>
-			</fileset>
-		</foreach>
-				
-		
+		<if>
+			<available file="${build}/web-dashboards" type="dir" />
+			<then>
+				<foreach target="add-web-dashboard-config" param="dashboard">
+					<fileset dir="${build}/web-dashboards">
+						<include name="*.xml"/>
+						<include name="*.json"/>
+					</fileset>
+				</foreach>
+			</then>
+		</if>	
+			
 		<foreach target="add-profile-config" param="profile">
 			<fileset dir="${build}/profiles">
 				<include name="*.profile.xml"/>
